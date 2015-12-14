@@ -1,0 +1,253 @@
+@import 'constants/colors';
+@import 'constants/typography';
+
+@import 'config/breakpoints';
+@import 'config/typography';
+@import 'config/layout';
+
+@import 'functions/math';
+@import 'functions/unit-conversion';
+
+@import 'mixins/media-queries';
+@import 'mixins/misc';
+@import 'mixins/flex-layout';
+@import 'mixins/flex-tiles';
+
+@import 'typography/definitions';
+@import 'typography/functions';
+@import 'typography/mixins';
+
+@import 'reset';
+@import 'helpers';
+
+// Chassis Core ----------------------------------------------------------------
+
+html {
+  @if variable-exists(body-bg-color) {
+    background: $body-bg-color;
+  }
+
+  font-size: $typography-base;
+}
+
+@if variable-exists(link-style-defs) {
+  a {
+    &:link {
+      font: {
+        weight: $link-weight;
+        style: $link-style;
+        variant: $link-variant;
+      }
+
+      text: {
+        decoration: $link-decoration;
+        transform: $link-transform;
+      }
+
+      color: $link-color;
+    }
+
+    &:visited {
+      font: {
+        weight: $visited-link-weight;
+        style: $visited-link-style;
+        variant: $visited-link-variant;
+      }
+
+      text: {
+        decoration: $visited-link-decoration;
+        transform: $visited-link-transform;
+      }
+
+      color: $visited-link-color;
+    }
+
+    &:hover {
+      font: {
+        weight: $hover-link-weight;
+        style: $hover-link-style;
+        variant: $hover-link-variant;
+      }
+
+      text: {
+        decoration: $hover-link-decoration;
+        transform: $hover-link-transform;
+      }
+
+      color: $hover-link-color;
+    }
+
+    &:active {
+      font: {
+        weight: $active-link-weight;
+        style: $active-link-style;
+        variant: $active-link-variant;
+      }
+
+      text: {
+        decoration: $active-link-decoration;
+        transform: $active-link-transform;
+      }
+
+      color: $active-link-color;
+    }
+
+    &.disabled {
+      font: {
+        weight: $disabled-link-weight;
+        style: $disabled-link-style;
+        variant: $disabled-link-variant;
+      }
+
+      text: {
+        decoration: $disabled-link-decoration;
+        transform: $disabled-link-transform;
+      }
+
+      color: $disabled-link-color;
+    }
+  }
+}
+
+.ngn-chassis {
+  min-width: $ui-min-width;
+
+  margin: 0;
+  padding: 0;
+
+  font: {
+    @if variable-exists(font-family) {
+      family: $font-family;
+    }
+    @if variable-exists(font-weight-defs) {
+      weight: $regular;
+    }
+    style: normal;
+    variant: normal;
+  }
+
+  @if variable-exists(text-color) {
+    color: $text-color;
+  }
+
+  @if variable-exists(heading-style-defs) {
+
+    h1 {
+      font: {
+        family: $h1-fonts;
+        weight: $h1-weight;
+        style: $h1-style;
+        variant: $h1-variant;
+      }
+
+      color: $h1-color;
+
+      text-transform: $h1-transform;
+      text-decoration: $h1-decoration;
+    }
+
+    h2 {
+      font: {
+        family: $h2-fonts;
+        weight: $h2-weight;
+        style: $h2-style;
+        variant: $h2-variant;
+      }
+
+      color: $h2-color;
+
+      text-transform: $h2-transform;
+      text-decoration: $h2-decoration;
+    }
+
+    h3 {
+      font: {
+        family: $h3-fonts;
+        weight: $h3-weight;
+        style: $h3-style;
+        variant: $h3-variant;
+      }
+
+      color: $h3-color;
+
+      text-transform: $h3-transform;
+      text-decoration: $h3-decoration;
+    }
+
+    h4 {
+      font: {
+        family: $h4-fonts;
+        weight: $h4-weight;
+        style: $h4-style;
+        variant: $h4-variant;
+      }
+
+      color: $h4-color;
+
+      text-transform: $h4-transform;
+      text-decoration: $h4-decoration;
+    }
+
+    h5 {
+      font: {
+        family: $h5-fonts;
+        weight: $h5-weight;
+        style: $h5-style;
+        variant: $h5-variant;
+      }
+
+      color: $h5-color;
+
+      text-transform: $h5-transform;
+      text-decoration: $h5-decoration;
+    }
+
+    h6 {
+      font: {
+        family: $h6-fonts;
+        weight: $h6-weight;
+        style: $h6-style;
+        variant: $h6-variant;
+      }
+
+      color: $h6-color;
+
+      text-transform: $h6-transform;
+      text-decoration: $h6-decoration;
+    }
+
+  }
+
+  // Auto Typography -----------------------------------------------------------
+
+  // Loops through each screen-size range, as specified in `config/breakpoints`.
+  // Uses global-typography-rules mixin to set appropriate typography rules at
+  // each screen-size range.
+  // This is determined by checking the upper-bound of the current screen-size
+  // range against preset golden-ratio typography rules and selecting the
+  // corresponding rules.
+
+  // Typography Rule definitions can be found in `typography/definitions`.
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        @include global-typography-rules($upper-bound);
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        @include global-typography-rules($upper-bound);
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        @include global-typography-rules($upper-bound);
+      }
+    }
+
+  }
+
+}

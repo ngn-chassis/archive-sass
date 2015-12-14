@@ -1,0 +1,80 @@
+// NGN Chassis
+// Media Query Mixins ----------------------------------------------------------
+
+@mixin screen-size($specified-range) {
+
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+
+    $lower-bound: map-get($screen-size-range, lower-bound);
+    $upper-bound: map-get($screen-size-range, upper-bound);
+
+    @if unit($lower-bound) != 'px' {
+      @if unit($lower-bound) == 'rem' {
+        $lower-bound: rem-to-px($lower-bound);
+      } @else {
+        @warn '#{unit($lower-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    @if unit($upper-bound) != 'px' {
+      @if unit($upper-bound) == 'rem' {
+        $upper-bound: rem-to-px($upper-bound);
+      } @else {
+        @warn '#{unit($upper-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    @media screen and (min-width: $lower-bound) and (max-width: $upper-bound) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+
+}
+
+@mixin min-screen-size($specified-range) {
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+    $lower-bound: map-get($screen-size-range, lower-bound);
+
+    @if unit($lower-bound) != 'px' {
+      @if unit($lower-bound) == 'rem' {
+        $lower-bound: rem-to-px($lower-bound);
+      } @else {
+        @warn '#{unit($lower-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    @media screen and (min-width: $lower-bound) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+}
+
+@mixin max-screen-size($specified-range) {
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+    $upper-bound: map-get($screen-size-range, upper-bound);
+
+    @if unit($upper-bound) != 'px' {
+      @if unit($upper-bound) == 'rem' {
+        $upper-bound: rem-to-px($upper-bound);
+      } @else {
+        @warn '#{unit($upper-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    @media screen and (max-width: $upper-bound) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+}

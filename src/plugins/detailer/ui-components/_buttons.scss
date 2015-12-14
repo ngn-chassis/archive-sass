@@ -1,0 +1,164 @@
+// NGN Chassis
+// UI Components
+
+// :: Buttons
+
+.ngn-chassis {
+
+  .button {
+    display: inline-block;
+
+    // Set line-height, margins and padding
+    @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+      $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+      $upper-bound: map-get($range-bounds, upper-bound);
+
+      @if $index == 1 {
+        @include max-screen-size($range-semantic-name) {
+          @include inline-line-height(root);
+          @include inline-margin(root);
+          @include inline-padding(root);
+        }
+      } @elseif $index == length($screen-size-ranges) {
+        @include min-screen-size($range-semantic-name) {
+          @include inline-line-height(root);
+          @include inline-margin(root);
+          @include inline-padding(root);
+        }
+      } @else {
+        @include screen-size($range-semantic-name) {
+          @include inline-line-height(root);
+          @include inline-margin(root);
+          @include inline-padding(root);
+        }
+      }
+
+    }
+
+    background: $primary-button-bg-color;
+
+    border: none;
+    border-radius: $primary-button-border-radius;
+
+    outline: none;
+
+    @if $primary-button-has-border {
+      box-shadow: inset 0 0 0 $primary-button-border-thickness $primary-button-border-color;
+    } @else {
+      box-shadow: none;
+    }
+
+    font: {
+      family: $primary-button-fonts;
+      weight: $primary-button-font-weight;
+      style: $primary-button-font-style;
+      variant: $primary-button-font-variant;
+    }
+
+    text: {
+      decoration: $primary-button-text-decoration;
+      transform: $primary-button-text-transform;
+    }
+
+    color: $primary-button-text-color;
+
+    cursor: pointer;
+
+    @extend %disable-text-selection;
+
+    // Ensure overwrite of <a> styles
+    &:link {
+      color: $primary-button-text-color;
+    }
+
+  	&:visited {
+      background: $visited-primary-button-bg-color;
+
+      @if $visited-primary-button-has-border {
+        box-shadow: inset 0 0 0 $visited-primary-button-border-thickness $visited-primary-button-border-color;
+      } @else {
+        box-shadow: none;
+      }
+
+      font: {
+        family: $visited-primary-button-fonts;
+        weight: $visited-primary-button-font-weight;
+        style: $visited-primary-button-font-style;
+        variant: $visited-primary-button-font-variant;
+      }
+
+      text: {
+        decoration: $visited-primary-button-text-decoration;
+        transform: $visited-primary-button-text-transform;
+      }
+
+      color: $visited-primary-button-text-color;
+  	}
+
+  	&:hover {
+      background: $hover-primary-button-bg-color;
+
+      @if $hover-primary-button-has-border {
+        box-shadow: inset 0 0 0 $hover-primary-button-border-thickness $hover-primary-button-border-color;
+      } @else {
+        box-shadow: none;
+      }
+
+      font: {
+        family: $hover-primary-button-fonts;
+        weight: $hover-primary-button-font-weight;
+        style: $hover-primary-button-font-style;
+        variant: $hover-primary-button-font-variant;
+      }
+
+      text: {
+        decoration: $hover-primary-button-text-decoration;
+        transform: $hover-primary-button-text-transform;
+      }
+
+      color: $hover-primary-button-text-color;
+  	}
+
+  	&:active {
+      background: $active-primary-button-bg-color;
+
+      @if $active-primary-button-has-border {
+        box-shadow: inset 0 0 0 $active-primary-button-border-thickness $active-primary-button-border-color;
+      } @else {
+        box-shadow: none;
+      }
+
+      font: {
+        family: $active-primary-button-fonts;
+        weight: $active-primary-button-font-weight;
+        style: $active-primary-button-font-style;
+        variant: $active-primary-button-font-variant;
+      }
+
+      text: {
+        decoration: $active-primary-button-text-decoration;
+        transform: $active-primary-button-text-transform;
+      }
+
+      color: $active-primary-button-text-color;
+  	}
+
+  	&:focus {
+  		outline: none;
+  	}
+
+  	&.disabled {
+  		background: $disabled-primary-button-bg-color;
+
+      @if $primary-button-has-border {
+        box-shadow: inset 0 0 0 $primary-button-border-thickness $disabled-primary-button-border-color;
+      }
+
+  		color: $disabled-primary-button-text-color;
+  		@extend %disable-pointer-events;
+  	}
+
+  }
+
+}

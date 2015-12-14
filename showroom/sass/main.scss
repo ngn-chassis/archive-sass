@@ -1,0 +1,71 @@
+@import 'detailer-config';
+@import 'plugins/detailer/plugin';
+
+@import 'chassis-config';
+@import 'chassis';
+
+// Import UI Components
+@import 'plugins/detailer/ui-components/buttons';
+
+.showroom {
+
+  header {
+    padding: 3.82em 0;
+    background: rgb(1,177,22);
+
+    text-align: center;
+
+    h1 {
+      margin: 0;
+
+      color: $white;
+
+      @include multiply-font-size(larger); // Multiplies by $type-scale-ratio by default
+      text-transform: uppercase;
+    }
+  }
+
+  main {
+    @include width-constraint;
+
+    @include min-screen-size(medium) {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    padding-top: 2em;
+
+    @include min-screen-size(medium) {
+      padding-top: 3.82em;
+    }
+
+    .sidebar {
+      @include min-screen-size(medium) {
+        flex: 1 0 25%;
+      }
+
+      box-shadow: inset 0 0 0 1px $grey-n02;
+
+      a {
+        display: block;
+
+        padding: .618em 1em;
+
+        &:not(:last-child) {
+          box-shadow: 0 1px 0 0 $grey-n02;
+        }
+      }
+    }
+
+    .workspace {
+      @include min-screen-size(medium) {
+        padding: 0 0 0 2.618em;
+      }
+
+      > section {
+        margin-bottom: 3em;
+      }
+    }
+
+  }
+}

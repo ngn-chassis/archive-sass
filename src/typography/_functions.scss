@@ -1,0 +1,39 @@
+@function get-font-size($type, $upper-bound) {
+  $range-upper-bound: null;
+
+  @if unit($upper-bound) == 'rem' {
+    $range-upper-bound: rem-to-px($upper-bound);
+  } @elseif unit($upper-bound) == 'px' {
+    $range-upper-bound: $upper-bound;
+  } @else {
+    @warn '`#{unit($upper-bound)}` cannot be used as units for breakpoint bounds. Please use `px` or `rem` instead.';
+  }
+
+  $font-size: null;
+
+  @each $font-size-def in $font-size-defs {
+    $def-upper-bound: map-get($font-size-def, upper-bound);
+
+    @if $range-upper-bound > $def-upper-bound {
+      $font-sizes: map-get($font-size-def, font-sizes);
+
+      @each $font-size-alias, $font-size-value in $font-sizes {
+        @if $type == $font-size-alias {
+          @if unit($font-size-value) == 'px' {
+            $font-size: $font-size-value;
+          } @elseif unit($font-size-value) == 'rem' {
+            $font-size: round(rem-to-px($font-size-value));
+          } @else {
+            @warn '`#{unit($upper-bound)}` cannot be used as units for Chassis Typography plugin font size definitions. Please use `px` or `rem` instead.';
+          }
+        }
+      }
+    }
+  }
+
+  @return $font-size;
+}
+
+@function get-line-height($type, $upper-bound) {
+  @return round(get-font-size($type, $upper-bound) * $type-scale-ratio);
+}

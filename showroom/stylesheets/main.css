@@ -1,0 +1,780 @@
+.ngn-chassis .button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.ngn-chassis .button.disabled {
+  pointer-events: none; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+ol, ul {
+  list-style: none; }
+
+main {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section, summary {
+  display: block; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important; }
+
+.width-constraint, .showroom main {
+  min-width: 320px !important;
+  max-width: 1440px !important;
+  margin: 0 auto;
+  padding-left: 6vw;
+  padding-right: 6vw; }
+  @media screen and (max-width: 320px) {
+    .width-constraint, .showroom main {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 1440px) {
+    .width-constraint, .showroom main {
+      padding-left: 89px;
+      padding-right: 89px; } }
+
+html {
+  background: white;
+  font-size: 16px; }
+
+a:link {
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  color: #01b116; }
+
+a:visited {
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  color: #01b116; }
+
+a:hover {
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: underline;
+  text-transform: none;
+  color: #01bb17; }
+
+a:active {
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: initial;
+  text-transform: none;
+  color: #01a715; }
+
+a.disabled {
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: initial;
+  text-transform: none;
+  color: #bcbdc1; }
+
+.ngn-chassis {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  color: #444444; }
+  .ngn-chassis h1 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h2 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h3 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h4 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h5 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h6 {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    color: #444444;
+    text-transform: none;
+    text-decoration: none; }
+  @media screen and (max-width: 512px) {
+    .ngn-chassis {
+      font-size: 14px;
+      line-height: 23px; }
+      .ngn-chassis h1 {
+        font-size: 23px;
+        line-height: 37px;
+        margin-bottom: 23px; }
+      .ngn-chassis h2 {
+        font-size: 18px;
+        line-height: 29px;
+        margin-bottom: 18px; }
+      .ngn-chassis h3 {
+        font-size: 14px;
+        line-height: 23px;
+        margin-bottom: 14px; }
+      .ngn-chassis h4 {
+        font-size: 14px;
+        line-height: 23px;
+        margin-bottom: 14px; }
+      .ngn-chassis h5 {
+        font-size: 14px;
+        line-height: 23px;
+        margin-bottom: 14px; }
+      .ngn-chassis h6 {
+        font-size: 14px;
+        line-height: 23px;
+        margin-bottom: 14px; }
+      .ngn-chassis p,
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis blockquote,
+      .ngn-chassis fieldset,
+      .ngn-chassis pre,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed,
+      .ngn-chassis figure,
+      .ngn-chassis nav {
+        margin-bottom: 23px; } }
+  @media screen and (min-width: 512px) and (max-width: 768px) {
+    .ngn-chassis {
+      font-size: 15px;
+      line-height: 24px; }
+      .ngn-chassis h1 {
+        font-size: 24px;
+        line-height: 39px;
+        margin-bottom: 24px; }
+      .ngn-chassis h2 {
+        font-size: 19px;
+        line-height: 31px;
+        margin-bottom: 19px; }
+      .ngn-chassis h3 {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 15px; }
+      .ngn-chassis h4 {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 15px; }
+      .ngn-chassis h5 {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 15px; }
+      .ngn-chassis h6 {
+        font-size: 15px;
+        line-height: 24px;
+        margin-bottom: 15px; }
+      .ngn-chassis p,
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis blockquote,
+      .ngn-chassis fieldset,
+      .ngn-chassis pre,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed,
+      .ngn-chassis figure,
+      .ngn-chassis nav {
+        margin-bottom: 24px; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .ngn-chassis {
+      font-size: 16px;
+      line-height: 26px; }
+      .ngn-chassis h1 {
+        font-size: 26px;
+        line-height: 42px;
+        margin-bottom: 26px; }
+      .ngn-chassis h2 {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 20px; }
+      .ngn-chassis h3 {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 16px; }
+      .ngn-chassis h4 {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 16px; }
+      .ngn-chassis h5 {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 16px; }
+      .ngn-chassis h6 {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 16px; }
+      .ngn-chassis p,
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis blockquote,
+      .ngn-chassis fieldset,
+      .ngn-chassis pre,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed,
+      .ngn-chassis figure,
+      .ngn-chassis nav {
+        margin-bottom: 26px; } }
+  @media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .ngn-chassis {
+      font-size: 17px;
+      line-height: 28px; }
+      .ngn-chassis h1 {
+        font-size: 28px;
+        line-height: 45px;
+        margin-bottom: 28px; }
+      .ngn-chassis h2 {
+        font-size: 22px;
+        line-height: 36px;
+        margin-bottom: 22px; }
+      .ngn-chassis h3 {
+        font-size: 17px;
+        line-height: 28px;
+        margin-bottom: 17px; }
+      .ngn-chassis h4 {
+        font-size: 17px;
+        line-height: 28px;
+        margin-bottom: 17px; }
+      .ngn-chassis h5 {
+        font-size: 17px;
+        line-height: 28px;
+        margin-bottom: 17px; }
+      .ngn-chassis h6 {
+        font-size: 17px;
+        line-height: 28px;
+        margin-bottom: 17px; }
+      .ngn-chassis p,
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis blockquote,
+      .ngn-chassis fieldset,
+      .ngn-chassis pre,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed,
+      .ngn-chassis figure,
+      .ngn-chassis nav {
+        margin-bottom: 28px; } }
+  @media screen and (min-width: 1200px) {
+    .ngn-chassis {
+      font-size: 18px;
+      line-height: 29px; }
+      .ngn-chassis h1 {
+        font-size: 29px;
+        line-height: 47px;
+        margin-bottom: 29px; }
+      .ngn-chassis h2 {
+        font-size: 23px;
+        line-height: 37px;
+        margin-bottom: 23px; }
+      .ngn-chassis h3 {
+        font-size: 18px;
+        line-height: 29px;
+        margin-bottom: 18px; }
+      .ngn-chassis h4 {
+        font-size: 18px;
+        line-height: 29px;
+        margin-bottom: 18px; }
+      .ngn-chassis h5 {
+        font-size: 18px;
+        line-height: 29px;
+        margin-bottom: 18px; }
+      .ngn-chassis h6 {
+        font-size: 18px;
+        line-height: 29px;
+        margin-bottom: 18px; }
+      .ngn-chassis p,
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis blockquote,
+      .ngn-chassis fieldset,
+      .ngn-chassis pre,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed,
+      .ngn-chassis figure,
+      .ngn-chassis nav {
+        margin-bottom: 29px; } }
+
+.ngn-chassis .button {
+  display: inline-block;
+  background: #009886;
+  border: none;
+  border-radius: 0.24063em;
+  outline: none;
+  box-shadow: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  text-transform: none;
+  color: white;
+  cursor: pointer; }
+
+@media screen and (max-width: 512px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    line-height: 37.214px; } }
+
+@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    line-height: 38.832px; } }
+
+@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    line-height: 42.068px; } }
+
+@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 45.304px; } }
+
+@media screen and (max-width: 512px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 46.922px; } }
+
+@media screen and (max-width: 512px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    margin: 0 13px 14px 0; } }
+
+@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    margin: 0 14px 15px 0; } }
+
+@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    margin: 0 15px 16px 0; } }
+
+@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 16px 17px 0; } }
+
+@media screen and (max-width: 512px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 17px 18px 0; } }
+
+@media screen and (max-width: 512px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    padding: 0 12px; } }
+
+@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 13px; } }
+
+@media screen and (max-width: 512px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 14px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    line-height: 37.214px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    line-height: 38.832px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    line-height: 42.068px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 45.304px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 46.922px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    margin: 0 13px 14px 0; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    margin: 0 14px 15px 0; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    margin: 0 15px 16px 0; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 16px 17px 0; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 17px 18px 0; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    padding: 0 12px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 13px; } }
+
+@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 14px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    line-height: 37.214px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    line-height: 38.832px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    line-height: 42.068px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 45.304px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 46.922px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    margin: 0 13px 14px 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    margin: 0 14px 15px 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    margin: 0 15px 16px 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 16px 17px 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 17px 18px 0; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    padding: 0 12px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 13px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 14px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    line-height: 37.214px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    line-height: 38.832px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    line-height: 42.068px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 45.304px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 46.922px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    margin: 0 13px 14px 0; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    margin: 0 14px 15px 0; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    margin: 0 15px 16px 0; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 16px 17px 0; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 17px 18px 0; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    padding: 0 12px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 13px; } }
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 14px; } }
+
+@media screen and (min-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    line-height: 37.214px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    line-height: 38.832px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    line-height: 42.068px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 45.304px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    line-height: 46.922px; } }
+
+@media screen and (min-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    margin: 0 13px 14px 0; } }
+
+@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    margin: 0 14px 15px 0; } }
+
+@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    margin: 0 15px 16px 0; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 16px 17px 0; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    margin: 0 17px 18px 0; } }
+
+@media screen and (min-width: 1200px) and (max-width: 512px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
+  .ngn-chassis .button {
+    padding: 0 11px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
+  .ngn-chassis .button {
+    padding: 0 12px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 13px; } }
+
+@media screen and (min-width: 1200px) and (min-width: 1200px) {
+  .ngn-chassis .button {
+    padding: 0 14px; } }
+  .ngn-chassis .button:link {
+    color: white; }
+  .ngn-chassis .button:visited {
+    background: #01b116;
+    box-shadow: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .ngn-chassis .button:hover {
+    background: #00a793;
+    box-shadow: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .ngn-chassis .button:active {
+    background: #008e7d;
+    box-shadow: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: white; }
+  .ngn-chassis .button:focus {
+    outline: none; }
+  .ngn-chassis .button.disabled {
+    background: rgba(0, 152, 134, 0.382);
+    color: white; }
+
+.showroom header {
+  padding: 3.82em 0;
+  background: #01b116;
+  text-align: center; }
+  .showroom header h1 {
+    margin: 0;
+    color: white;
+    text-transform: uppercase; }
+    @media screen and (max-width: 512px) {
+      .showroom header h1 {
+        font-size: 37px;
+        line-height: 60px; } }
+    @media screen and (min-width: 512px) and (max-width: 768px) {
+      .showroom header h1 {
+        font-size: 39px;
+        line-height: 63px; } }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .showroom header h1 {
+        font-size: 42px;
+        line-height: 68px; } }
+    @media screen and (min-width: 1024px) and (max-width: 1200px) {
+      .showroom header h1 {
+        font-size: 45px;
+        line-height: 73px; } }
+    @media screen and (min-width: 1200px) {
+      .showroom header h1 {
+        font-size: 47px;
+        line-height: 76px; } }
+
+.showroom main {
+  padding-top: 2em; }
+  @media screen and (min-width: 768px) {
+    .showroom main {
+      display: flex;
+      align-items: flex-start; } }
+  @media screen and (min-width: 768px) {
+    .showroom main {
+      padding-top: 3.82em; } }
+  .showroom main .sidebar {
+    box-shadow: inset 0 0 0 1px #dadbdd; }
+    @media screen and (min-width: 768px) {
+      .showroom main .sidebar {
+        flex: 1 0 25%; } }
+    .showroom main .sidebar a {
+      display: block;
+      padding: .618em 1em; }
+      .showroom main .sidebar a:not(:last-child) {
+        box-shadow: 0 1px 0 0 #dadbdd; }
+  @media screen and (min-width: 768px) {
+    .showroom main .workspace {
+      padding: 0 0 0 2.618em; } }
+  .showroom main .workspace > section {
+    margin-bottom: 3em; }
