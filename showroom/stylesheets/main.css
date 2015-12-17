@@ -1,4 +1,4 @@
-.ngn-chassis .button {
+.ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -7,7 +7,7 @@
   -o-user-select: none;
   user-select: none; }
 
-.ngn-chassis .button.disabled {
+.ngn-chassis a.disabled:not(.button), .ngn-chassis .disabled.button, .showroom main .workspace > section.buttons .disabled.custom-button {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -65,8 +65,8 @@ section, summary {
   min-width: 320px !important;
   max-width: 1440px !important;
   margin: 0 auto;
-  padding-left: 6vw;
-  padding-right: 6vw; }
+  padding-left: 6.18vw;
+  padding-right: 6.18vw; }
   @media screen and (max-width: 320px) {
     .width-constraint, .showroom main {
       padding-left: 20px;
@@ -78,47 +78,7 @@ section, summary {
 
 html {
   background: white;
-  font-size: 16px; }
-
-a:link {
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: none;
-  text-transform: none;
-  color: #01b116; }
-
-a:visited {
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: none;
-  text-transform: none;
-  color: #01b116; }
-
-a:hover {
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: underline;
-  text-transform: none;
-  color: #01bb17; }
-
-a:active {
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: initial;
-  text-transform: none;
-  color: #01a715; }
-
-a.disabled {
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration: initial;
-  text-transform: none;
-  color: #bcbdc1; }
+  font-size: 20px; }
 
 .ngn-chassis {
   min-width: 320px;
@@ -129,46 +89,58 @@ a.disabled {
   font-style: normal;
   font-variant: normal;
   color: #444444; }
+  .ngn-chassis a:not(.button) {
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: #01b116; }
+    .ngn-chassis a:not(.button):link {
+      color: #01b116; }
+    .ngn-chassis a:not(.button):hover {
+      text-decoration: underline;
+      color: #01a715; }
+    .ngn-chassis a:not(.button):active {
+      text-decoration: initial;
+      color: #01bb17; }
+    .ngn-chassis a:not(.button).disabled {
+      text-decoration: initial;
+      color: #bcbdc1; }
   .ngn-chassis h1 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h2 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h3 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h4 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h5 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h6 {
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
-    color: #444444;
     text-transform: none;
     text-decoration: none; }
   @media screen and (max-width: 512px) {
@@ -372,13 +344,15 @@ a.disabled {
       .ngn-chassis nav {
         margin-bottom: 29px; } }
 
-.ngn-chassis .button {
+.ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
   display: inline-block;
   background: #009886;
-  border: none;
   border-radius: 0.24063em;
+  border: none;
   outline: none;
   box-shadow: none;
+  box-shadow: none;
+  vertical-align: middle;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -389,341 +363,317 @@ a.disabled {
   cursor: pointer; }
 
 @media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button {
-    line-height: 37.214px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 37px; } }
 
 @media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
-    line-height: 38.832px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 39px; } }
 
 @media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
-    line-height: 42.068px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 42px; } }
 
 @media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 45.304px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 45px; } }
 
 @media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 46.922px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 47px; } }
 
 @media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 13px 14px 0; } }
 
 @media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 14px 15px 0; } }
 
 @media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 15px 16px 0; } }
 
 @media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 16px 17px 0; } }
 
 @media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 17px 18px 0; } }
 
 @media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 12px; } }
 
 @media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 13px; } }
 
 @media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 14px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button {
-    line-height: 37.214px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 37px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
-    line-height: 38.832px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 39px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
-    line-height: 42.068px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 42px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 45.304px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 45px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 46.922px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 47px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 13px 14px 0; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 14px 15px 0; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 15px 16px 0; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 16px 17px 0; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 17px 18px 0; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 12px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 13px; } }
 
 @media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 14px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button {
-    line-height: 37.214px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 37px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
-    line-height: 38.832px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 39px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
-    line-height: 42.068px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 42px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 45.304px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 45px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 46.922px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 47px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 13px 14px 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 14px 15px 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 15px 16px 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 16px 17px 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 17px 18px 0; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 12px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 13px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 14px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
-    line-height: 37.214px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 37px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
-    line-height: 38.832px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 39px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
-    line-height: 42.068px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 42px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 45.304px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 45px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 46.922px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 47px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 13px 14px 0; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 14px 15px 0; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 15px 16px 0; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 16px 17px 0; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 17px 18px 0; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 12px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 13px; } }
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 14px; } }
 
 @media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
-    line-height: 37.214px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 37px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
-    line-height: 38.832px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 39px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
-    line-height: 42.068px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 42px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 45.304px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 45px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
-    line-height: 46.922px; } }
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+    line-height: 47px; } }
 
 @media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 13px 14px 0; } }
 
 @media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 14px 15px 0; } }
 
 @media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 15px 16px 0; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 16px 17px 0; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     margin: 0 17px 18px 0; } }
 
 @media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 11px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 12px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 13px; } }
 
 @media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button {
+  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
     padding: 0 14px; } }
-  .ngn-chassis .button:link {
+  .ngn-chassis .button:link, .showroom main .workspace > section.buttons .custom-button:link {
     color: white; }
-  .ngn-chassis .button:visited {
-    background: #01b116;
-    box-shadow: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-variant: normal;
-    text-decoration: none;
-    text-transform: none;
-    color: white; }
-  .ngn-chassis .button:hover {
-    background: #00a793;
-    box-shadow: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-variant: normal;
-    text-decoration: none;
-    text-transform: none;
-    color: white; }
-  .ngn-chassis .button:active {
-    background: #008e7d;
-    box-shadow: none;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-variant: normal;
-    text-decoration: none;
-    text-transform: none;
-    color: white; }
-  .ngn-chassis .button:focus {
-    outline: none; }
-  .ngn-chassis .button.disabled {
+  .ngn-chassis .button:visited, .showroom main .workspace > section.buttons .custom-button:visited {
+    background: #01b116; }
+  .ngn-chassis .button:hover, .showroom main .workspace > section.buttons .custom-button:hover {
+    background: #00a793; }
+  .ngn-chassis .button:active, .showroom main .workspace > section.buttons .custom-button:active {
+    background: #008e7d; }
+  .ngn-chassis .disabled.button, .showroom main .workspace > section.buttons .disabled.custom-button {
     background: rgba(0, 152, 134, 0.382);
     color: white; }
+  .ngn-chassis .button:focus, .showroom main .workspace > section.buttons .custom-button:focus {
+    outline: none; }
 
 .showroom header {
   padding: 3.82em 0;
@@ -778,3 +728,27 @@ a.disabled {
       padding: 0 0 0 2.618em; } }
   .showroom main .workspace > section {
     margin-bottom: 3em; }
+    .showroom main .workspace > section.buttons .button.purple {
+      background: purple; }
+      .showroom main .workspace > section.buttons .button.purple:hover {
+        background: #b300b3; }
+      .showroom main .workspace > section.buttons .button.purple:active {
+        background: #610561; }
+      .showroom main .workspace > section.buttons .button.purple.disabled {
+        background: #ccb3cc; }
+  .showroom main .workspace pre {
+    padding: 0.38195em 1em 1em;
+    background: #fafafa;
+    box-shadow: 0 0 0 1px #d1d2d4;
+    border-radius: 0.24063em;
+    font-family: Consolas, Courier New, monospace;
+    white-space: pre-wrap; }
+    .showroom main .workspace pre:before {
+      display: block;
+      color: #a9aaae; }
+    .showroom main .workspace pre.html:before {
+      content: 'HTML:'; }
+    .showroom main .workspace pre.sass:before {
+      content: 'SASS:'; }
+    .showroom main .workspace pre.javascript:before {
+      content: 'JavaScript:'; }

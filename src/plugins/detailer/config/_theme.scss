@@ -1,274 +1,177 @@
 // NGN chassis
 // Detailer UI Pack
 
+// :: Core Theme
+
 // Make Chassis Core Typography constants and vars available to Detailer
 @import '../../../constants/typography';
 @import '../../../config/typography';
 
+
 // :: Global -------------------------------------------------------------------
 
-$body-bg-color            : $white                   !default;
-$text-color               : rgba(68,68,68,1)         !default;
+$body-bg-color            : $white            !default;
+$text-color               : rgba(68,68,68,1)  !default;
 
-$default-border-radius    : .240625em !default;
+$default-border-radius    : .240625em         !default;
 
 $icon-size-multiplier     : $type-scale-ratio !default;
 
+
 // :: Links --------------------------------------------------------------------
 
-$link-style-defs : (
-  link: (
-    fonts: $font-family,
-    weight: $regular,
-    color: $green,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  visited: (
-    fonts: $font-family,
-    weight: $regular,
-    color: $green,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  hover: (
-    fonts: $font-family,
-    weight: $regular,
-    color: lighten($green, 2%),
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: underline
-  ),
-  active: (
-    fonts: $font-family,
-    weight: $regular,
-    color: darken($green, 2%),
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: initial
-  ),
-  disabled: (
-    fonts: $font-family,
-    weight: $regular,
-    color: rgba(188,189,193,1),
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: initial
-  )
-) !default;
+$link-fonts               : $font-family !default;
+$link-color               : $green       !default;
+$link-weight              : $regular     !default;
+$link-style               : normal       !default;
+$link-variant             : normal       !default;
+$link-transform           : none         !default;
+$link-decoration          : none         !default;
 
-$link-color               : map-get(map-get($link-style-defs, link), color)          !default;
-$link-weight              : map-get(map-get($link-style-defs, link), weight)         !default;
-$link-style               : map-get(map-get($link-style-defs, link), style)          !default;
-$link-variant             : map-get(map-get($link-style-defs, link), variant)        !default;
-$link-transform           : map-get(map-get($link-style-defs, link), transform)      !default;
-$link-decoration          : map-get(map-get($link-style-defs, link), decoration)     !default;
+$visited-link-color       : $link-color  !default;
+$visited-link-weight      : $regular     !default;
+$visited-link-style       : normal       !default;
+$visited-link-variant     : normal       !default;
+$visited-link-transform   : none         !default;
+$visited-link-decoration  : none         !default;
 
-$visited-link-color       : map-get(map-get($link-style-defs, visited), color)       !default;
-$visited-link-weight      : map-get(map-get($link-style-defs, visited), weight)      !default;
-$visited-link-style       : map-get(map-get($link-style-defs, visited), style)       !default;
-$visited-link-variant     : map-get(map-get($link-style-defs, visited), variant)     !default;
-$visited-link-transform   : map-get(map-get($link-style-defs, visited), transform)   !default;
-$visited-link-decoration  : map-get(map-get($link-style-defs, visited), decoration)  !default;
+$hover-link-fonts         : $font-family !default;
+$hover-link-color         : darken($link-color, 2%) !default;
+$hover-link-weight        : $regular     !default;
+$hover-link-style         : normal       !default;
+$hover-link-variant       : normal       !default;
+$hover-link-transform     : none         !default;
+$hover-link-decoration    : underline    !default;
 
-$hover-link-color         : map-get(map-get($link-style-defs, hover), color)         !default;
-$hover-link-weight        : map-get(map-get($link-style-defs, hover), weight)        !default;
-$hover-link-style         : map-get(map-get($link-style-defs, hover), style)         !default;
-$hover-link-variant       : map-get(map-get($link-style-defs, hover), variant)       !default;
-$hover-link-transform     : map-get(map-get($link-style-defs, hover), transform)     !default;
-$hover-link-decoration    : map-get(map-get($link-style-defs, hover), decoration)    !default;
+$active-link-fonts        : $font-family !default;
+$active-link-color        : lighten($link-color, 2%) !default;
+$active-link-weight       : $regular     !default;
+$active-link-style        : normal       !default;
+$active-link-variant      : normal       !default;
+$active-link-transform    : none         !default;
+$active-link-decoration   : initial      !default;
 
-$active-link-color        : map-get(map-get($link-style-defs, active), color)        !default;
-$active-link-weight       : map-get(map-get($link-style-defs, active), weight)       !default;
-$active-link-style        : map-get(map-get($link-style-defs, active), style)        !default;
-$active-link-variant      : map-get(map-get($link-style-defs, active), variant)      !default;
-$active-link-transform    : map-get(map-get($link-style-defs, active), transform)    !default;
-$active-link-decoration   : map-get(map-get($link-style-defs, active), decoration)   !default;
-
-$disabled-link-color      : map-get(map-get($link-style-defs, disabled), color)      !default;
-$disabled-link-weight     : map-get(map-get($link-style-defs, disabled), weight)     !default;
-$disabled-link-style      : map-get(map-get($link-style-defs, disabled), style)      !default;
-$disabled-link-variant    : map-get(map-get($link-style-defs, disabled), variant)    !default;
-$disabled-link-transform  : map-get(map-get($link-style-defs, disabled), transform)  !default;
-$disabled-link-decoration : map-get(map-get($link-style-defs, disabled), decoration) !default;
+$disabled-link-color      : rgba(188,189,193,1) !default;
+$disabled-link-weight     : $regular     !default;
+$disabled-link-style      : normal       !default;
+$disabled-link-variant    : normal       !default;
+$disabled-link-transform  : none         !default;
+$disabled-link-decoration : initial      !default;
 
 
 // :: Headings -----------------------------------------------------------------
 
-$heading-style-defs : (
-  heading-one: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  heading-two: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  heading-three: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  heading-four: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  heading-five: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  ),
-  heading-six: (
-    fonts: $font-family,
-    weight: $bold,
-    color: $text-color,
-    style: normal,
-    variant: normal,
-    transform: none,
-    decoration: none
-  )
-) !default;
+$h1-fonts         : $font-family       !default;
+$h1-weight        : $bold              !default;
+$h1-color         : $text-color        !default;
+$h1-style         : normal             !default;
+$h1-variant       : normal             !default;
+$h1-transform     : none               !default;
+$h1-decoration    : none               !default;
 
-$h1-fonts         : map-get(map-get($heading-style-defs, heading-one), family)       !default;
-$h1-weight        : map-get(map-get($heading-style-defs, heading-one), weight)       !default;
-$h1-color         : map-get(map-get($heading-style-defs, heading-one), color)       !default;
-$h1-style         : map-get(map-get($heading-style-defs, heading-one), style)        !default;
-$h1-variant       : map-get(map-get($heading-style-defs, heading-one), variant)      !default;
-$h1-transform     : map-get(map-get($heading-style-defs, heading-one), transform)    !default;
-$h1-decoration    : map-get(map-get($heading-style-defs, heading-one), decoration)   !default;
+$h2-fonts         : $font-family       !default;
+$h2-weight        : $bold              !default;
+$h2-color         : $text-color        !default;
+$h2-style         : normal             !default;
+$h2-variant       : normal             !default;
+$h2-transform     : none               !default;
+$h2-decoration    : none               !default;
 
-$h2-fonts         : map-get(map-get($heading-style-defs, heading-two), family)       !default;
-$h2-weight        : map-get(map-get($heading-style-defs, heading-two), weight)       !default;
-$h2-color         : map-get(map-get($heading-style-defs, heading-two), color)       !default;
-$h2-style         : map-get(map-get($heading-style-defs, heading-two), style)        !default;
-$h2-variant       : map-get(map-get($heading-style-defs, heading-two), variant)      !default;
-$h2-transform     : map-get(map-get($heading-style-defs, heading-two), transform)    !default;
-$h2-decoration    : map-get(map-get($heading-style-defs, heading-two), decoration)   !default;
+$h3-fonts         : $font-family       !default;
+$h3-weight        : $bold              !default;
+$h3-color         : $text-color        !default;
+$h3-style         : normal             !default;
+$h3-variant       : normal             !default;
+$h3-transform     : none               !default;
+$h3-decoration    : none               !default;
 
-$h3-fonts         : map-get(map-get($heading-style-defs, heading-three), family)     !default;
-$h3-weight        : map-get(map-get($heading-style-defs, heading-three), weight)     !default;
-$h3-color         : map-get(map-get($heading-style-defs, heading-three), color)     !default;
-$h3-style         : map-get(map-get($heading-style-defs, heading-three), style)      !default;
-$h3-variant       : map-get(map-get($heading-style-defs, heading-three), variant)    !default;
-$h3-transform     : map-get(map-get($heading-style-defs, heading-three), transform)  !default;
-$h3-decoration    : map-get(map-get($heading-style-defs, heading-three), decoration) !default;
+$h4-fonts         : $font-family       !default;
+$h4-weight        : $bold              !default;
+$h4-color         : $text-color        !default;
+$h4-style         : normal             !default;
+$h4-variant       : normal             !default;
+$h4-transform     : none               !default;
+$h4-decoration    : none               !default;
 
-$h4-fonts         : map-get(map-get($heading-style-defs, heading-four), family)      !default;
-$h4-weight        : map-get(map-get($heading-style-defs, heading-four), weight)      !default;
-$h4-color         : map-get(map-get($heading-style-defs, heading-four), color)      !default;
-$h4-style         : map-get(map-get($heading-style-defs, heading-four), style)       !default;
-$h4-variant       : map-get(map-get($heading-style-defs, heading-four), variant)     !default;
-$h4-transform     : map-get(map-get($heading-style-defs, heading-four), transform)   !default;
-$h4-decoration    : map-get(map-get($heading-style-defs, heading-four), decoration)  !default;
+$h5-fonts         : $font-family       !default;
+$h5-weight        : $bold              !default;
+$h5-color         : $text-color        !default;
+$h5-style         : normal             !default;
+$h5-variant       : normal             !default;
+$h5-transform     : none               !default;
+$h5-decoration    : none               !default;
 
-$h5-fonts         : map-get(map-get($heading-style-defs, heading-five), family)      !default;
-$h5-weight        : map-get(map-get($heading-style-defs, heading-five), weight)      !default;
-$h5-color         : map-get(map-get($heading-style-defs, heading-five), color)      !default;
-$h5-style         : map-get(map-get($heading-style-defs, heading-five), style)       !default;
-$h5-variant       : map-get(map-get($heading-style-defs, heading-five), variant)     !default;
-$h5-transform     : map-get(map-get($heading-style-defs, heading-five), transform)   !default;
-$h5-decoration    : map-get(map-get($heading-style-defs, heading-five), decoration)  !default;
-
-$h6-fonts         : map-get(map-get($heading-style-defs, heading-six), family)       !default;
-$h6-weight        : map-get(map-get($heading-style-defs, heading-six), weight)       !default;
-$h6-color         : map-get(map-get($heading-style-defs, heading-six), color)       !default;
-$h6-style         : map-get(map-get($heading-style-defs, heading-six), style)        !default;
-$h6-variant       : map-get(map-get($heading-style-defs, heading-six), variant)      !default;
-$h6-transform     : map-get(map-get($heading-style-defs, heading-six), transform)    !default;
-$h6-decoration    : map-get(map-get($heading-style-defs, heading-six), decoration)   !default;
+$h6-fonts         : $font-family       !default;
+$h6-weight        : $bold              !default;
+$h6-color         : $text-color        !default;
+$h6-style         : normal             !default;
+$h6-variant       : normal             !default;
+$h6-transform     : none               !default;
+$h6-decoration    : none               !default;
 
 
 // :: Buttons ------------------------------------------------------------------
 
-// :: :: Primary Button
+$default-button-fonts                    : $font-family     !default;
+$default-button-text-color               : rgb(255,255,255) !default;
+$default-button-font-weight              : $regular         !default;
+$default-button-font-style               : normal           !default;
+$default-button-font-variant             : normal           !default;
+$default-button-text-decoration          : none             !default;
+$default-button-text-transform           : none             !default;
 
-$primary-button-fonts            : $font-family     !default;
-$primary-button-text-color       : rgb(255,255,255) !default;
-$primary-button-font-weight      : $regular         !default;
-$primary-button-font-style       : normal           !default;
-$primary-button-font-variant     : normal           !default;
-$primary-button-text-decoration  : none             !default;
-$primary-button-text-transform   : none             !default;
+$default-button-bg-color                 : rgb(0, 152, 134) !default;
 
-$primary-button-bg-color         : rgb(0, 152, 134) !default;
+$default-button-has-border               : false            !default;
+$default-button-border-thickness         : 0px              !default;
+$default-button-border-color             : transparent      !default;
+$default-button-border-radius            : $default-border-radius      !default;
 
-$primary-button-has-border       : false            !default;
-$primary-button-border-thickness : 0px              !default;
-$primary-button-border-color     : transparent      !default;
-$primary-button-border-radius    : $default-border-radius      !default;
+$visited-default-button-fonts            : $font-family     !default;
+$visited-default-button-text-color       : rgb(255,255,255) !default;
+$visited-default-button-font-weight      : $regular         !default;
+$visited-default-button-font-style       : normal           !default;
+$visited-default-button-font-variant     : normal           !default;
+$visited-default-button-text-decoration  : none             !default;
+$visited-default-button-text-transform   : none             !default;
 
-$visited-primary-button-fonts            : $font-family     !default;
-$visited-primary-button-text-color       : rgb(255,255,255) !default;
-$visited-primary-button-font-weight      : $regular         !default;
-$visited-primary-button-font-style       : normal           !default;
-$visited-primary-button-font-variant     : normal           !default;
-$visited-primary-button-text-decoration  : none             !default;
-$visited-primary-button-text-transform   : none             !default;
+$visited-default-button-bg-color         : $green           !default;
 
-$visited-primary-button-bg-color         : $green           !default;
+$visited-default-button-has-border       : false            !default;
+$visited-default-button-border-thickness : 0px              !default;
+$visited-default-button-border-color     : transparent      !default;
 
-$visited-primary-button-has-border       : false            !default;
-$visited-primary-button-border-thickness : 0px              !default;
-$visited-primary-button-border-color     : transparent      !default;
+$hover-default-button-fonts              : $font-family     !default;
+$hover-default-button-text-color         : rgb(255,255,255) !default;
+$hover-default-button-font-weight        : $regular         !default;
+$hover-default-button-font-style         : normal           !default;
+$hover-default-button-font-variant       : normal           !default;
+$hover-default-button-text-decoration    : none             !default;
+$hover-default-button-text-transform     : none             !default;
 
-$hover-primary-button-fonts            : $font-family     !default;
-$hover-primary-button-text-color       : rgb(255,255,255) !default;
-$hover-primary-button-font-weight      : $regular         !default;
-$hover-primary-button-font-style       : normal           !default;
-$hover-primary-button-font-variant     : normal           !default;
-$hover-primary-button-text-decoration  : none             !default;
-$hover-primary-button-text-transform   : none             !default;
+$hover-default-button-bg-color           : lighten($default-button-bg-color, 3%) !default;
 
-$hover-primary-button-bg-color         : lighten($primary-button-bg-color, 3%) !default;
+$hover-default-button-has-border         : false            !default;
+$hover-default-button-border-thickness   : 0px              !default;
+$hover-default-button-border-color       : transparent      !default;
 
-$hover-primary-button-has-border       : false            !default;
-$hover-primary-button-border-thickness : 0px              !default;
-$hover-primary-button-border-color     : transparent      !default;
+$active-default-button-fonts             : $font-family     !default;
+$active-default-button-text-color        : rgb(255,255,255) !default;
+$active-default-button-font-weight       : $regular         !default;
+$active-default-button-font-style        : normal           !default;
+$active-default-button-font-variant      : normal           !default;
+$active-default-button-text-decoration   : none             !default;
+$active-default-button-text-transform    : none             !default;
 
-$active-primary-button-fonts            : $font-family     !default;
-$active-primary-button-text-color       : rgb(255,255,255) !default;
-$active-primary-button-font-weight      : $regular         !default;
-$active-primary-button-font-style       : normal           !default;
-$active-primary-button-font-variant     : normal           !default;
-$active-primary-button-text-decoration  : none             !default;
-$active-primary-button-text-transform   : none             !default;
+$active-default-button-bg-color          : darken($default-button-bg-color, 2%) !default;
 
-$active-primary-button-bg-color         : darken($primary-button-bg-color, 2%) !default;
+$active-default-button-has-border        : false            !default;
+$active-default-button-border-thickness  : 0px              !default;
+$active-default-button-border-color      : transparent      !default;
 
-$active-primary-button-has-border       : false            !default;
-$active-primary-button-border-thickness : 0px              !default;
-$active-primary-button-border-color     : transparent      !default;
+$disabled-default-button-text-color      : $default-button-text-color !default;
+$disabled-default-button-bg-color        : transparentize($default-button-bg-color, 0.618) !default;
+$disabled-default-button-border-color    : transparentize($default-button-border-color, 0.618) !default;
 
-$disabled-primary-button-text-color     : $primary-button-text-color !default;
-$disabled-primary-button-bg-color       : transparentize($primary-button-bg-color, 0.618) !default;
-$disabled-primary-button-border-color   : transparentize($primary-button-border-color, 0.618) !default;
+
+// :: Tags ---------------------------------------------------------------------

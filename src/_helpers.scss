@@ -21,8 +21,8 @@
 	max-width: $ui-max-width !important;
 	margin: 0 auto;
   padding: {
-    left: round($ui-gutter);
-    right: round($ui-gutter);
+    left: $ui-gutter;
+    right: $ui-gutter;
   }
 
 	// Prevent vw padding from shrinking at screen sizes below minimum ui width

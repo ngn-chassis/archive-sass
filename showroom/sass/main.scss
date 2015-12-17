@@ -1,10 +1,7 @@
-@import 'detailer-config';
 @import 'plugins/detailer/plugin';
-
-@import 'chassis-config';
 @import 'chassis';
 
-// Import UI Components
+// Import Detailer UI Components
 @import 'plugins/detailer/ui-components/buttons';
 
 .showroom {
@@ -64,7 +61,57 @@
 
       > section {
         margin-bottom: 3em;
+
+        &.buttons {
+          .custom-button {
+            @extend %button;
+          }
+
+          .button {
+            &.purple {
+              background: purple;
+
+              &:hover {
+                background: lighten(saturate(purple, 10%), 10%);
+              }
+              &:active {
+                background: darken(desaturate(purple, 10%), 5%);
+              }
+              &.disabled {
+                background: lighten(desaturate(purple, 80%), 50%);
+              }
+            }
+          }
+        }
       }
+
+      pre {
+        padding: (1em - ( 1em / $type-scale-ratio )) 1em 1em;
+        background: lighten($grey-n00, 5%);
+      	box-shadow: 0 0 0 1px $grey-n03;
+      	border-radius: $default-border-radius;
+
+        font-family: Consolas, Courier New, monospace;
+
+        white-space: pre-wrap;
+
+        &:before {
+          display: block;
+
+          color: $grey-n05;
+        }
+
+        &.html:before {
+          content: 'HTML:';
+        }
+        &.sass:before {
+          content: 'SASS:';
+        }
+        &.javascript:before {
+          content: 'JavaScript:';
+        }
+      }
+
     }
 
   }

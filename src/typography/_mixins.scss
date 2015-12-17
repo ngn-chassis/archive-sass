@@ -145,15 +145,15 @@
 
     @if $index == 1 {
       @include max-screen-size($range-semantic-name) {
-        line-height: ( $line-height * $type-scale-ratio );
+        line-height: round( $line-height * $type-scale-ratio );
       }
     } @elseif $index == length($screen-size-ranges) {
       @include min-screen-size($range-semantic-name) {
-        line-height: ( $line-height * $type-scale-ratio );
+        line-height: round( $line-height * $type-scale-ratio );
       }
     } @else {
       @include screen-size($range-semantic-name) {
-        line-height: ( $line-height * $type-scale-ratio );
+        line-height: round( $line-height * $type-scale-ratio );
       }
     }
 
