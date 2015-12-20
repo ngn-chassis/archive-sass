@@ -1,2 +1,6 @@
 .sass-cache
 *.css.map
+.*
+!.gitignore
+node_modules
+backup
