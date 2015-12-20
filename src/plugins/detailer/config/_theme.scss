@@ -6,14 +6,13 @@
 // Make Chassis Core Typography constants and vars available to Detailer
 @import '../../../constants/typography';
 @import '../../../config/typography';
+@import '../../../config/layout';
 
 
 // :: Global -------------------------------------------------------------------
 
-$body-bg-color            : $white            !default;
+$root-bg-color            : $white          !default;
 $text-color               : rgba(68,68,68,1)  !default;
-
-$default-border-radius    : .240625em         !default;
 
 $icon-size-multiplier     : $type-scale-ratio !default;
 

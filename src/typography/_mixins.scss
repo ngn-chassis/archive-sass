@@ -1,47 +1,50 @@
 @mixin global-typography-rules($upper-bound) {
-  font-size: get-font-size(root, $upper-bound);
-  line-height: get-line-height(root, $upper-bound);
+  $font-size: get-font-size(root, $upper-bound);
+  $line-height: get-line-height(root, $upper-bound);
+
+  font-size: $font-size;
+  line-height: $line-height;
 
   h1 {
-    font-size: get-font-size(larger, $upper-bound);
+    font-size: (( get-font-size(larger, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(larger, $upper-bound);
-    margin-bottom: get-font-size(larger, $upper-bound);
+    line-height: (( get-line-height(larger, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   h2 {
-    font-size: get-font-size(large, $upper-bound);
+    font-size: (( get-font-size(large, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(large, $upper-bound);
-    margin-bottom: get-font-size(large, $upper-bound);
+    line-height: (( get-line-height(large, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   h3 {
-    font-size: get-font-size(root, $upper-bound);
+    font-size: (( get-font-size(root, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(root, $upper-bound);
-    margin-bottom: get-font-size(root, $upper-bound);
+    line-height: (( get-line-height(root, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   h4 {
-    font-size: get-font-size(root, $upper-bound);
+    font-size: (( get-font-size(root, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(root, $upper-bound);
-    margin-bottom: get-font-size(root, $upper-bound);
+    line-height: (( get-line-height(root, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   h5 {
-    font-size: get-font-size(root, $upper-bound);
+    font-size: (( get-font-size(root, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(root, $upper-bound);
-    margin-bottom: get-font-size(root, $upper-bound);
+    line-height: (( get-line-height(root, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   h6 {
-    font-size: get-font-size(root, $upper-bound);
+    font-size: (( get-font-size(root, $upper-bound) / $font-size ) * 1em);
 
-    line-height: get-line-height(root, $upper-bound);
-    margin-bottom: get-font-size(root, $upper-bound);
+    line-height: (( get-line-height(root, $upper-bound) / $line-height ) * 1em);
+    margin-bottom: 1em;
   }
 
   p,
@@ -55,7 +58,7 @@
   embed,
   figure,
   nav {
-    margin-bottom: get-line-height(root, $upper-bound);
+    margin-bottom: (( $line-height / $font-size ) * 1em);
   }
 }
 
@@ -66,8 +69,8 @@
     $index: index(map-keys($screen-size-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    $font-size: round(get-font-size($alias, $upper-bound) * $multiplier);
-    $line-height: round($font-size * $type-scale-ratio);
+    $font-size: (((get-font-size($alias, $upper-bound) * $multiplier) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ( $multiplier * 1em );
 
     @if $index == 1 {
       @include max-screen-size($range-semantic-name) {
@@ -103,28 +106,32 @@
 
 // Typography-based Layout Mixins ----------------------------------------------
 
-// Calculate appropriate padding for inline-block elements
-@mixin inline-padding($alias) {
+// :: Inline Layout Rules
+
+@mixin inline-layout-rules($alias) {
 
   @each $range-semantic-name, $range-bounds in $screen-size-ranges {
 
     $index: index(map-keys($screen-size-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    $font-size: round(get-font-size($alias, $upper-bound));
-    $line-height: round($font-size * $type-scale-ratio);
-
     @if $index == 1 {
       @include max-screen-size($range-semantic-name) {
-        padding: 0 round( ($line-height - (1px * $icon-size-multiplier)) / 2 );
+        @include inline-line-height($alias);
+        @include inline-margin($alias);
+        @include inline-padding($alias);
       }
     } @elseif $index == length($screen-size-ranges) {
       @include min-screen-size($range-semantic-name) {
-        padding: 0 round( ($line-height - (1px * $icon-size-multiplier)) / 2 );
+        @include inline-line-height($alias);
+        @include inline-margin($alias);
+        @include inline-padding($alias);
       }
     } @else {
       @include screen-size($range-semantic-name) {
-        padding: 0 round( ($line-height - (1px * $icon-size-multiplier)) / 2 );
+        @include inline-line-height($alias);
+        @include inline-margin($alias);
+        @include inline-padding($alias);
       }
     }
 
@@ -132,36 +139,7 @@
 
 }
 
-// Calculate appropriate line-height for inline-block elements
-@mixin inline-line-height($alias) {
-
-  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
-
-    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
-    $upper-bound: map-get($range-bounds, upper-bound);
-
-    $font-size: round(get-font-size($alias, $upper-bound));
-    $line-height: round($font-size * $type-scale-ratio);
-
-    @if $index == 1 {
-      @include max-screen-size($range-semantic-name) {
-        line-height: round( $line-height * $type-scale-ratio );
-      }
-    } @elseif $index == length($screen-size-ranges) {
-      @include min-screen-size($range-semantic-name) {
-        line-height: round( $line-height * $type-scale-ratio );
-      }
-    } @else {
-      @include screen-size($range-semantic-name) {
-        line-height: round( $line-height * $type-scale-ratio );
-      }
-    }
-
-  }
-
-}
-
-// Calculate appropriate margins for inline-block elements
+// Calculate appropriate margins for inline elements
 @mixin inline-margin($alias) {
 
   @each $range-semantic-name, $range-bounds in $screen-size-ranges {
@@ -169,20 +147,166 @@
     $index: index(map-keys($screen-size-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    $font-size: round(get-font-size($alias, $upper-bound));
-    $line-height: round($font-size * $type-scale-ratio);
+    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ($font-size * $type-scale-ratio);
 
     @if $index == 1 {
       @include max-screen-size($range-semantic-name) {
-        margin: 0 round( ($line-height - (1px * $icon-size-multiplier)) / $type-scale-ratio ) $font-size 0;
+        margin: 0 ( $line-height / 2 ) $line-height 0;
       }
     } @elseif $index == length($screen-size-ranges) {
       @include min-screen-size($range-semantic-name) {
-        margin: 0 round( ($line-height - (1px * $icon-size-multiplier)) / $type-scale-ratio ) $font-size 0;
+        margin: 0 ( $line-height / 2 ) $line-height 0;
       }
     } @else {
       @include screen-size($range-semantic-name) {
-        margin: 0 round( ($line-height - (1px * $icon-size-multiplier)) / $type-scale-ratio ) $font-size 0;
+        margin: 0 ( $line-height / 2 ) $line-height 0;
+      }
+    }
+
+  }
+
+}
+
+// Calculate appropriate padding for inline elements
+@mixin inline-padding($alias) {
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ($font-size * $type-scale-ratio);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        padding: 0 ( $line-height / 2 );
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        padding: 0 ( $line-height / 2 );
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        padding: 0 ( $line-height / 2 );
+      }
+    }
+
+  }
+
+}
+
+// Calculate appropriate line-height for inline elements
+@mixin inline-line-height($alias) {
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ($font-size * $type-scale-ratio);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        line-height: ( $line-height * $type-scale-ratio );
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        line-height: ( $line-height * $type-scale-ratio );
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        line-height: ( $line-height * $type-scale-ratio );
+      }
+    }
+
+  }
+
+}
+
+// :: Block Layout Rules
+
+@mixin block-layout-rules($alias) {
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        @include block-margin($alias);
+        @include block-padding($alias);
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        @include block-margin($alias);
+        @include block-padding($alias);
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        @include block-margin($alias);
+        @include block-padding($alias);
+      }
+    }
+
+  }
+
+}
+
+// Calculate appropriate margins for block elements
+@mixin block-margin($alias) {
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ($font-size * $type-scale-ratio);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        margin: 0 0 $line-height 0;
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        margin: 0 0 $line-height 0;
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        margin: 0 0 $line-height 0;
+      }
+    }
+
+  }
+
+}
+
+// Calculate appropriate padding for block elements
+@mixin block-padding($alias) {
+
+  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+
+    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $line-height: ($font-size * $type-scale-ratio);
+
+    @if $index == 1 {
+      @include max-screen-size($range-semantic-name) {
+        padding: ( ( $line-height / $type-scale-ratio ) / 2 ) ( $line-height / 2 );
+      }
+    } @elseif $index == length($screen-size-ranges) {
+      @include min-screen-size($range-semantic-name) {
+        padding: ( ( $line-height / $type-scale-ratio ) / 2 ) ( $line-height / 2 );
+      }
+    } @else {
+      @include screen-size($range-semantic-name) {
+        padding: ( ( $line-height / $type-scale-ratio ) / 2 ) ( $line-height / 2 );
       }
     }
 

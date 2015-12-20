@@ -23,11 +23,9 @@
 // Chassis Core ----------------------------------------------------------------
 
 html {
-  @if variable-exists(body-bg-color) {
-    background: $body-bg-color;
+  @if variable-exists(root-bg-color) {
+    background: $root-bg-color;
   }
-
-  font-size: $typography-base;
 }
 
 .ngn-chassis {

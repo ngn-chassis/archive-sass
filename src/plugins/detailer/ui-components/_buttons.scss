@@ -119,33 +119,8 @@
 
     display: inline-block;
 
-    // Set line-height, margins and padding
-    @each $range-semantic-name, $range-bounds in $screen-size-ranges {
-
-      $index: index(map-keys($screen-size-ranges), $range-semantic-name);
-      $upper-bound: map-get($range-bounds, upper-bound);
-
-      @if $index == 1 {
-        @include max-screen-size($range-semantic-name) {
-          @include inline-line-height(root);
-          @include inline-margin(root);
-          @include inline-padding(root);
-        }
-      } @elseif $index == length($screen-size-ranges) {
-        @include min-screen-size($range-semantic-name) {
-          @include inline-line-height(root);
-          @include inline-margin(root);
-          @include inline-padding(root);
-        }
-      } @else {
-        @include screen-size($range-semantic-name) {
-          @include inline-line-height(root);
-          @include inline-margin(root);
-          @include inline-padding(root);
-        }
-      }
-
-    }
+    // Setup default padding, margin and line-height rules
+    @include inline-layout-rules(root);
 
     background: map-get($default, bg-color);
     border-radius: map-get($default, border-radius);
