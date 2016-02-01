@@ -15,7 +15,6 @@ deploy:
   file: ~/chassis.zip
   skip_cleanup: true
   on:
-    # repo: ngnjs/chassis-sass
     tags: true
 cache:
   directories:
