@@ -7,9 +7,10 @@ before_script:
   - pwd ./
 
 before_deploy:
-  - gulp build
-  - pwd ./
-  - ls -l ./
+  - echo $(find ./dist/**/*.*)
+  - export RELEASE_PKG_FILE=$(find ./dist/**/*.*)
+  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+  - find ./dist/**/*.*
 
 deploy:
 - provider: releases
