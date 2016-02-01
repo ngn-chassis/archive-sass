@@ -2,22 +2,22 @@ language: node_js
 node_js:
 - 4.2.1
 sudo: false
-
 before_script:
-  - npm install -g gulp
-
+- npm install -g gulp
 before_deploy: gulp build
-
 deploy:
-  provider: releases
+- provider: releases
   api_key:
     secure: LDPLGVSFMFiIDP39LpC4/PPVCe8bYMxQwaptxyx6Rx2fRgmOQyEmqi5iFw6o6gDQuJVsFqL/8rPxlVKetF7Q/zGXc3WONMuHBPIx1FXSVTzNZ6KDrx+pCDe9SAebpcxLz7cCwdxeC4qrQGc1BKL/R8TfQx9L9ZhbVxZ/vFpYhJmldKd5YJZIpE9R0tauZcsf9MEr2ZS06dn/yiOxR7qVJfY/cycVg8SLRVCFOAIKAq78elEdmijQSxehC2ky/uCdl4Z4e6WBaziWGTkPfLHy5FskvEKJk4Jl1jv0UN40hiTHAAB0x8+aTRTchWYWXj9ySVf0fE9vwbD46rZ+iF0RWQjoFmAPuhb4hSs7ziD7NnWVGuSov17+fYzLMdQosKVvm4mmvQp81TraeHn9rtLBglxpTyox8jJmrKa8Yec+vXQpGnr3cjhj5lF7HqieKF846IQbkdEs53jSPx/jXc4qa80qaDrujAXDpBQ/dRZw612WSO2qS83NmU9UY2VR0lGQvc3+ec7I+L9/aHoZNLlXAqt+FA7y08So8pMNJj21sO1lplLA6kgFquM6JO4tuocPGHEwvzPhsWAcEVf42WhG9muQu7KHiq0V8Zm5VhvcjAZFvJ0xbRz/eHaWNgc3EKx1/56sRcCgkCCOUMFzZ8qHIRtkSgTsLEJMTxCRW6pe8Hk=
   file_glob: true
-  file: "dist/*"
+  file: dist/*
   skip_cleanup: true
   on:
     tags: true
-
 cache:
   directories:
-    - node_modules
+  - node_modules
+notifications:
+  hipchat:
+    rooms:
+      secure: Ne08i/qfAlVkoBCmZK4hGH4MRhS4wKDP5XjEjboQRDgp6LYdY2AXbYfh/nYVx4VSb9RCNpYn/jSXfxWXvC7wV7zA/tUujJB53r8ZKa3L6JjYjs1xl3HLIeAKt+FU9atO5bFhwqqU4pJTwxei5QVSu2Fwpd2/E+3s6JmWag7Cq6JI9BJP6y3DC0U0zkKJDAdKnWjy2ISq+q3Wlvjk6omyfkfW40rVQhrw0TNoJImDhOaTUtEx9o2B5P8NRl3OXytIzxb/abrMEb4iqdXCmn3fj+CSVmoot5/jBueuc4NkgcRuIskyuu3ioaqTOWE0Mile/NrhxY7Y4FHuNU+FT9+PrVs6gvMWqeG6frBzArF4zdx3C5TaGXN3o+ZzO6vjrwHfXUEwrtIHgBRbIiuMyoDvGRzdteir63n4KsDPrU0APjGkDkj2J/burrbIG35pHvUmd8c5cppSRORxsGGwgEcTxwQhPlBgy5H7FD0Mk4jST9u2Rbh+dU/Gk8sbbkIkrnGCdKkbIsFtRyEyq5ng7tfUqvnPyrZlGh6GCw5E5Y9H1vMRMvmvk1m4R/uAS3Rz9EYJKd/Ip7qreQwQSFckIvlFF/ntJDV7DJeaKjd61/CiLJRnOb7BlRtQUr8LFvsjr3g/a0/OM5AV+edsHAMmodoOFg8n1V6X8HnN92IVmx6gBY8=
