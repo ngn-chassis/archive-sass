@@ -5,9 +5,8 @@ sudo: false
 
 before_deploy:
   - cd ./src && zip -r -9 chassis.zip .
-  - export RELEASE_PKG_PATH=$(pwd ~/)
-  - cd ./src && zip -r -9 chassis.zip .
   - mv chassis.zip ~/
+  - export RELEASE_PKG_PATH=$(pwd ~/)
   - export RELEASE_PKG_FILE=$RELEASE_PKG_FILE/chassis.zip
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 
