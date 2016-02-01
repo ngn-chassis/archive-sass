@@ -14,11 +14,10 @@ deploy:
 - provider: releases
   api_key:
     secure: LDPLGVSFMFiIDP39LpC4/PPVCe8bYMxQwaptxyx6Rx2fRgmOQyEmqi5iFw6o6gDQuJVsFqL/8rPxlVKetF7Q/zGXc3WONMuHBPIx1FXSVTzNZ6KDrx+pCDe9SAebpcxLz7cCwdxeC4qrQGc1BKL/R8TfQx9L9ZhbVxZ/vFpYhJmldKd5YJZIpE9R0tauZcsf9MEr2ZS06dn/yiOxR7qVJfY/cycVg8SLRVCFOAIKAq78elEdmijQSxehC2ky/uCdl4Z4e6WBaziWGTkPfLHy5FskvEKJk4Jl1jv0UN40hiTHAAB0x8+aTRTchWYWXj9ySVf0fE9vwbD46rZ+iF0RWQjoFmAPuhb4hSs7ziD7NnWVGuSov17+fYzLMdQosKVvm4mmvQp81TraeHn9rtLBglxpTyox8jJmrKa8Yec+vXQpGnr3cjhj5lF7HqieKF846IQbkdEs53jSPx/jXc4qa80qaDrujAXDpBQ/dRZw612WSO2qS83NmU9UY2VR0lGQvc3+ec7I+L9/aHoZNLlXAqt+FA7y08So8pMNJj21sO1lplLA6kgFquM6JO4tuocPGHEwvzPhsWAcEVf42WhG9muQu7KHiq0V8Zm5VhvcjAZFvJ0xbRz/eHaWNgc3EKx1/56sRcCgkCCOUMFzZ8qHIRtkSgTsLEJMTxCRW6pe8Hk=
-  file: ./src/chassis.zip
+  file: "$RELEASE_PKG_FILE"
   skip_cleanup: true
   on:
-    repo: ngnjs/chassis-sass
-    # tags: true
+    tags: true
 cache:
   directories:
   - node_modules
