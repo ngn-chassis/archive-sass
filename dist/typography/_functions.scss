@@ -1,0 +1,42 @@
+// NGN Chassis
+// Golden Ratio typography-base
+
+// Select appropriate font-size for screen-size-range.
+// Compares current screen-size upper-bound to Chassis typography defaults and
+// returns the appropriate font-size
+
+@function get-font-size($type, $upper-bound) {
+  $range-upper-bound: null;
+
+  @if unit($upper-bound) == 'px' {
+    $range-upper-bound: $upper-bound;
+  } @else {
+    @warn '`#{unit($upper-bound)}` cannot be used as units for breakpoint bounds. Please use `px` instead.';
+  }
+
+  $font-size: null;
+
+  @each $font-size-def in $font-size-defs {
+    $def-upper-bound: map-get($font-size-def, upper-bound);
+
+    @if $range-upper-bound >= $def-upper-bound {
+      $font-sizes: map-get($font-size-def, font-sizes);
+
+      @each $font-size-alias, $font-size-value in $font-sizes {
+        @if $type == $font-size-alias {
+          @if unit($font-size-value) == 'px' {
+            $font-size: $font-size-value;
+          } @else {
+            @warn '`#{unit($upper-bound)}` cannot be used as units for Chassis Typography plugin font size definitions. Please use `px` instead.';
+          }
+        }
+      }
+    }
+  }
+
+  @return $font-size;
+}
+
+@function get-line-height($type, $upper-bound) {
+  @return round(get-font-size($type, $upper-bound) * $type-scale-ratio);
+}
