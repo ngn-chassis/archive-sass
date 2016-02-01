@@ -20,7 +20,6 @@ deploy:
   skip_cleanup: true
   on:
     repo: ngnjs/chassis-sass
-    tags: true
 cache:
   directories:
   - node_modules
