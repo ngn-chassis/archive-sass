@@ -4,10 +4,6 @@ node_js:
 sudo: false
 before_script:
   - npm install -g gulp
-  - export RELEASE_PKG_FILE=$(ls ./dist/**/*)
-  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
-  - gulp build
-  - echo ./dist
 
 before_deploy:
   - export RELEASE_PKG_FILE=$(ls ./dist/**/*)
@@ -23,6 +19,7 @@ deploy:
   file: dist/*
   skip_cleanup: true
   on:
+    repo: ngnjs/chassis-sass
     tags: true
 cache:
   directories:
