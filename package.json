@@ -1,6 +1,6 @@
 {
   "name": "chassis-sass",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Sass-based layout engine for NGN Chassis framework",
   "main": "showroom/index.html",
   "scripts": {
@@ -16,5 +16,8 @@
     "gulp-sass": "^2.1.0",
     "gulp-sass-glob": "0.0.2",
     "wrench": "^1.5.8"
+  },
+  "dependencies": {
+    "publish-release": "^1.2.0"
   }
 }
