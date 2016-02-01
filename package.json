@@ -4,7 +4,7 @@
   "description": "Sass-based layout engine for NGN Chassis framework",
   "main": "showroom/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test, deployment only.\" && exit 0"
   },
   "author": "Graham Butler",
   "license": "ISC",
