@@ -98,7 +98,11 @@
         <section id="flex_tiles" class="flex-tiles">
           <h1>Flex Tiles</h1>
 
-          <div class="tiles">
+          <p>
+            A fluid, responsive grid of equally-sized tiles.
+          </p>
+
+          <section class="tiles">
 
             <div class="tile"></div>
             <div class="tile"></div>
@@ -107,10 +111,24 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
 
-          </div>
+          </section>
+
+          <pre class="html code">&lt;section class="tiles">
+  &lt;article>&lt;/article>
+  &lt;article>&lt;/article>
+  &lt;article>&lt;/article>
+  ...
+&lt;/section></pre>
+
+          <pre class="sass code">.tiles {
+  @include tiles(NUMBER_OF_COLUMNS);
+  // additional styles
+
+  @include min-screen-size(medium) {
+    @include tiles(DIFFERENT_NUMBER_OF_COLUMNS);
+  }
+}</pre>
 
         </section>
 

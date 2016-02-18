@@ -48,7 +48,7 @@
           @include show;
         }
 
-        @include inline-layout-rules(root, false);
+        @include inline-layout-rules($has-margin: false);
 
         &:not(:first-child) {
           box-shadow: 0 -1px 0 0 $grey-n02;
@@ -106,6 +106,12 @@
 
         &.flex-tiles {
           .tiles {
+            @include tiles(1);
+
+            padding: 1em 1em 0;
+
+            border: 1px solid $grey-n03;
+
             @include min-screen-size(small) {
               @include tiles(2);
             }
@@ -123,17 +129,18 @@
               justify-content: center;
               align-items: center;
 
-              min-height: 10em;
+              height: 3.82em;
               margin-bottom: 1em;
 
               @include min-screen-size(small) {
+                height: 6.18em;
                 margin-bottom: 0;
               }
 
-              background: $grey-n02;
+              background: $grey-n00;
 
               &:before {
-                content: 'Tile';
+                content: 'Tile ' counter(CHASSIS_FLEX_TILE_COUNTER);
                 display: block;
               }
             }

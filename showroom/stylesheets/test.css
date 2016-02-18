@@ -154,11 +154,16 @@ html {
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis section,
-  .ngn-chassis article,
   .ngn-chassis nav,
-  .ngn-chassis fieldset {
+  .ngn-chassis form {
     margin-bottom: 2.58885em; }
+  .ngn-chassis section section,
+  .ngn-chassis nav section,
+  .ngn-chassis section nav,
+  .ngn-chassis nav nav,
+  .ngn-chassis article,
   .ngn-chassis p,
+  .ngn-chassis fieldset,
   .ngn-chassis figure,
   .ngn-chassis pre,
   .ngn-chassis blockquote,
@@ -189,11 +194,16 @@ html {
         font-size: 0.8em;
         line-height: 0.79167em; }
       .ngn-chassis section,
-      .ngn-chassis article,
       .ngn-chassis nav,
-      .ngn-chassis fieldset {
+      .ngn-chassis form {
         margin-bottom: 2.58885em; }
+      .ngn-chassis section section,
+      .ngn-chassis nav section,
+      .ngn-chassis section nav,
+      .ngn-chassis nav nav,
+      .ngn-chassis article,
       .ngn-chassis p,
+      .ngn-chassis fieldset,
       .ngn-chassis figure,
       .ngn-chassis pre,
       .ngn-chassis blockquote,
@@ -224,11 +234,16 @@ html {
         font-size: 0.8125em;
         line-height: 0.80769em; }
       .ngn-chassis section,
-      .ngn-chassis article,
       .ngn-chassis nav,
-      .ngn-chassis fieldset {
+      .ngn-chassis form {
         margin-bottom: 2.62931em; }
+      .ngn-chassis section section,
+      .ngn-chassis nav section,
+      .ngn-chassis section nav,
+      .ngn-chassis nav nav,
+      .ngn-chassis article,
       .ngn-chassis p,
+      .ngn-chassis fieldset,
       .ngn-chassis figure,
       .ngn-chassis pre,
       .ngn-chassis blockquote,
@@ -259,11 +274,16 @@ html {
         font-size: 0.76471em;
         line-height: 0.75em; }
       .ngn-chassis section,
-      .ngn-chassis article,
       .ngn-chassis nav,
-      .ngn-chassis fieldset {
+      .ngn-chassis form {
         margin-bottom: 2.665em; }
+      .ngn-chassis section section,
+      .ngn-chassis nav section,
+      .ngn-chassis section nav,
+      .ngn-chassis nav nav,
+      .ngn-chassis article,
       .ngn-chassis p,
+      .ngn-chassis fieldset,
       .ngn-chassis figure,
       .ngn-chassis pre,
       .ngn-chassis blockquote,
@@ -294,11 +314,16 @@ html {
         font-size: 0.77778em;
         line-height: 0.7931em; }
       .ngn-chassis section,
-      .ngn-chassis article,
       .ngn-chassis nav,
-      .ngn-chassis fieldset {
+      .ngn-chassis form {
         margin-bottom: 2.60683em; }
+      .ngn-chassis section section,
+      .ngn-chassis nav section,
+      .ngn-chassis section nav,
+      .ngn-chassis nav nav,
+      .ngn-chassis article,
       .ngn-chassis p,
+      .ngn-chassis fieldset,
       .ngn-chassis figure,
       .ngn-chassis pre,
       .ngn-chassis blockquote,
@@ -329,11 +354,16 @@ html {
         font-size: 0.78947em;
         line-height: 0.77419em; }
       .ngn-chassis section,
-      .ngn-chassis article,
       .ngn-chassis nav,
-      .ngn-chassis fieldset {
+      .ngn-chassis form {
         margin-bottom: 2.63995em; }
+      .ngn-chassis section section,
+      .ngn-chassis nav section,
+      .ngn-chassis section nav,
+      .ngn-chassis nav nav,
+      .ngn-chassis article,
       .ngn-chassis p,
+      .ngn-chassis fieldset,
       .ngn-chassis figure,
       .ngn-chassis pre,
       .ngn-chassis blockquote,

@@ -37,14 +37,19 @@
 
   // Container Elements
   section,
-  article,
   nav,
-  fieldset {
+  form {
     margin-bottom: ( ( get-line-height(root, $upper-bound) / get-font-size(root, $upper-bound) ) * $type-scale-ratio ) * 1em;
   }
 
   // Inner Elements
+  section section,
+  nav section,
+  section nav,
+  nav nav,
+  article,
   p,
+  fieldset,
   figure,
   pre,
   blockquote,
@@ -114,7 +119,7 @@
 // just plain text. ie: buttons, form fields, tags, etc.
 // Margin, padding and line-height are calculated using GR Typography rules
 
-@mixin inline-layout-rules($alias, $has-margin: true) {
+@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
 
   // TODO: Figure out whether this loop is actually necessary
   @each $range-semantic-name, $range-bounds in $screen-size-ranges {
@@ -130,7 +135,7 @@
       margin: $margin;
     }
 
-    @if not variable-exists(padding) {
+    @if not ( variable-exists(padding) ) and $has-padding {
       $padding: 0 ( $base-line-height / 2 );
       padding: $padding;
     }
@@ -149,7 +154,7 @@
 // Used to set margin, padding, and line-height on block elements
 // Margin and padding are calculated using GR Typography rules
 
-@mixin block-layout-rules($alias, $has-margin: true) {
+@mixin block-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
 
   // TODO: Figure out whether this loop is actually necessary
   @each $range-semantic-name, $range-bounds in $screen-size-ranges {
@@ -165,7 +170,7 @@
       margin: $margin;
     }
 
-    @if not variable-exists(padding) {
+    @if not ( variable-exists(padding) ) and $has-padding {
       $padding: ( ( $line-height / $type-scale-ratio ) / 2 ) ( $line-height / 2 );
       padding: $padding;
     }

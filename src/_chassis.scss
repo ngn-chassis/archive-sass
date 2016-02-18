@@ -316,14 +316,19 @@ html {
 
     // Container Elements
     section,
-    article,
     nav,
-    fieldset {
+    form {
       margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
     }
 
     // Inner Elements
+    section section,
+    nav section,
+    section nav,
+    nav nav,
+    article,
     p,
+    fieldset,
     figure,
     pre,
     blockquote,
