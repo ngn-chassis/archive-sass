@@ -1,55 +1,72 @@
+@import 'detailer-config';
 @import 'plugins/detailer/plugin';
+
 @import 'chassis';
 
 // Import Detailer UI Components
 @import 'plugins/detailer/ui-components/buttons';
+@import 'plugins/detailer/ui-components/tiles';
 
 .showroom {
 
   header {
-    padding: 3.82em 0;
-    background: rgb(1,177,22);
+    padding: 1.45898033em 0 0.90169942em;
 
-    text-align: center;
+    border-bottom: 2px solid $grey-n03;
 
     h1 {
       margin: 0;
 
-      color: $white;
-
-      @include multiply-font-size(larger); // Multiplies by $type-scale-ratio by default
-      text-transform: uppercase;
+      @include font-size(large);
+      color: $grey-n05;
     }
   }
 
   main {
     @include width-constraint;
 
-    @include min-screen-size(medium) {
-      display: flex;
-      align-items: flex-start;
-    }
-
     padding-top: 2em;
 
     @include min-screen-size(medium) {
+      display: flex;
+      align-items: flex-start;
+
       padding-top: 3.82em;
     }
 
     .sidebar {
+      position: sticky;
+
       @include min-screen-size(medium) {
         flex: 1 0 25%;
       }
 
-      box-shadow: inset 0 0 0 1px $grey-n02;
-
       a {
-        display: block;
+        @include hide;
 
-        padding: .618em 1em;
+        @include min-screen-size(medium) {
+          @include show;
+        }
 
-        &:not(:last-child) {
-          box-shadow: 0 1px 0 0 $grey-n02;
+        @include inline-layout-rules(root, false);
+
+        &:not(:first-child) {
+          box-shadow: 0 -1px 0 0 $grey-n02;
+        }
+
+        &:hover {
+          box-shadow: none;
+          background: $hover-default-button-bg-color;
+          color: $white;
+          text-decoration: none;
+
+          + a {
+            box-shadow: none;
+          }
+        }
+
+        &:active {
+          background: $active-default-button-bg-color;
         }
       }
     }
@@ -60,7 +77,6 @@
       }
 
       > section {
-        margin-bottom: 3em;
 
         h1 {
           box-shadow: inset 0 -1px 0 0 $grey-n03;
@@ -72,28 +88,64 @@
           }
 
           .button {
-            &.purple {
-              background: purple;
+            &.green {
+              background: $green;
 
               &:hover {
-                background: lighten(saturate(purple, 10%), 10%);
+                background: lighten(saturate($green, 10%), 10%);
               }
               &:active {
-                background: darken(desaturate(purple, 10%), 5%);
+                background: darken(desaturate($green, 10%), 5%);
               }
               &.disabled {
-                background: lighten(desaturate(purple, 80%), 50%);
+                background: lighten(desaturate($green, 80%), 50%);
+              }
+            }
+          }
+        }
+
+        &.flex-tiles {
+          .tiles {
+            @include min-screen-size(small) {
+              @include tiles(2);
+            }
+
+            @include min-screen-size(medium) {
+              @include tiles(3);
+            }
+
+            @include min-screen-size(huge) {
+              @include tiles(4);
+            }
+
+            .tile {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              min-height: 10em;
+              margin-bottom: 1em;
+
+              @include min-screen-size(small) {
+                margin-bottom: 0;
+              }
+
+              background: $grey-n02;
+
+              &:before {
+                content: 'Tile';
+                display: block;
               }
             }
           }
         }
       }
 
-      pre {
+      pre.code {
         @include block-layout-rules(root);
         background: lighten($grey-n00, 5%);
       	box-shadow: 0 0 0 1px $grey-n03;
-      	border-radius: $default-border-radius;
+      	border-radius: 0 $default-border-radius $default-border-radius 0;
 
         font-family: Consolas, Courier New, monospace;
 

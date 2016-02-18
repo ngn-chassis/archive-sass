@@ -83,10 +83,12 @@ html {
   min-width: 320px;
   margin: 0;
   padding: 0;
+  font-size: 15px;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-variant: normal;
+  line-height: 24px;
   color: #444444; }
   .ngn-chassis a:not(.button) {
     font-weight: 300;
@@ -94,93 +96,119 @@ html {
     font-variant: normal;
     text-decoration: none;
     text-transform: none;
-    color: #01b116; }
+    color: #0098e6; }
     .ngn-chassis a:not(.button):link {
-      color: #01b116; }
+      color: #0098e6; }
     .ngn-chassis a:not(.button):hover {
       text-decoration: underline;
-      color: #01a715; }
+      color: #0091dc; }
     .ngn-chassis a:not(.button):active {
       text-decoration: initial;
-      color: #01bb17; }
+      color: #009ff0; }
     .ngn-chassis a:not(.button).disabled {
       text-decoration: initial;
       color: #bcbdc1; }
   .ngn-chassis h1 {
+    font-size: 1.6em;
+    line-height: 1.625em;
+    margin-bottom: 1.00431em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h2 {
+    font-size: 1.26667em;
+    line-height: 1.29167em;
+    margin-bottom: 1.00837em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h3 {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 0.98885em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h4 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h5 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
   .ngn-chassis h6 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
     font-weight: 600;
     font-style: normal;
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  @media screen and (max-width: 512px) {
+  .ngn-chassis section,
+  .ngn-chassis article,
+  .ngn-chassis nav,
+  .ngn-chassis fieldset {
+    margin-bottom: 2.58885em; }
+  .ngn-chassis p,
+  .ngn-chassis figure,
+  .ngn-chassis pre,
+  .ngn-chassis blockquote,
+  .ngn-chassis table,
+  .ngn-chassis canvas,
+  .ngn-chassis embed {
+    margin-bottom: 1.6em; }
+  @media screen and (min-width: 320px) and (max-width: 512px) {
     .ngn-chassis {
       font-size: 15px;
       line-height: 24px; }
       .ngn-chassis h1 {
         font-size: 1.6em;
-        line-height: 1.625em;
-        margin-bottom: 1em; }
+        line-height: 1.625em; }
       .ngn-chassis h2 {
         font-size: 1.26667em;
-        line-height: 1.29167em;
-        margin-bottom: 1em; }
+        line-height: 1.29167em; }
       .ngn-chassis h3 {
         font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        line-height: 1em; }
       .ngn-chassis h4 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.8em;
+        line-height: 0.79167em; }
       .ngn-chassis h5 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.8em;
+        line-height: 0.79167em; }
       .ngn-chassis h6 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
-      .ngn-chassis p,
+        font-size: 0.8em;
+        line-height: 0.79167em; }
       .ngn-chassis section,
       .ngn-chassis article,
-      .ngn-chassis blockquote,
-      .ngn-chassis fieldset,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.58885em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
       .ngn-chassis pre,
+      .ngn-chassis blockquote,
       .ngn-chassis table,
       .ngn-chassis canvas,
-      .ngn-chassis embed,
-      .ngn-chassis figure,
-      .ngn-chassis nav {
+      .ngn-chassis embed {
         margin-bottom: 1.6em; } }
   @media screen and (min-width: 512px) and (max-width: 768px) {
     .ngn-chassis {
@@ -188,39 +216,34 @@ html {
       line-height: 26px; }
       .ngn-chassis h1 {
         font-size: 1.625em;
-        line-height: 1.61538em;
-        margin-bottom: 1em; }
+        line-height: 1.61538em; }
       .ngn-chassis h2 {
         font-size: 1.25em;
-        line-height: 1.23077em;
-        margin-bottom: 1em; }
+        line-height: 1.23077em; }
       .ngn-chassis h3 {
         font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        line-height: 1em; }
       .ngn-chassis h4 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
       .ngn-chassis h5 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
       .ngn-chassis h6 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
-      .ngn-chassis p,
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
       .ngn-chassis section,
       .ngn-chassis article,
-      .ngn-chassis blockquote,
-      .ngn-chassis fieldset,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.62931em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
       .ngn-chassis pre,
+      .ngn-chassis blockquote,
       .ngn-chassis table,
       .ngn-chassis canvas,
-      .ngn-chassis embed,
-      .ngn-chassis figure,
-      .ngn-chassis nav {
+      .ngn-chassis embed {
         margin-bottom: 1.625em; } }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     .ngn-chassis {
@@ -228,39 +251,34 @@ html {
       line-height: 28px; }
       .ngn-chassis h1 {
         font-size: 1.64706em;
-        line-height: 1.60714em;
-        margin-bottom: 1em; }
+        line-height: 1.60714em; }
       .ngn-chassis h2 {
         font-size: 1.29412em;
-        line-height: 1.28571em;
-        margin-bottom: 1em; }
+        line-height: 1.28571em; }
       .ngn-chassis h3 {
         font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        line-height: 1em; }
       .ngn-chassis h4 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.76471em;
+        line-height: 0.75em; }
       .ngn-chassis h5 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.76471em;
+        line-height: 0.75em; }
       .ngn-chassis h6 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
-      .ngn-chassis p,
+        font-size: 0.76471em;
+        line-height: 0.75em; }
       .ngn-chassis section,
       .ngn-chassis article,
-      .ngn-chassis blockquote,
-      .ngn-chassis fieldset,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.665em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
       .ngn-chassis pre,
+      .ngn-chassis blockquote,
       .ngn-chassis table,
       .ngn-chassis canvas,
-      .ngn-chassis embed,
-      .ngn-chassis figure,
-      .ngn-chassis nav {
+      .ngn-chassis embed {
         margin-bottom: 1.64706em; } }
   @media screen and (min-width: 1024px) and (max-width: 1200px) {
     .ngn-chassis {
@@ -268,39 +286,34 @@ html {
       line-height: 29px; }
       .ngn-chassis h1 {
         font-size: 1.61111em;
-        line-height: 1.62069em;
-        margin-bottom: 1em; }
+        line-height: 1.62069em; }
       .ngn-chassis h2 {
         font-size: 1.27778em;
-        line-height: 1.27586em;
-        margin-bottom: 1em; }
+        line-height: 1.27586em; }
       .ngn-chassis h3 {
         font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        line-height: 1em; }
       .ngn-chassis h4 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
       .ngn-chassis h5 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
       .ngn-chassis h6 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
-      .ngn-chassis p,
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
       .ngn-chassis section,
       .ngn-chassis article,
-      .ngn-chassis blockquote,
-      .ngn-chassis fieldset,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.60683em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
       .ngn-chassis pre,
+      .ngn-chassis blockquote,
       .ngn-chassis table,
       .ngn-chassis canvas,
-      .ngn-chassis embed,
-      .ngn-chassis figure,
-      .ngn-chassis nav {
+      .ngn-chassis embed {
         margin-bottom: 1.61111em; } }
   @media screen and (min-width: 1200px) {
     .ngn-chassis {
@@ -308,48 +321,45 @@ html {
       line-height: 31px; }
       .ngn-chassis h1 {
         font-size: 1.63158em;
-        line-height: 1.6129em;
-        margin-bottom: 1em; }
+        line-height: 1.6129em; }
       .ngn-chassis h2 {
         font-size: 1.26316em;
-        line-height: 1.25806em;
-        margin-bottom: 1em; }
+        line-height: 1.25806em; }
       .ngn-chassis h3 {
         font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        line-height: 1em; }
       .ngn-chassis h4 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
       .ngn-chassis h5 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
       .ngn-chassis h6 {
-        font-size: 1em;
-        line-height: 1em;
-        margin-bottom: 1em; }
-      .ngn-chassis p,
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
       .ngn-chassis section,
       .ngn-chassis article,
-      .ngn-chassis blockquote,
-      .ngn-chassis fieldset,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.63995em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
       .ngn-chassis pre,
+      .ngn-chassis blockquote,
       .ngn-chassis table,
       .ngn-chassis canvas,
-      .ngn-chassis embed,
-      .ngn-chassis figure,
-      .ngn-chassis nav {
+      .ngn-chassis embed {
         margin-bottom: 1.63158em; } }
 
 .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
   display: inline-block;
-  background: #009886;
+  margin: 0 0.80902em 1.61803em 0;
+  padding: 0 0.80902em;
+  line-height: 2.61803em;
+  background: #0098e6;
   border-radius: 0.24063em;
   border: none;
   outline: none;
-  box-shadow: none;
   box-shadow: none;
   vertical-align: middle;
   font-family: Helvetica, Arial, sans-serif;
@@ -360,595 +370,220 @@ html {
   text-transform: none;
   color: white;
   cursor: pointer; }
-
-@media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    line-height: 2.61792em; } }
-
-@media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    margin: 0 0.809em 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (max-width: 512px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
-    padding: 0 0.809em; } }
   .ngn-chassis .button:link, .showroom main .workspace > section.buttons .custom-button:link {
     color: white; }
   .ngn-chassis .button:visited, .showroom main .workspace > section.buttons .custom-button:visited {
     background: #01b116; }
   .ngn-chassis .button:hover, .showroom main .workspace > section.buttons .custom-button:hover {
-    background: #00a793; }
+    background: #00a2f5; }
   .ngn-chassis .button:active, .showroom main .workspace > section.buttons .custom-button:active {
-    background: #008e7d; }
+    background: #0091dc; }
   .ngn-chassis .disabled.button, .showroom main .workspace > section.buttons .disabled.custom-button {
-    background: rgba(0, 152, 134, 0.382);
+    background: rgba(0, 152, 230, 0.382);
     color: white; }
   .ngn-chassis .button:focus, .showroom main .workspace > section.buttons .custom-button:focus {
     outline: none; }
 
 .showroom header {
-  padding: 3.82em 0;
-  background: #01b116;
-  text-align: center; }
+  padding: 1.45898033em 0 0.90169942em;
+  border-bottom: 2px solid #d1d2d4; }
   .showroom header h1 {
     margin: 0;
-    color: white;
-    text-transform: uppercase; }
+    color: #a9aaae; }
     @media screen and (max-width: 512px) {
       .showroom header h1 {
-        font-size: 2.5888em;
-        line-height: 1.618em; } }
+        font-size: 19px;
+        line-height: 31px; } }
     @media screen and (min-width: 512px) and (max-width: 768px) {
       .showroom header h1 {
-        font-size: 2.62925em;
-        line-height: 1.618em; } }
+        font-size: 20px;
+        line-height: 32px; } }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .showroom header h1 {
-        font-size: 2.66494em;
-        line-height: 1.618em; } }
+        font-size: 22px;
+        line-height: 36px; } }
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
       .showroom header h1 {
-        font-size: 2.60678em;
-        line-height: 1.618em; } }
+        font-size: 23px;
+        line-height: 37px; } }
     @media screen and (min-width: 1200px) {
       .showroom header h1 {
-        font-size: 2.63989em;
-        line-height: 1.618em; } }
+        font-size: 24px;
+        line-height: 39px; } }
 
 .showroom main {
   padding-top: 2em; }
   @media screen and (min-width: 768px) {
     .showroom main {
       display: flex;
-      align-items: flex-start; } }
-  @media screen and (min-width: 768px) {
-    .showroom main {
+      align-items: flex-start;
       padding-top: 3.82em; } }
   .showroom main .sidebar {
-    box-shadow: inset 0 0 0 1px #dadbdd; }
+    position: sticky; }
     @media screen and (min-width: 768px) {
       .showroom main .sidebar {
         flex: 1 0 25%; } }
     .showroom main .sidebar a {
-      display: block;
-      padding: .618em 1em; }
-      .showroom main .sidebar a:not(:last-child) {
-        box-shadow: 0 1px 0 0 #dadbdd; }
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      padding: 0 0.80902em;
+      line-height: 2.61803em; }
+      @media screen and (min-width: 768px) {
+        .showroom main .sidebar a {
+          display: block;
+          visibility: visible;
+          opacity: 1; } }
+      .showroom main .sidebar a:not(:first-child) {
+        box-shadow: 0 -1px 0 0 #dadbdd; }
+      .showroom main .sidebar a:hover {
+        box-shadow: none;
+        background: #00a2f5;
+        color: white;
+        text-decoration: none; }
+        .showroom main .sidebar a:hover + a {
+          box-shadow: none; }
+      .showroom main .sidebar a:active {
+        background: #0091dc; }
   @media screen and (min-width: 768px) {
     .showroom main .workspace {
       padding: 0 0 0 3.82vw; } }
-  .showroom main .workspace > section {
-    margin-bottom: 3em; }
-    .showroom main .workspace > section h1 {
-      box-shadow: inset 0 -1px 0 0 #d1d2d4; }
-    .showroom main .workspace > section.buttons .button.purple {
-      background: purple; }
-      .showroom main .workspace > section.buttons .button.purple:hover {
-        background: #b300b3; }
-      .showroom main .workspace > section.buttons .button.purple:active {
-        background: #610561; }
-      .showroom main .workspace > section.buttons .button.purple.disabled {
-        background: #ccb3cc; }
-  .showroom main .workspace pre {
+  .showroom main .workspace > section h1 {
+    box-shadow: inset 0 -1px 0 0 #d1d2d4; }
+  .showroom main .workspace > section.buttons .button.green {
+    background: #01b116; }
+    .showroom main .workspace > section.buttons .button.green:hover {
+      background: #00e51b; }
+    .showroom main .workspace > section.buttons .button.green:active {
+      background: #089019; }
+    .showroom main .workspace > section.buttons .button.green.disabled {
+      background: #d1e0d3; }
+  @media screen and (min-width: 512px) {
+    .showroom main .workspace > section.flex-tiles .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      .showroom main .workspace > section.flex-tiles .tiles > * {
+        overflow: hidden;
+        flex: 0 0 50%;
+        padding: 0 0.5em 1em;
+        background-clip: content-box !important; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
+          margin-left: auto;
+          margin-right: auto; } }
+  @media screen and (min-width: 768px) {
+    .showroom main .workspace > section.flex-tiles .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      .showroom main .workspace > section.flex-tiles .tiles > * {
+        overflow: hidden;
+        flex: 0 0 33.33333%;
+        padding: 0 0.5em 1em;
+        background-clip: content-box !important; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(1n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
+          margin-left: auto;
+          margin-right: auto; } }
+  @media screen and (min-width: 1200px) {
+    .showroom main .workspace > section.flex-tiles .tiles {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      .showroom main .workspace > section.flex-tiles .tiles > * {
+        overflow: hidden;
+        flex: 0 0 25%;
+        padding: 0 0.5em 1em;
+        background-clip: content-box !important; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(1n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n) {
+          padding-right: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1) {
+          padding-left: 0.5em; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n) {
+          padding-right: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          padding-left: 0; }
+        .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
+          margin-left: auto;
+          margin-right: auto; } }
+  .showroom main .workspace > section.flex-tiles .tiles .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10em;
+    margin-bottom: 1em;
+    background: #dadbdd; }
+    @media screen and (min-width: 512px) {
+      .showroom main .workspace > section.flex-tiles .tiles .tile {
+        margin-bottom: 0; } }
+    .showroom main .workspace > section.flex-tiles .tiles .tile:before {
+      content: 'Tile';
+      display: block; }
+  .showroom main .workspace pre.code {
+    margin: 0 0 1.61803em 0;
+    padding: 0.5em 0.80902em;
     background: #fafafa;
     box-shadow: 0 0 0 1px #d1d2d4;
-    border-radius: 0.24063em;
+    border-radius: 0 0.24063em 0.24063em 0;
     font-family: Consolas, Courier New, monospace;
     white-space: pre-wrap; }
-
-@media screen and (max-width: 512px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (max-width: 512px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (max-width: 512px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 512px) and (max-width: 768px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1200px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    margin: 0 0 1.618em 0; } }
-
-@media screen and (min-width: 1200px) and (max-width: 512px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 512px) and (max-width: 768px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 768px) and (max-width: 1024px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1024px) and (max-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-
-@media screen and (min-width: 1200px) and (min-width: 1200px) {
-  .showroom main .workspace pre {
-    padding: 0.5em 0.809em; } }
-    .showroom main .workspace pre:before {
+    .showroom main .workspace pre.code:before {
       display: block;
       color: #a9aaae; }
-    .showroom main .workspace pre.html:before {
+    .showroom main .workspace pre.code.html:before {
       content: 'HTML:'; }
-    .showroom main .workspace pre.sass:before {
+    .showroom main .workspace pre.code.sass:before {
       content: 'SASS:'; }
-    .showroom main .workspace pre.javascript:before {
+    .showroom main .workspace pre.code.javascript:before {
       content: 'JavaScript:'; }

@@ -12,6 +12,8 @@
 // :: Global -------------------------------------------------------------------
 
 $root-bg-color            : $white          !default;
+$tile-gutter-color        : $root-bg-color  !default;
+
 $text-color               : rgba(68,68,68,1)  !default;
 
 $icon-size-multiplier     : $type-scale-ratio !default;

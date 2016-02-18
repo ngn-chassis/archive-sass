@@ -1,5 +1,4 @@
-// NGN Chassis
-// Flex Tiles mixin
+// Flex Grid mixins
 
 // These are for situations where you need a grid of fluid, responsive tiles,
 // all the same size.
@@ -9,9 +8,6 @@
 // |_|_|_|_|
 // |_|_|_|_|
 // |_|_|_|_|
-
-// import necessary libraries
-// @import 'media-queries';
 
 
 // :: Grid container
@@ -34,10 +30,10 @@
 // For example, if you have this code:
 
 // .grid {
-// 	@include tiles(2);
+// 	@include grid(2);
 //
 // 	@include min-screen-size(medium) {
-// 		@include tiles(4);
+// 		@include grid(4);
 // 	}
 // }
 
@@ -48,24 +44,26 @@
 // To get around this, you'll need to add a media-query mixin to the first grid
 // mixin as well:
 
-// .tiles {
+// .grid {
 //
 // 	@include max-screen-size(medium) {
-// 		@include tiles(2);
+// 		@include grid(2);
 // 	}
 //
 // 	@include min-screen-size(medium) {
-// 		@include tiles(4);
+// 		@include grid(4);
 // 	}
 // }
 
 @mixin tiles($columns, $gutter-width: 1em) {
+  // counter-reset: NGN_CHASSIS;
 
-	display: flex;
+  display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+	flex-direction: row;
 
 	& > * {
+    // counter-increment: my-awesome-counter;
 
 		overflow: hidden;
 
@@ -75,11 +73,15 @@
 		$gutter-reduction					: strip-units((100% - $column-width-percentage) / 100);
 		$final-gutter-width				: $gutter-width * $gutter-reduction;
 
-    flex: 0, 0, $column-width-percentage;
+    flex: 0 0 $column-width-percentage;
 
 		padding: 0 ($gutter-width / 2) $gutter-width;
 
+    // Allows for gutters between tiles
+    background-clip: content-box !important;
+
 		@for $i from 0 to ($columns - 1) {
+
 
 			&:last-child:nth-child(#{$i}n) {
 				padding-right: ($gutter-width / 2);
@@ -95,10 +97,14 @@
 
 		}
 
-		// Remove margins on first and last items
+		// First tile
 		&:first-child {
 			padding-left: 0;
 		}
+
+    // Last tile IF it is also an even multiple of the number of columns
+    // ie these rules will apply to the 6th of 6 items in a 3x3 grid of tiles
+    // it will NOT apply to the 5th of 5 tiles in a 3x3 grid of tiles
 		&:last-child:nth-child(#{$columns}n) {
 			padding-right: 0;
 		}

@@ -1,0 +1,343 @@
+.ngn-chassis a.disabled:not(.button) {
+  pointer-events: none; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+ol, ul {
+  list-style: none; }
+
+main {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section, summary {
+  display: block; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important; }
+
+.width-constraint, .showroom main {
+  min-width: 320px !important;
+  max-width: 1440px !important;
+  margin: 0 auto;
+  padding-left: 6.18vw;
+  padding-right: 6.18vw; }
+  @media screen and (max-width: 320px) {
+    .width-constraint, .showroom main {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  @media screen and (min-width: 1440px) {
+    .width-constraint, .showroom main {
+      padding-left: 89px;
+      padding-right: 89px; } }
+
+html {
+  background: white; }
+
+.ngn-chassis {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 24px;
+  color: #444444; }
+  .ngn-chassis a:not(.button) {
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    color: #01b116; }
+    .ngn-chassis a:not(.button):link {
+      color: #01b116; }
+    .ngn-chassis a:not(.button):hover {
+      text-decoration: underline;
+      color: #01a715; }
+    .ngn-chassis a:not(.button):active {
+      text-decoration: initial;
+      color: #01bb17; }
+    .ngn-chassis a:not(.button).disabled {
+      text-decoration: initial;
+      color: #bcbdc1; }
+  .ngn-chassis h1 {
+    font-size: 1.6em;
+    line-height: 1.625em;
+    margin-bottom: 1.00431em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h2 {
+    font-size: 1.26667em;
+    line-height: 1.29167em;
+    margin-bottom: 1.00837em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h3 {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 0.98885em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h4 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h5 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis h6 {
+    font-size: 0.8em;
+    line-height: 0.79167em;
+    margin-bottom: 0.78284em;
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: none; }
+  .ngn-chassis section,
+  .ngn-chassis article,
+  .ngn-chassis nav,
+  .ngn-chassis fieldset {
+    margin-bottom: 2.58885em; }
+  .ngn-chassis p,
+  .ngn-chassis figure,
+  .ngn-chassis pre,
+  .ngn-chassis blockquote,
+  .ngn-chassis table,
+  .ngn-chassis canvas,
+  .ngn-chassis embed {
+    margin-bottom: 1.6em; }
+  @media screen and (min-width: 320px) and (max-width: 512px) {
+    .ngn-chassis {
+      font-size: 15px;
+      line-height: 24px; }
+      .ngn-chassis h1 {
+        font-size: 1.6em;
+        line-height: 1.625em; }
+      .ngn-chassis h2 {
+        font-size: 1.26667em;
+        line-height: 1.29167em; }
+      .ngn-chassis h3 {
+        font-size: 1em;
+        line-height: 1em; }
+      .ngn-chassis h4 {
+        font-size: 0.8em;
+        line-height: 0.79167em; }
+      .ngn-chassis h5 {
+        font-size: 0.8em;
+        line-height: 0.79167em; }
+      .ngn-chassis h6 {
+        font-size: 0.8em;
+        line-height: 0.79167em; }
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.58885em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
+      .ngn-chassis pre,
+      .ngn-chassis blockquote,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed {
+        margin-bottom: 1.6em; } }
+  @media screen and (min-width: 512px) and (max-width: 768px) {
+    .ngn-chassis {
+      font-size: 16px;
+      line-height: 26px; }
+      .ngn-chassis h1 {
+        font-size: 1.625em;
+        line-height: 1.61538em; }
+      .ngn-chassis h2 {
+        font-size: 1.25em;
+        line-height: 1.23077em; }
+      .ngn-chassis h3 {
+        font-size: 1em;
+        line-height: 1em; }
+      .ngn-chassis h4 {
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
+      .ngn-chassis h5 {
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
+      .ngn-chassis h6 {
+        font-size: 0.8125em;
+        line-height: 0.80769em; }
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.62931em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
+      .ngn-chassis pre,
+      .ngn-chassis blockquote,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed {
+        margin-bottom: 1.625em; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .ngn-chassis {
+      font-size: 17px;
+      line-height: 28px; }
+      .ngn-chassis h1 {
+        font-size: 1.64706em;
+        line-height: 1.60714em; }
+      .ngn-chassis h2 {
+        font-size: 1.29412em;
+        line-height: 1.28571em; }
+      .ngn-chassis h3 {
+        font-size: 1em;
+        line-height: 1em; }
+      .ngn-chassis h4 {
+        font-size: 0.76471em;
+        line-height: 0.75em; }
+      .ngn-chassis h5 {
+        font-size: 0.76471em;
+        line-height: 0.75em; }
+      .ngn-chassis h6 {
+        font-size: 0.76471em;
+        line-height: 0.75em; }
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.665em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
+      .ngn-chassis pre,
+      .ngn-chassis blockquote,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed {
+        margin-bottom: 1.64706em; } }
+  @media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .ngn-chassis {
+      font-size: 18px;
+      line-height: 29px; }
+      .ngn-chassis h1 {
+        font-size: 1.61111em;
+        line-height: 1.62069em; }
+      .ngn-chassis h2 {
+        font-size: 1.27778em;
+        line-height: 1.27586em; }
+      .ngn-chassis h3 {
+        font-size: 1em;
+        line-height: 1em; }
+      .ngn-chassis h4 {
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
+      .ngn-chassis h5 {
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
+      .ngn-chassis h6 {
+        font-size: 0.77778em;
+        line-height: 0.7931em; }
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.60683em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
+      .ngn-chassis pre,
+      .ngn-chassis blockquote,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed {
+        margin-bottom: 1.61111em; } }
+  @media screen and (min-width: 1200px) {
+    .ngn-chassis {
+      font-size: 19px;
+      line-height: 31px; }
+      .ngn-chassis h1 {
+        font-size: 1.63158em;
+        line-height: 1.6129em; }
+      .ngn-chassis h2 {
+        font-size: 1.26316em;
+        line-height: 1.25806em; }
+      .ngn-chassis h3 {
+        font-size: 1em;
+        line-height: 1em; }
+      .ngn-chassis h4 {
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
+      .ngn-chassis h5 {
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
+      .ngn-chassis h6 {
+        font-size: 0.78947em;
+        line-height: 0.77419em; }
+      .ngn-chassis section,
+      .ngn-chassis article,
+      .ngn-chassis nav,
+      .ngn-chassis fieldset {
+        margin-bottom: 2.63995em; }
+      .ngn-chassis p,
+      .ngn-chassis figure,
+      .ngn-chassis pre,
+      .ngn-chassis blockquote,
+      .ngn-chassis table,
+      .ngn-chassis canvas,
+      .ngn-chassis embed {
+        margin-bottom: 1.63158em; } }

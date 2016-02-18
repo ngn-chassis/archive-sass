@@ -11,7 +11,6 @@
 @import 'mixins/media-queries';
 @import 'mixins/misc';
 @import 'mixins/flex-layout';
-@import 'mixins/flex-tiles';
 
 @import 'typography/definitions';
 @import 'typography/functions';
@@ -29,12 +28,19 @@ html {
 }
 
 .ngn-chassis {
+  // Used to set default font-size, line-height, and margin values for
+  // mobile-first media-queries
+  $first-screen-size-range: nth(map-keys($screen-size-ranges), 1);
+  $first-screen-size-range-upper-bound: map-get(nth(map-values($screen-size-ranges), 1), upper-bound);
+
   min-width: $ui-min-width;
 
   margin: 0;
   padding: 0;
 
   font: {
+    size: get-font-size(root, $first-screen-size-range-upper-bound);
+
     @if variable-exists(font-family) {
       family: $font-family;
     }
@@ -44,6 +50,8 @@ html {
     style: normal;
     variant: normal;
   }
+
+  line-height: get-line-height(root, $first-screen-size-range-upper-bound);
 
   @if variable-exists(text-color) {
     color: $text-color;
@@ -171,7 +179,14 @@ html {
 
   @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
 
+    // TODO: Replace default font-size aliases for headings with constants so
+    // they can be easily changed in the theme file
+
     h1 {
+      font-size: ( ( get-font-size($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h1-fonts != $font-family {
         font-family: $h1-fonts;
       }
@@ -190,6 +205,10 @@ html {
     }
 
     h2 {
+      font-size: ( ( get-font-size($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h2-fonts != $font-family {
         font-family: $h2-fonts;
       }
@@ -208,6 +227,10 @@ html {
     }
 
     h3 {
+      font-size: ( ( get-font-size($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h3-fonts != $font-family {
         font-family: $h3-fonts;
       }
@@ -226,6 +249,10 @@ html {
     }
 
     h4 {
+      font-size: ( ( get-font-size($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h4-fonts != $font-family {
         font-family: $h4-fonts;
       }
@@ -244,6 +271,10 @@ html {
     }
 
     h5 {
+      font-size: ( ( get-font-size($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h5-fonts != $font-family {
         font-family: $h5-fonts;
       }
@@ -262,6 +293,10 @@ html {
     }
 
     h6 {
+      font-size: ( ( get-font-size($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+      line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+      margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
       @if $h6-fonts != $font-family {
         font-family: $h6-fonts;
       }
@@ -277,6 +312,25 @@ html {
 
       text-transform: $h6-transform;
       text-decoration: $h6-decoration;
+    }
+
+    // Container Elements
+    section,
+    article,
+    nav,
+    fieldset {
+      margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
+    }
+
+    // Inner Elements
+    p,
+    figure,
+    pre,
+    blockquote,
+    table,
+    canvas,
+    embed {
+      margin-bottom: ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em;
     }
 
   }
@@ -297,11 +351,7 @@ html {
     $index: index(map-keys($screen-size-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    @if $index == 1 {
-      @include max-screen-size($range-semantic-name) {
-        @include global-typography-rules($upper-bound);
-      }
-    } @elseif $index == length($screen-size-ranges) {
+    @if $index == length($screen-size-ranges) {
       @include min-screen-size($range-semantic-name) {
         @include global-typography-rules($upper-bound);
       }
