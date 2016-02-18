@@ -10,9 +10,9 @@
 .showroom {
 
   header {
-    padding: 1.45898033em 0 0.90169942em;
+    padding: 2.36em 0 0.90169942em;
 
-    border-bottom: 2px solid $grey-n03;
+    border-bottom: 4px solid $grey-n00;
 
     @include min-screen-size(medium) {
       .width-constraint {

@@ -415,8 +415,8 @@ html {
     outline: none; }
 
 .showroom header {
-  padding: 1.45898033em 0 0.90169942em;
-  border-bottom: 2px solid #d1d2d4; }
+  padding: 2.36em 0 0.90169942em;
+  border-bottom: 4px solid #ededed; }
   @media screen and (min-width: 768px) {
     .showroom header .width-constraint, .showroom header main {
       display: flex; } }
@@ -517,19 +517,16 @@ html {
         flex-wrap: wrap;
         flex-direction: row; }
         .showroom main .workspace > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom main .workspace > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 50%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
-            padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
             padding-right: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n) {
@@ -537,6 +534,7 @@ html {
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
+            padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
     @media screen and (min-width: 768px) {
@@ -546,25 +544,20 @@ html {
         flex-wrap: wrap;
         flex-direction: row; }
         .showroom main .workspace > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom main .workspace > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 33.33333%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(1n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
-            padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
             padding-right: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n) {
@@ -572,6 +565,7 @@ html {
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
+            padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
     @media screen and (min-width: 1200px) {
@@ -581,31 +575,24 @@ html {
         flex-wrap: wrap;
         flex-direction: row; }
         .showroom main .workspace > section.flex-tiles .tiles > * {
-          counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+          counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
+        .showroom main .workspace > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 25%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(0n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(1n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
-            padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n) {
+          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n):last-child {
             padding-right: 0.5em; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:first-child {
-            padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
             padding-right: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n) {
@@ -613,6 +600,7 @@ html {
           .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
           .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
+            padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
     .showroom main .workspace > section.flex-tiles .tiles .tile {

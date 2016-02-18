@@ -57,7 +57,7 @@ html {
     color: $text-color;
   }
 
-  @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+  @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
     a:not(.button) {
       @if $link-fonts != $font-family {
         font-family: $link-fonts;
@@ -182,7 +182,7 @@ html {
     line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h1-fonts != $font-family {
         font-family: $h1-fonts;
       }
@@ -206,7 +206,7 @@ html {
     line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h2-fonts != $font-family {
         font-family: $h2-fonts;
       }
@@ -230,7 +230,7 @@ html {
     line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h3-fonts != $font-family {
         font-family: $h3-fonts;
       }
@@ -254,7 +254,7 @@ html {
     line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h4-fonts != $font-family {
         font-family: $h4-fonts;
       }
@@ -278,7 +278,7 @@ html {
     line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h5-fonts != $font-family {
         font-family: $h5-fonts;
       }
@@ -302,7 +302,7 @@ html {
     line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
     margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h6-fonts != $font-family {
         font-family: $h6-fonts;
       }
