@@ -14,11 +14,31 @@
 
     border-bottom: 2px solid $grey-n03;
 
+    @include min-screen-size(medium) {
+      .width-constraint {
+        display: flex;
+      }
+    }
+
     h1 {
+      flex: 1;
       margin: 0;
 
       @include font-size(large);
       color: $grey-n05;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-left: 1em;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
     }
   }
 
@@ -35,10 +55,16 @@
     }
 
     .sidebar {
+      position: -webkit-sticky;
       position: sticky;
+      top: 0;
+
+      margin: 0;
 
       @include min-screen-size(medium) {
         flex: 1 0 25%;
+
+        @include block-layout-rules($has-padding: false);
       }
 
       a {
@@ -92,13 +118,13 @@
               background: $green;
 
               &:hover {
-                background: lighten(saturate($green, 10%), 10%);
+                background: lighten($green, 2%);
               }
               &:active {
-                background: darken(desaturate($green, 10%), 5%);
+                background: darken($green, 2%);
               }
               &.disabled {
-                background: lighten(desaturate($green, 80%), 50%);
+                background: lighten(desaturate($green, 10%), 32%);
               }
             }
           }

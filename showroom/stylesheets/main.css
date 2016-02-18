@@ -403,7 +403,7 @@ html {
   .ngn-chassis .button:link, .showroom main .workspace > section.buttons .custom-button:link {
     color: white; }
   .ngn-chassis .button:visited, .showroom main .workspace > section.buttons .custom-button:visited {
-    background: #01b116; }
+    background: #3ab727; }
   .ngn-chassis .button:hover, .showroom main .workspace > section.buttons .custom-button:hover {
     background: #00a2f5; }
   .ngn-chassis .button:active, .showroom main .workspace > section.buttons .custom-button:active {
@@ -417,7 +417,11 @@ html {
 .showroom header {
   padding: 1.45898033em 0 0.90169942em;
   border-bottom: 2px solid #d1d2d4; }
+  @media screen and (min-width: 768px) {
+    .showroom header .width-constraint, .showroom header main {
+      display: flex; } }
   .showroom header h1 {
+    flex: 1;
     margin: 0;
     color: #a9aaae; }
     @media screen and (max-width: 512px) {
@@ -440,6 +444,13 @@ html {
       .showroom header h1 {
         font-size: 24px;
         line-height: 39px; } }
+  .showroom header .links {
+    display: flex;
+    align-items: center; }
+    .showroom header .links a {
+      margin-left: 1em; }
+      .showroom header .links a:first-child {
+        margin-left: 0; }
 
 .showroom main {
   padding-top: 2em; }
@@ -449,10 +460,14 @@ html {
       align-items: flex-start;
       padding-top: 3.82em; } }
   .showroom main .sidebar {
-    position: sticky; }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin: 0; }
     @media screen and (min-width: 768px) {
       .showroom main .sidebar {
-        flex: 1 0 25%; } }
+        flex: 1 0 25%;
+        margin: 0 0 1.61803em 0; } }
     .showroom main .sidebar a {
       display: none;
       visibility: hidden;
@@ -481,13 +496,13 @@ html {
   .showroom main .workspace > section h1 {
     box-shadow: inset 0 -1px 0 0 #d1d2d4; }
   .showroom main .workspace > section.buttons .button.green {
-    background: #01b116; }
+    background: #3ab727; }
     .showroom main .workspace > section.buttons .button.green:hover {
-      background: #00e51b; }
+      background: #3dbf29; }
     .showroom main .workspace > section.buttons .button.green:active {
-      background: #089019; }
+      background: #37af25; }
     .showroom main .workspace > section.buttons .button.green.disabled {
-      background: #d1e0d3; }
+      background: #a7e39e; }
   .showroom main .workspace > section.flex-tiles .tiles {
     counter-reset: CHASSIS_FLEX_TILE_COUNTER;
     display: block;

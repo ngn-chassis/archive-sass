@@ -177,16 +177,12 @@ html {
     }
   }
 
-  @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+  h1 {
+    font-size: ( ( get-font-size($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    // TODO: Replace default font-size aliases for headings with constants so
-    // they can be easily changed in the theme file
-
-    h1 {
-      font-size: ( ( get-font-size($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
-
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h1-fonts != $font-family {
         font-family: $h1-fonts;
       }
@@ -203,12 +199,14 @@ html {
       text-transform: $h1-transform;
       text-decoration: $h1-decoration;
     }
+  }
 
-    h2 {
-      font-size: ( ( get-font-size($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  h2 {
+    font-size: ( ( get-font-size($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h2-fonts != $font-family {
         font-family: $h2-fonts;
       }
@@ -225,12 +223,14 @@ html {
       text-transform: $h2-transform;
       text-decoration: $h2-decoration;
     }
+  }
 
-    h3 {
-      font-size: ( ( get-font-size($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  h3 {
+    font-size: ( ( get-font-size($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h3-fonts != $font-family {
         font-family: $h3-fonts;
       }
@@ -247,12 +247,14 @@ html {
       text-transform: $h3-transform;
       text-decoration: $h3-decoration;
     }
+  }
 
-    h4 {
-      font-size: ( ( get-font-size($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  h4 {
+    font-size: ( ( get-font-size($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h4-fonts != $font-family {
         font-family: $h4-fonts;
       }
@@ -269,12 +271,14 @@ html {
       text-transform: $h4-transform;
       text-decoration: $h4-decoration;
     }
+  }
 
-    h5 {
-      font-size: ( ( get-font-size($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  h5 {
+    font-size: ( ( get-font-size($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h5-fonts != $font-family {
         font-family: $h5-fonts;
       }
@@ -291,12 +295,14 @@ html {
       text-transform: $h5-transform;
       text-decoration: $h5-decoration;
     }
+  }
 
-    h6 {
-      font-size: ( ( get-font-size($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-      line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-      margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  h6 {
+    font-size: ( ( get-font-size($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
       @if $h6-fonts != $font-family {
         font-family: $h6-fonts;
       }
@@ -313,31 +319,30 @@ html {
       text-transform: $h6-transform;
       text-decoration: $h6-decoration;
     }
+  }
 
-    // Container Elements
-    section,
-    nav,
-    form {
-      margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
-    }
+  // Container Elements
+  section,
+  nav,
+  form {
+    margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
+  }
 
-    // Inner Elements
-    section section,
-    nav section,
-    section nav,
-    nav nav,
-    article,
-    p,
-    fieldset,
-    figure,
-    pre,
-    blockquote,
-    table,
-    canvas,
-    embed {
-      margin-bottom: ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em;
-    }
-
+  // Inner Elements
+  section section,
+  nav section,
+  section nav,
+  nav nav,
+  article,
+  p,
+  fieldset,
+  figure,
+  pre,
+  blockquote,
+  table,
+  canvas,
+  embed {
+    margin-bottom: ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em;
   }
 
   // Auto Typography -----------------------------------------------------------

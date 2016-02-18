@@ -56,88 +56,92 @@
 // }
 
 @mixin tiles($columns, $gutter-width: 1em) {
-  counter-reset: CHASSIS_FLEX_TILE_COUNTER;
 
-  @if $columns > 1 {
+  @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
 
-    display: flex;
-    flex-wrap: wrap;
-  	flex-direction: row;
+    counter-reset: CHASSIS_FLEX_TILE_COUNTER;
 
-  	> * {
-      counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+    @if $columns > 1 {
 
-  		overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    	flex-direction: row;
 
-  		// Calculate flex-basis. Takes margins into account, as they are not
-  		// handled automatically by flexbox
-  		$column-width-percentage	: (100 / $columns) * 1%;
+    	> * {
+        counter-increment: CHASSIS_FLEX_TILE_COUNTER;
 
-      flex: 0 0 $column-width-percentage;
+    		overflow: hidden;
 
-  		padding: 0 ($gutter-width / 2) $gutter-width;
+    		// Calculate flex-basis. Takes margins into account, as they are not
+    		// handled automatically by flexbox
+    		$column-width-percentage	: (100 / $columns) * 1%;
 
-      // Allows for gutters between tiles
-      background-clip: content-box !important;
+        flex: 0 0 $column-width-percentage;
 
-  		@for $i from 0 to ($columns - 1) {
+    		padding: 0 ($gutter-width / 2) $gutter-width;
+
+        // Allows for gutters between tiles
+        background-clip: content-box !important;
+
+    		@for $i from 0 to ($columns - 1) {
 
 
-  			&:last-child:nth-child(#{$i}n) {
-  				padding-right: ($gutter-width / 2);
-  			}
+    			&:last-child:nth-child(#{$i}n) {
+    				padding-right: ($gutter-width / 2);
+    			}
 
-  			&:nth-child(#{$i}n) {
-  				padding-right: ($gutter-width / 2);
-  			}
+    			&:nth-child(#{$i}n) {
+    				padding-right: ($gutter-width / 2);
+    			}
 
-  			&:nth-child(#{$i}n + 1) {
-  				padding-left: ($gutter-width / 2);
-  			}
+    			&:nth-child(#{$i}n + 1) {
+    				padding-left: ($gutter-width / 2);
+    			}
 
-  		}
+    		}
 
-  		// First tile
-  		&:first-child {
-  			padding-left: 0;
-  		}
+    		// First tile
+    		&:first-child {
+    			padding-left: 0;
+    		}
 
-      // Last tile IF it is also an even multiple of the number of columns
-      // ie these rules will apply to the 6th of 6 items in a 3x3 grid of tiles
-      // it will NOT apply to the 5th of 5 tiles in a 3x3 grid of tiles
-  		&:last-child:nth-child(#{$columns}n) {
-  			padding-right: 0;
-  		}
+        // Last tile IF it is also an even multiple of the number of columns
+        // ie these rules will apply to the 6th of 6 items in a 3x3 grid of tiles
+        // it will NOT apply to the 5th of 5 tiles in a 3x3 grid of tiles
+    		&:last-child:nth-child(#{$columns}n) {
+    			padding-right: 0;
+    		}
 
-  		// The following allows for this default behavior:
-  		// Once more than one row of grid items has been added, they will all
-  		// align left by default. Until the first row is filled, items will
-  		// display centered and spaced out to fill the whole column width
+    		// The following allows for this default behavior:
+    		// Once more than one row of grid items has been added, they will all
+    		// align left by default. Until the first row is filled, items will
+    		// display centered and spaced out to fill the whole column width
 
-  		&:nth-child(#{$columns}n) {
-  			padding-right: 0;
-  		}
+    		&:nth-child(#{$columns}n) {
+    			padding-right: 0;
+    		}
 
-  		&:nth-child(#{$columns}n + 1),
-  		&:first-child:not(:only-child) {
-  			padding-left: 0;
-  		}
+    		&:nth-child(#{$columns}n + 1),
+    		&:first-child:not(:only-child) {
+    			padding-left: 0;
+    		}
 
-  		&:only-child,
-  		&:nth-child(-n+#{$columns - 1}),
-  		&:first-child:nth-last-child(-n+#{$columns - 1}) {
-  			margin-left: auto;
-  			margin-right: auto;
-  		}
-  	}
+    		&:only-child,
+    		&:nth-child(-n+#{$columns - 1}),
+    		&:first-child:nth-last-child(-n+#{$columns - 1}) {
+    			margin-left: auto;
+    			margin-right: auto;
+    		}
+    	}
 
-  } @else {
+    } @else {
 
-    display: block;
+      display: block;
 
-    > * {
-      counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+      > * {
+        counter-increment: CHASSIS_FLEX_TILE_COUNTER;
+      }
+
     }
-
   }
 }

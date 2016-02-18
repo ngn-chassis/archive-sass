@@ -87,15 +87,15 @@ html {
     font-variant: normal;
     text-decoration: none;
     text-transform: none;
-    color: #01b116; }
+    color: #3ab727; }
     .ngn-chassis a:not(.button):link {
-      color: #01b116; }
+      color: #3ab727; }
     .ngn-chassis a:not(.button):hover {
       text-decoration: underline;
-      color: #01a715; }
+      color: #37af25; }
     .ngn-chassis a:not(.button):active {
       text-decoration: initial;
-      color: #01bb17; }
+      color: #3dbf29; }
     .ngn-chassis a:not(.button).disabled {
       text-decoration: initial;
       color: #bcbdc1; }
