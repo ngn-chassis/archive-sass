@@ -76,9 +76,15 @@ html {
         @if $link-fonts != $font-family {
           family: $link-fonts;
         }
-        weight: $link-weight;
-        style: $link-style;
-        variant: $link-variant;
+        @if $link-weight != $font-weight {
+          weight: $link-weight;
+        }
+        @if $link-style != $font-style {
+          style: $link-style;
+        }
+        @if $link-variant != $font-variant {
+          variant: $link-variant;
+        }
       }
 
       text: {
@@ -86,10 +92,12 @@ html {
         transform: $link-transform;
       }
 
-      color: $link-color;
-
-      &:link {
+      @if $link-color != $text-color {
         color: $link-color;
+
+        &:link {
+          color: $link-color;
+        }
       }
 
       &:visited {
