@@ -4,6 +4,7 @@
 @import 'config/breakpoints';
 @import 'config/typography';
 @import 'config/layout';
+@import 'config/z-index';
 
 @import 'functions/math';
 @import 'functions/unit-conversion';
@@ -27,7 +28,7 @@ html {
   }
 }
 
-.ngn-chassis {
+.chassis {
   // Used to set default font-size, line-height, and margin values for
   // mobile-first media-queries
   $first-screen-size-range: nth(map-keys($screen-size-ranges), 1);
@@ -47,8 +48,16 @@ html {
     @if variable-exists(font-weight-defs) {
       weight: $regular;
     }
-    style: normal;
-    variant: normal;
+    @if variable-exists(font-style) {
+      style: $font-style;
+    } @else {
+      style: normal;
+    }
+    @if variable-exists(font-variant) {
+      variant: $font-variant;
+    } @else {
+      variant: normal;
+    }
   }
 
   line-height: get-line-height(root, $first-screen-size-range-upper-bound);

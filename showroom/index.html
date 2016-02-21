@@ -27,7 +27,7 @@
 
   </head>
 
-  <body class="ngn-chassis showroom">
+  <body class="ngn chassis showroom">
     <header>
       <div class="width-constraint">
         <h1>NGN Chassis Showroom</h1>
@@ -39,22 +39,27 @@
     </header>
 
     <main>
-      <nav class="sidebar">
-        <a href="#typography">
-          Typography
-        </a>
-        <a href="#buttons">
-          Buttons
-        </a>
-        <a href="#flex_tiles">
-          Flex Tiles
-        </a>
-        <a class="disabled" href="javascript:;">
-          A Disabled Link
-        </a>
-      </nav>
+      <aside class="sidebar">
+        <nav>
+          <a href="#typography">
+            Typography
+          </a>
+          <a href="#buttons">
+            Buttons
+          </a>
+          <a href="#flex_tiles">
+            Flex Tiles
+          </a>
+          <a href="#modals">
+            Modal Window
+          </a>
+          <a class="disabled" href="javascript:;">
+            A Disabled Link
+          </a>
+        </nav>
+      </aside>
 
-      <div class="workspace">
+      <div class="content">
 
         <section id="typography" class="typography">
           <h1>Heading (h1)</h1>
@@ -143,10 +148,47 @@
 
         </section>
 
+        <section id="modals">
+          <h1>Modal Window</h1>
+
+          <a id="show_modal_button" class="button" href="javascript:;">Open Modal Window</a>
+        </section>
+
       </div>
     </main>
     <footer>
 
     </footer>
+
+    <div id="overlay" class="hidden overlay">
+      <div class="modal">
+        <header>
+          <h1>Modal Window</h1>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <footer>
+          <a id="hide_modal_button" class="button" href="#">Okay</a>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var openButton = document.getElementById('show_modal_button');
+        var closeButton = document.getElementById('hide_modal_button');
+        var overlay = document.getElementById('overlay');
+
+        document.addEventListener('DOMContentLoaded', function() {
+          openButton.addEventListener('click', function() {
+            overlay.classList.remove('hidden');
+          });
+          closeButton.addEventListener('click', function() {
+            overlay.classList.add('hidden');
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -1,0 +1,6 @@
+// NGN Chassis Detailer
+// z-index functions
+
+@function get-z-index($key) {
+  @return map-get($CHASSIS_Z-INDEX_DEFAULTS, $key);
+}

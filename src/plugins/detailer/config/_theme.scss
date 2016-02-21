@@ -22,7 +22,7 @@ $icon-size-multiplier     : $type-scale-ratio !default;
 // :: Links --------------------------------------------------------------------
 
 $link-fonts               : $font-family !default;
-$link-color               : $green       !default;
+$link-color               : $blue       !default;
 $link-weight              : $regular     !default;
 $link-style               : normal       !default;
 $link-variant             : normal       !default;
@@ -121,12 +121,12 @@ $default-button-font-variant             : normal           !default;
 $default-button-text-decoration          : none             !default;
 $default-button-text-transform           : none             !default;
 
-$default-button-bg-color                 : $blue !default;
+$default-button-bg-color                 : $blue            !default;
 
 $default-button-has-border               : false            !default;
 $default-button-border-thickness         : 0px              !default;
 $default-button-border-color             : transparent      !default;
-$default-button-border-radius            : $default-border-radius      !default;
+$default-button-border-radius            : $default-border-radius !default;
 
 $visited-default-button-fonts            : $font-family     !default;
 $visited-default-button-text-color       : rgb(255,255,255) !default;
@@ -136,7 +136,7 @@ $visited-default-button-font-variant     : normal           !default;
 $visited-default-button-text-decoration  : none             !default;
 $visited-default-button-text-transform   : none             !default;
 
-$visited-default-button-bg-color         : $green           !default;
+$visited-default-button-bg-color         : $default-button-bg-color !default;
 
 $visited-default-button-has-border       : false            !default;
 $visited-default-button-border-thickness : 0px              !default;
@@ -176,3 +176,20 @@ $disabled-default-button-border-color    : transparentize($default-button-border
 
 
 // :: Tags ---------------------------------------------------------------------
+
+
+// :: Overlay ------------------------------------------------------------------
+
+$overlay-bg-color                        : $black   !default;
+$overlay-bg-opacity                      : .8       !default;
+$overlay-bg-image                        : none     !default;
+$overlay-bg-blend-mode                   : multiply !default;
+
+$overlay-content-vertical-alignment      : center   !default;
+$overlay-content-horizontal-alignment    : center   !default;
+
+
+// :: Modal ------------------------------------------------------------------
+
+$modal-bg-color                          : $white   !default;
+$modal-vertical-alignment                : center   !default;

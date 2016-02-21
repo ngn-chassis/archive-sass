@@ -1,0 +1,37 @@
+// NGN Chassis
+// UI Components
+
+// :: Screen Overlay
+
+@if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+
+  $default-modal-defs : (
+    bg-color: $modal-bg-color,
+    vertical-alignment: $modal-vertical-alignment
+  );
+
+  @mixin modal-styles($settings) {
+    align-self: map-get($settings, vertical-alignment);
+
+    min-width: $ui-min-width;
+    max-width: calc(#{$ui-max-width} - #{$ui-gutter});
+
+    min-height: 38.2vh;
+    max-height: 100vh;
+
+    overflow: auto;
+    z-index: map-get($CHASSIS_Z-INDEX_DEFAULTS, max) - index($z-index-order, modal);
+
+    background: map-get($settings, bg-color);
+
+  }
+
+  %modal {
+    @include modal-styles($default-modal-defs);
+  }
+
+  .chassis .modal {
+    @extend %modal;
+  }
+
+}

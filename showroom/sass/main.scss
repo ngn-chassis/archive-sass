@@ -5,16 +5,36 @@
 
 // Import Detailer UI Components
 @import 'plugins/detailer/ui-components/buttons';
+@import 'plugins/detailer/ui-components/modal';
+@import 'plugins/detailer/ui-components/overlay';
 @import 'plugins/detailer/ui-components/tiles';
 
 .showroom {
 
-  header {
-    padding: 2.36em 0 0.90169942em;
+  .overlay {
+    .modal {
+      // These stay in Showroom
+      padding: 1.618em;
+      border-radius: $default-border-radius;
+
+      footer {
+        text-align: right;
+
+        .button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  > header {
+    padding: 1.46em 0 .90169942em;
 
     border-bottom: 4px solid $grey-n00;
 
     @include min-screen-size(medium) {
+      padding-top: 2.36em;
+
       .width-constraint {
         display: flex;
       }
@@ -67,7 +87,7 @@
         @include block-layout-rules($has-padding: false);
       }
 
-      a {
+      nav a {
         @include hide;
 
         @include min-screen-size(medium) {
@@ -97,7 +117,7 @@
       }
     }
 
-    .workspace {
+    .content {
       @include min-screen-size(medium) {
         padding: 0 0 0 3.82vw;
       }
@@ -183,6 +203,7 @@
         font-family: Consolas, Courier New, monospace;
 
         white-space: pre-wrap;
+        word-wrap: break-word;
 
         &:before {
           display: block;
@@ -204,4 +225,9 @@
     }
 
   }
+
+  > footer {
+
+  }
+
 }

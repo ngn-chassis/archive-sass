@@ -1,4 +1,4 @@
-.ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+.chassis .button, .showroom main .content > section.buttons .custom-button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -7,7 +7,7 @@
   -o-user-select: none;
   user-select: none; }
 
-.ngn-chassis a.disabled:not(.button), .ngn-chassis .disabled.button, .showroom main .workspace > section.buttons .disabled.custom-button {
+.chassis a.disabled:not(.button), .chassis .disabled.button, .showroom main .content > section.buttons .disabled.custom-button {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -79,7 +79,7 @@ section, summary {
 html {
   background: white; }
 
-.ngn-chassis {
+.chassis {
   min-width: 320px;
   margin: 0;
   padding: 0;
@@ -90,25 +90,25 @@ html {
   font-variant: normal;
   line-height: 24px;
   color: #444444; }
-  .ngn-chassis a:not(.button) {
+  .chassis a:not(.button) {
     font-weight: 300;
     font-style: normal;
     font-variant: normal;
     text-decoration: none;
     text-transform: none;
     color: #0098e6; }
-    .ngn-chassis a:not(.button):link {
+    .chassis a:not(.button):link {
       color: #0098e6; }
-    .ngn-chassis a:not(.button):hover {
+    .chassis a:not(.button):hover {
       text-decoration: underline;
       color: #0091dc; }
-    .ngn-chassis a:not(.button):active {
+    .chassis a:not(.button):active {
       text-decoration: initial;
       color: #009ff0; }
-    .ngn-chassis a:not(.button).disabled {
+    .chassis a:not(.button).disabled {
       text-decoration: initial;
       color: #bcbdc1; }
-  .ngn-chassis h1 {
+  .chassis h1 {
     font-size: 1.6em;
     line-height: 1.625em;
     margin-bottom: 1.00431em;
@@ -117,7 +117,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h2 {
+  .chassis h2 {
     font-size: 1.26667em;
     line-height: 1.29167em;
     margin-bottom: 1.00837em;
@@ -126,7 +126,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h3 {
+  .chassis h3 {
     font-size: 1em;
     line-height: 1em;
     margin-bottom: 0.98885em;
@@ -135,7 +135,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h4 {
+  .chassis h4 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -144,7 +144,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h5 {
+  .chassis h5 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -153,7 +153,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h6 {
+  .chassis h6 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -162,226 +162,226 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis section,
-  .ngn-chassis nav,
-  .ngn-chassis form {
+  .chassis section,
+  .chassis nav,
+  .chassis form {
     margin-bottom: 2.58885em; }
-  .ngn-chassis section section,
-  .ngn-chassis nav section,
-  .ngn-chassis section nav,
-  .ngn-chassis nav nav,
-  .ngn-chassis article,
-  .ngn-chassis p,
-  .ngn-chassis fieldset,
-  .ngn-chassis figure,
-  .ngn-chassis pre,
-  .ngn-chassis blockquote,
-  .ngn-chassis table,
-  .ngn-chassis canvas,
-  .ngn-chassis embed {
+  .chassis section section,
+  .chassis nav section,
+  .chassis section nav,
+  .chassis nav nav,
+  .chassis article,
+  .chassis p,
+  .chassis fieldset,
+  .chassis figure,
+  .chassis pre,
+  .chassis blockquote,
+  .chassis table,
+  .chassis canvas,
+  .chassis embed {
     margin-bottom: 1.6em; }
   @media screen and (min-width: 320px) and (max-width: 512px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 15px;
       line-height: 24px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.6em;
         line-height: 1.625em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.26667em;
         line-height: 1.29167em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.58885em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.6em; } }
   @media screen and (min-width: 512px) and (max-width: 768px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 16px;
       line-height: 26px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.625em;
         line-height: 1.61538em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.25em;
         line-height: 1.23077em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.62931em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.625em; } }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 17px;
       line-height: 28px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.64706em;
         line-height: 1.60714em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.29412em;
         line-height: 1.28571em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.665em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.64706em; } }
   @media screen and (min-width: 1024px) and (max-width: 1200px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 18px;
       line-height: 29px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.61111em;
         line-height: 1.62069em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.27778em;
         line-height: 1.27586em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.60683em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.61111em; } }
   @media screen and (min-width: 1200px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 19px;
       line-height: 31px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.63158em;
         line-height: 1.6129em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.26316em;
         line-height: 1.25806em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.63995em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.63158em; } }
 
-.ngn-chassis .button, .showroom main .workspace > section.buttons .custom-button {
+.chassis .button, .showroom main .content > section.buttons .custom-button {
   display: inline-block;
   margin: 0 0.80902em 1.61803em 0;
   padding: 0 0.80902em;
@@ -392,64 +392,95 @@ html {
   outline: none;
   box-shadow: none;
   vertical-align: middle;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-variant: normal;
   text-decoration: none;
   text-transform: none;
   color: white;
   cursor: pointer; }
-  .ngn-chassis .button:link, .showroom main .workspace > section.buttons .custom-button:link {
+  .chassis .button:link, .showroom main .content > section.buttons .custom-button:link {
     color: white; }
-  .ngn-chassis .button:visited, .showroom main .workspace > section.buttons .custom-button:visited {
-    background: #3ab727; }
-  .ngn-chassis .button:hover, .showroom main .workspace > section.buttons .custom-button:hover {
+  .chassis .button:hover, .showroom main .content > section.buttons .custom-button:hover {
     background: #00a2f5; }
-  .ngn-chassis .button:active, .showroom main .workspace > section.buttons .custom-button:active {
+  .chassis .button:active, .showroom main .content > section.buttons .custom-button:active {
     background: #0091dc; }
-  .ngn-chassis .disabled.button, .showroom main .workspace > section.buttons .disabled.custom-button {
+  .chassis .disabled.button, .showroom main .content > section.buttons .disabled.custom-button {
     background: rgba(0, 152, 230, 0.382);
     color: white; }
-  .ngn-chassis .button:focus, .showroom main .workspace > section.buttons .custom-button:focus {
+  .chassis .button:focus, .showroom main .content > section.buttons .custom-button:focus {
     outline: none; }
 
-.showroom header {
-  padding: 2.36em 0 0.90169942em;
+.chassis .modal {
+  align-self: flex-start;
+  min-width: 320px;
+  max-width: calc(1440px - 6.18vw);
+  min-height: 38.2vh;
+  max-height: 100vh;
+  overflow: auto;
+  z-index: 999;
+  background: white; }
+
+.chassis .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 6.18vh 19.1vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: none;
+  background-blend-mode: multiply;
+  z-index: 997; }
+
+.showroom .overlay .modal {
+  padding: 1.618em;
+  border-radius: 0.24063em; }
+  .showroom .overlay .modal footer {
+    text-align: right; }
+    .showroom .overlay .modal footer .button {
+      margin-bottom: 0; }
+
+.showroom > header {
+  padding: 1.46em 0 .90169942em;
   border-bottom: 4px solid #ededed; }
   @media screen and (min-width: 768px) {
-    .showroom header .width-constraint, .showroom header main {
-      display: flex; } }
-  .showroom header h1 {
+    .showroom > header {
+      padding-top: 2.36em; }
+      .showroom > header .width-constraint, .showroom > header main {
+        display: flex; } }
+  .showroom > header h1 {
     flex: 1;
     margin: 0;
     color: #a9aaae; }
     @media screen and (max-width: 512px) {
-      .showroom header h1 {
+      .showroom > header h1 {
         font-size: 19px;
         line-height: 31px; } }
     @media screen and (min-width: 512px) and (max-width: 768px) {
-      .showroom header h1 {
+      .showroom > header h1 {
         font-size: 20px;
         line-height: 32px; } }
     @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .showroom header h1 {
+      .showroom > header h1 {
         font-size: 22px;
         line-height: 36px; } }
     @media screen and (min-width: 1024px) and (max-width: 1200px) {
-      .showroom header h1 {
+      .showroom > header h1 {
         font-size: 23px;
         line-height: 37px; } }
     @media screen and (min-width: 1200px) {
-      .showroom header h1 {
+      .showroom > header h1 {
         font-size: 24px;
         line-height: 39px; } }
-  .showroom header .links {
+  .showroom > header .links {
     display: flex;
     align-items: center; }
-    .showroom header .links a {
+    .showroom > header .links a {
       margin-left: 1em; }
-      .showroom header .links a:first-child {
+      .showroom > header .links a:first-child {
         margin-left: 0; }
 
 .showroom main {
@@ -468,142 +499,142 @@ html {
       .showroom main .sidebar {
         flex: 1 0 25%;
         margin: 0 0 1.61803em 0; } }
-    .showroom main .sidebar a {
+    .showroom main .sidebar nav a {
       display: none;
       visibility: hidden;
       opacity: 0;
       padding: 0 0.80902em;
       line-height: 2.61803em; }
       @media screen and (min-width: 768px) {
-        .showroom main .sidebar a {
+        .showroom main .sidebar nav a {
           display: block;
           visibility: visible;
           opacity: 1; } }
-      .showroom main .sidebar a:not(:first-child) {
+      .showroom main .sidebar nav a:not(:first-child) {
         box-shadow: 0 -1px 0 0 #dadbdd; }
-      .showroom main .sidebar a:hover {
+      .showroom main .sidebar nav a:hover {
         box-shadow: none;
         background: #00a2f5;
         color: white;
         text-decoration: none; }
-        .showroom main .sidebar a:hover + a {
+        .showroom main .sidebar nav a:hover + a {
           box-shadow: none; }
-      .showroom main .sidebar a:active {
+      .showroom main .sidebar nav a:active {
         background: #0091dc; }
   @media screen and (min-width: 768px) {
-    .showroom main .workspace {
+    .showroom main .content {
       padding: 0 0 0 3.82vw; } }
-  .showroom main .workspace > section h1 {
+  .showroom main .content > section h1 {
     box-shadow: inset 0 -1px 0 0 #d1d2d4; }
-  .showroom main .workspace > section.buttons .button.green {
+  .showroom main .content > section.buttons .button.green {
     background: #3ab727; }
-    .showroom main .workspace > section.buttons .button.green:hover {
+    .showroom main .content > section.buttons .button.green:hover {
       background: #3dbf29; }
-    .showroom main .workspace > section.buttons .button.green:active {
+    .showroom main .content > section.buttons .button.green:active {
       background: #37af25; }
-    .showroom main .workspace > section.buttons .button.green.disabled {
+    .showroom main .content > section.buttons .button.green.disabled {
       background: #a7e39e; }
-  .showroom main .workspace > section.flex-tiles .tiles {
+  .showroom main .content > section.flex-tiles .tiles {
     counter-reset: CHASSIS_FLEX_TILE_COUNTER;
     display: block;
     padding: 1em 1em 0;
     border: 1px solid #d1d2d4; }
-    .showroom main .workspace > section.flex-tiles .tiles > * {
+    .showroom main .content > section.flex-tiles .tiles > * {
       counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
     @media screen and (min-width: 512px) {
-      .showroom main .workspace > section.flex-tiles .tiles {
+      .showroom main .content > section.flex-tiles .tiles {
         counter-reset: CHASSIS_FLEX_TILE_COUNTER;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 50%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
+          .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(2n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
+          .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+1), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+1) {
             padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
     @media screen and (min-width: 768px) {
-      .showroom main .workspace > section.flex-tiles .tiles {
+      .showroom main .content > section.flex-tiles .tiles {
         counter-reset: CHASSIS_FLEX_TILE_COUNTER;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 33.33333%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
+          .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(3n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(3n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(3n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
+          .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+2), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+2) {
             padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
     @media screen and (min-width: 1200px) {
-      .showroom main .workspace > section.flex-tiles .tiles {
+      .showroom main .content > section.flex-tiles .tiles {
         counter-reset: CHASSIS_FLEX_TILE_COUNTER;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           counter-increment: CHASSIS_FLEX_TILE_COUNTER; }
-        .showroom main .workspace > section.flex-tiles .tiles > * {
+        .showroom main .content > section.flex-tiles .tiles > * {
           overflow: hidden;
           flex: 0 0 25%;
           padding: 0 0.5em 1em;
           background-clip: content-box !important; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(0n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(0n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(1n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(1n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n), .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n):last-child {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n), .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n):last-child {
             padding-right: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(2n + 1) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(2n + 1) {
             padding-left: 0.5em; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
+          .showroom main .content > section.flex-tiles .tiles > *:last-child:nth-child(4n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(4n) {
             padding-right: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:not(:only-child) {
+          .showroom main .content > section.flex-tiles .tiles > *:nth-child(4n + 1), .showroom main .content > section.flex-tiles .tiles > *:first-child:not(:only-child) {
             padding-left: 0; }
-          .showroom main .workspace > section.flex-tiles .tiles > *:only-child, .showroom main .workspace > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom main .workspace > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
+          .showroom main .content > section.flex-tiles .tiles > *:only-child, .showroom main .content > section.flex-tiles .tiles > *:nth-child(-n+3), .showroom main .content > section.flex-tiles .tiles > *:first-child:nth-last-child(-n+3) {
             padding-left: 0.5em;
             margin-left: auto;
             margin-right: auto; } }
-    .showroom main .workspace > section.flex-tiles .tiles .tile {
+    .showroom main .content > section.flex-tiles .tiles .tile {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -611,26 +642,27 @@ html {
       margin-bottom: 1em;
       background: #ededed; }
       @media screen and (min-width: 512px) {
-        .showroom main .workspace > section.flex-tiles .tiles .tile {
+        .showroom main .content > section.flex-tiles .tiles .tile {
           height: 6.18em;
           margin-bottom: 0; } }
-      .showroom main .workspace > section.flex-tiles .tiles .tile:before {
+      .showroom main .content > section.flex-tiles .tiles .tile:before {
         content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
         display: block; }
-  .showroom main .workspace pre.code {
+  .showroom main .content pre.code {
     margin: 0 0 1.61803em 0;
-    padding: 0.5em 0.80902em;
+    padding: 0.5em 1em;
     background: #fafafa;
     box-shadow: 0 0 0 1px #d1d2d4;
     border-radius: 0 0.24063em 0.24063em 0;
     font-family: Consolas, Courier New, monospace;
-    white-space: pre-wrap; }
-    .showroom main .workspace pre.code:before {
+    white-space: pre-wrap;
+    word-wrap: break-word; }
+    .showroom main .content pre.code:before {
       display: block;
       color: #a9aaae; }
-    .showroom main .workspace pre.code.html:before {
+    .showroom main .content pre.code.html:before {
       content: 'HTML:'; }
-    .showroom main .workspace pre.code.sass:before {
+    .showroom main .content pre.code.sass:before {
       content: 'SASS:'; }
-    .showroom main .workspace pre.code.javascript:before {
+    .showroom main .content pre.code.javascript:before {
       content: 'JavaScript:'; }

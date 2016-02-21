@@ -1,4 +1,4 @@
-.ngn-chassis a.disabled:not(.button) {
+.chassis a.disabled:not(.button) {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -70,7 +70,7 @@ section, summary {
 html {
   background: white; }
 
-.ngn-chassis {
+.chassis {
   min-width: 320px;
   margin: 0;
   padding: 0;
@@ -81,25 +81,25 @@ html {
   font-variant: normal;
   line-height: 24px;
   color: #444444; }
-  .ngn-chassis a:not(.button) {
+  .chassis a:not(.button) {
     font-weight: 300;
     font-style: normal;
     font-variant: normal;
     text-decoration: none;
     text-transform: none;
-    color: #3ab727; }
-    .ngn-chassis a:not(.button):link {
-      color: #3ab727; }
-    .ngn-chassis a:not(.button):hover {
+    color: #009886; }
+    .chassis a:not(.button):link {
+      color: #009886; }
+    .chassis a:not(.button):hover {
       text-decoration: underline;
-      color: #37af25; }
-    .ngn-chassis a:not(.button):active {
+      color: #008e7d; }
+    .chassis a:not(.button):active {
       text-decoration: initial;
-      color: #3dbf29; }
-    .ngn-chassis a:not(.button).disabled {
+      color: #00a28f; }
+    .chassis a:not(.button).disabled {
       text-decoration: initial;
       color: #bcbdc1; }
-  .ngn-chassis h1 {
+  .chassis h1 {
     font-size: 1.6em;
     line-height: 1.625em;
     margin-bottom: 1.00431em;
@@ -108,7 +108,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h2 {
+  .chassis h2 {
     font-size: 1.26667em;
     line-height: 1.29167em;
     margin-bottom: 1.00837em;
@@ -117,7 +117,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h3 {
+  .chassis h3 {
     font-size: 1em;
     line-height: 1em;
     margin-bottom: 0.98885em;
@@ -126,7 +126,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h4 {
+  .chassis h4 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -135,7 +135,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h5 {
+  .chassis h5 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -144,7 +144,7 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis h6 {
+  .chassis h6 {
     font-size: 0.8em;
     line-height: 0.79167em;
     margin-bottom: 0.78284em;
@@ -153,221 +153,221 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
-  .ngn-chassis section,
-  .ngn-chassis nav,
-  .ngn-chassis form {
+  .chassis section,
+  .chassis nav,
+  .chassis form {
     margin-bottom: 2.58885em; }
-  .ngn-chassis section section,
-  .ngn-chassis nav section,
-  .ngn-chassis section nav,
-  .ngn-chassis nav nav,
-  .ngn-chassis article,
-  .ngn-chassis p,
-  .ngn-chassis fieldset,
-  .ngn-chassis figure,
-  .ngn-chassis pre,
-  .ngn-chassis blockquote,
-  .ngn-chassis table,
-  .ngn-chassis canvas,
-  .ngn-chassis embed {
+  .chassis section section,
+  .chassis nav section,
+  .chassis section nav,
+  .chassis nav nav,
+  .chassis article,
+  .chassis p,
+  .chassis fieldset,
+  .chassis figure,
+  .chassis pre,
+  .chassis blockquote,
+  .chassis table,
+  .chassis canvas,
+  .chassis embed {
     margin-bottom: 1.6em; }
   @media screen and (min-width: 320px) and (max-width: 512px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 15px;
       line-height: 24px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.6em;
         line-height: 1.625em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.26667em;
         line-height: 1.29167em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.8em;
         line-height: 0.79167em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.58885em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.6em; } }
   @media screen and (min-width: 512px) and (max-width: 768px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 16px;
       line-height: 26px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.625em;
         line-height: 1.61538em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.25em;
         line-height: 1.23077em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.62931em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.625em; } }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 17px;
       line-height: 28px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.64706em;
         line-height: 1.60714em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.29412em;
         line-height: 1.28571em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.76471em;
         line-height: 0.75em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.665em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.64706em; } }
   @media screen and (min-width: 1024px) and (max-width: 1200px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 18px;
       line-height: 29px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.61111em;
         line-height: 1.62069em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.27778em;
         line-height: 1.27586em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.60683em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.61111em; } }
   @media screen and (min-width: 1200px) {
-    .ngn-chassis {
+    .chassis {
       font-size: 19px;
       line-height: 31px; }
-      .ngn-chassis h1 {
+      .chassis h1 {
         font-size: 1.63158em;
         line-height: 1.6129em; }
-      .ngn-chassis h2 {
+      .chassis h2 {
         font-size: 1.26316em;
         line-height: 1.25806em; }
-      .ngn-chassis h3 {
+      .chassis h3 {
         font-size: 1em;
         line-height: 1em; }
-      .ngn-chassis h4 {
+      .chassis h4 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis h5 {
+      .chassis h5 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis h6 {
+      .chassis h6 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
-      .ngn-chassis section,
-      .ngn-chassis nav,
-      .ngn-chassis form {
+      .chassis section,
+      .chassis nav,
+      .chassis form {
         margin-bottom: 2.63995em; }
-      .ngn-chassis section section,
-      .ngn-chassis nav section,
-      .ngn-chassis section nav,
-      .ngn-chassis nav nav,
-      .ngn-chassis article,
-      .ngn-chassis p,
-      .ngn-chassis fieldset,
-      .ngn-chassis figure,
-      .ngn-chassis pre,
-      .ngn-chassis blockquote,
-      .ngn-chassis table,
-      .ngn-chassis canvas,
-      .ngn-chassis embed {
+      .chassis section section,
+      .chassis nav section,
+      .chassis section nav,
+      .chassis nav nav,
+      .chassis article,
+      .chassis p,
+      .chassis fieldset,
+      .chassis figure,
+      .chassis pre,
+      .chassis blockquote,
+      .chassis table,
+      .chassis canvas,
+      .chassis embed {
         margin-bottom: 1.63158em; } }

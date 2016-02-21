@@ -171,7 +171,7 @@
     }
 
     @if not ( variable-exists(padding) ) and $has-padding {
-      $padding: ( ( $line-height / $type-scale-ratio ) / 2 ) ( $line-height / 2 );
+      $padding: ( ( $line-height / $type-scale-ratio ) / 2 ) 1em;
       padding: $padding;
     }
 
