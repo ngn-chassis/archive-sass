@@ -35,6 +35,11 @@
     line-height: ( ( get-line-height($h6-font-size-alias, $upper-bound) / $root-line-height ) * 1em );
   }
 
+  legend {
+    font-size: ( ( get-font-size($form-legend-font-size-alias, $upper-bound) / $root-font-size ) * 1em );
+    line-height: ( ( get-line-height($form-legend-font-size-alias, $upper-bound) / $root-line-height ) * 1em );
+  }
+
   // Container Elements
   section,
   nav,
@@ -57,6 +62,15 @@
   canvas,
   embed {
     margin-bottom: ( get-line-height(root, $upper-bound) / get-font-size(root, $upper-bound) ) * 1em;
+  }
+
+  input,
+  textarea {
+    font-size: get-font-size(root, $upper-bound);
+  }
+
+  textarea {
+    line-height: get-line-height(root, $upper-bound);
   }
 
 }
@@ -119,7 +133,10 @@
 // just plain text. ie: buttons, form fields, tags, etc.
 // Margin, padding and line-height are calculated using GR Typography rules
 
-@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
+// $multi-line bool is for elements that are inline but contain multiple lines
+// of text content, such as a textarea or a contentEditable container
+
+@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false) {
 
   // TODO: Figure out whether this loop is actually necessary
   @each $range-semantic-name, $range-bounds in $screen-size-ranges {
@@ -136,13 +153,23 @@
     }
 
     @if not ( variable-exists(padding) ) and $has-padding {
-      $padding: 0 ( $base-line-height / 2 );
-      padding: $padding;
+
+      @if $multi-line {
+        $padding: ( ( ( $base-line-height * $type-scale-ratio ) - $base-line-height ) / 2 ) ( $base-line-height / 2 );
+        padding: $padding;
+      } @else {
+        $padding: 0 ( $base-line-height / 2 );
+        padding: $padding;
+      }
     }
 
-    @if not variable-exists(adjusted-line-height) {
-      $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
-      line-height: $adjusted-line-height;
+    @if $multi-line {
+      line-height: $base-line-height;
+    } @else {
+      @if not variable-exists(adjusted-line-height) {
+        $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
+        line-height: $adjusted-line-height;
+      }
     }
 
   }

@@ -41,7 +41,7 @@
     @include overlay-styles($default-overlay-defs);
   }
 
-  .chassis .overlay {
+  .chassis chassis-overlay {
     @extend %overlay;
   }
 

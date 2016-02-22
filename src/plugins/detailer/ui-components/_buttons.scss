@@ -152,6 +152,7 @@
     }
 
     text: {
+      align: center;
       decoration: map-get($default, text-decoration);
       transform: map-get($default, text-transform);
     }

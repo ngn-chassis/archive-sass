@@ -5,23 +5,27 @@
 
 // Import Detailer UI Components
 @import 'plugins/detailer/ui-components/buttons';
+@import 'plugins/detailer/ui-components/forms';
 @import 'plugins/detailer/ui-components/modal';
 @import 'plugins/detailer/ui-components/overlay';
 @import 'plugins/detailer/ui-components/tiles';
 
 .showroom {
 
-  .overlay {
-    .modal {
-      // These stay in Showroom
-      padding: 1.618em;
-      border-radius: $default-border-radius;
+  .modal {
+    align-self: flex-start;
+    // These stay in Showroom
+    padding: 1.618em;
+    border-radius: $default-border-radius;
 
-      footer {
-        text-align: right;
+    footer {
+      text-align: right;
 
-        .button {
-          margin-bottom: 0;
+      .button {
+        margin-bottom: 0;
+
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
@@ -79,20 +83,20 @@
       position: sticky;
       top: 0;
 
-      margin: 0;
+      @include hide;
 
       @include min-screen-size(medium) {
+        @include show;
+
         flex: 1 0 25%;
 
         @include block-layout-rules($has-padding: false);
       }
 
-      nav a {
-        @include hide;
+      margin: 0;
 
-        @include min-screen-size(medium) {
-          @include show;
-        }
+      nav a {
+        display: block;
 
         @include inline-layout-rules($has-margin: false);
 
@@ -102,7 +106,9 @@
 
         &:hover {
           box-shadow: none;
-          background: $hover-default-button-bg-color;
+          @if variable-exists(hover-default-button-bg-color) {
+            background: $hover-default-button-bg-color;
+          }
           color: $white;
           text-decoration: none;
 
@@ -112,7 +118,9 @@
         }
 
         &:active {
-          background: $active-default-button-bg-color;
+          @if variable-exists(active-default-button-bg-color) {
+            background: $active-default-button-bg-color;
+          }
         }
       }
     }
@@ -134,6 +142,7 @@
           }
 
           .button {
+
             &.green {
               background: $green;
 
@@ -191,6 +200,21 @@
               }
             }
           }
+        }
+
+        &.modals {
+          .open.button {
+            margin-bottom: 0;
+
+            @include max-screen-size(tiny) {
+              display: block;
+              margin-right: 0;
+            }
+          }
+        }
+
+        &.forms {
+
         }
       }
 

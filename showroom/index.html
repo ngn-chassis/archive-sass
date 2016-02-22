@@ -15,13 +15,11 @@
     <!-- Keep the SVG in the head (not body) to prevent FOUC -->
     <!-- <script src="lib/svg.js"></script> -->
 
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.0/webcomponents.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/webcomponentsjs/latest/webcomponents.min.js"></script>
 
-    <!-- <link rel="import" href="components/select-menu.html"/>
-    <link rel="import" href="components/modal.html"/>
-    <link rel="import" href="components/accordion.html"/>
-    <link rel="import" href="components/drawer.html"/>
-    <link rel="import" href="components/notification.html"/> -->
+    <script src="https://cdn.jsdelivr.net/chassis/1.0.30/chassis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/g/ngn-components@0.0.34(ngn-cycle.min.js+ngn-layout.min.js+ngn-list.min.js)"></script>
+    <script src="https://rawgit.com/ngnjs/chassis-components/master/dist/chassis-overlay.min.js"></script>
 
     <link rel="stylesheet" href="stylesheets/main.css">
 
@@ -148,10 +146,25 @@
 
         </section>
 
-        <section id="modals">
+        <section id="modals" class="modals">
           <h1>Modal Window</h1>
+          <a class="open button" href="javascript:;">Open Modal Window</a>
+        </section>
 
-          <a id="show_modal_button" class="button" href="javascript:;">Open Modal Window</a>
+        <section id="forms" class="forms">
+          <h1>Forms</h1>
+          <form>
+            <fieldset>
+              <legend>Fieldset Legend</legend>
+
+              <label for="textfield">Textfield</label>
+              <input id="textfield" type="text" name="textfield" value="">
+
+              <label for="textarea">Textarea</label>
+              <textarea name="textarea" rows="3"></textarea>
+            </fieldset>
+            <input type="button" name="button" value="Form Button">
+          </form>
         </section>
 
       </div>
@@ -160,7 +173,7 @@
 
     </footer>
 
-    <div id="overlay" class="hidden overlay">
+    <chassis-overlay>
       <div class="modal">
         <header>
           <h1>Modal Window</h1>
@@ -169,24 +182,34 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
         <footer>
-          <a id="hide_modal_button" class="button" href="#">Okay</a>
+          <a class="okay button" href="#">Okay</a>
         </footer>
       </div>
-    </div>
+    </chassis-overlay>
 
     <script>
       (function() {
-        var openButton = document.getElementById('show_modal_button');
-        var closeButton = document.getElementById('hide_modal_button');
-        var overlay = document.getElementById('overlay');
+        // hide body to prevent FOUC
+        document.body.classList.add('hidden');
+        window.addEventListener('WebComponentsReady', function() {
+          // Show body when everything is ready. Delay by a few ms to assure
+          // the custom element is loaded. This is a hack to get around the
+          // requirement of a polyfill in some web browsers that don't natively
+          // support web components yet.
+          setTimeout(function () {
+            document.body.classList.remove('hidden');
+          }, 100)
+        });
 
-        document.addEventListener('DOMContentLoaded', function() {
-          openButton.addEventListener('click', function() {
-            overlay.classList.remove('hidden');
-          });
-          closeButton.addEventListener('click', function() {
-            overlay.classList.add('hidden');
-          });
+        var openButton = document.querySelector('section.modals .open.button');
+        var closeButton = document.querySelector('chassis-overlay .okay.button');
+        var overlay = document.querySelector('chassis-overlay');
+
+        openButton.addEventListener('click', function() {
+          overlay.open();
+        });
+        closeButton.addEventListener('click', function() {
+          overlay.close();
         });
       })();
     </script>

@@ -338,6 +338,12 @@ html {
     }
   }
 
+  legend {
+    font-size: ( ( get-font-size($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  }
+
   // Container Elements
   section,
   nav,

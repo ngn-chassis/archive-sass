@@ -183,13 +183,35 @@ $disabled-default-button-border-color    : transparentize($default-button-border
 $overlay-bg-color                        : $black   !default;
 $overlay-bg-opacity                      : .8       !default;
 $overlay-bg-image                        : none     !default;
-$overlay-bg-blend-mode                   : multiply !default;
+$overlay-bg-blend-mode                   : normal   !default;
 
 $overlay-content-vertical-alignment      : center   !default;
 $overlay-content-horizontal-alignment    : center   !default;
 
 
-// :: Modal ------------------------------------------------------------------
+// :: Modal --------------------------------------------------------------------
 
 $modal-bg-color                          : $white   !default;
 $modal-vertical-alignment                : center   !default;
+
+
+// :: Forms --------------------------------------------------------------------
+
+$form-legend-fonts                       : $font-family !default;
+$form-legend-font-weight                 : $bold        !default;
+$form-legend-font-style                  : normal       !default;
+$form-legend-font-variant                : normal       !default;
+$form-legend-text-color                  : $text-color  !default;
+$form-legend-text-decoration             : none         !default;
+$form-legend-text-transform              : none         !default;
+
+$textfield-fonts                         : $font-family !default;
+$textfield-font-weight                   : $regular     !default;
+$textfield-font-style                    : normal       !default;
+$textfield-font-variant                  : normal       !default;
+$textfield-text-color                    : $text-color  !default;
+$textfield-text-decoration               : none         !default;
+$textfield-text-transform                : none         !default;
+
+$textfield-border-color                  : rgb(188,189,193) !default;
+$textfield-focus-ring-color              : $blue !default;

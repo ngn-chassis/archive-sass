@@ -1,4 +1,7 @@
-.chassis .button, .showroom main .content > section.buttons .custom-button {
+.chassis .button, .chassis button,
+.chassis input[type="reset"],
+.chassis input[type="button"],
+.chassis input[type="submit"], .showroom main .content > section.buttons .custom-button {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -7,7 +10,10 @@
   -o-user-select: none;
   user-select: none; }
 
-.chassis a.disabled:not(.button), .chassis .disabled.button, .showroom main .content > section.buttons .disabled.custom-button {
+.chassis a.disabled:not(.button), .chassis .disabled.button, .chassis button.disabled,
+.chassis input.disabled[type="reset"],
+.chassis input.disabled[type="button"],
+.chassis input.disabled[type="submit"], .showroom main .content > section.buttons .disabled.custom-button {
   pointer-events: none; }
 
 *, *:before, *:after {
@@ -30,9 +36,6 @@ time, mark, audio, video {
 ol, ul {
   list-style: none; }
 
-main {
-  display: block; }
-
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -52,7 +55,7 @@ q:before, q:after, blockquote:before, blockquote:after {
 a img {
   border: none; }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav,
 section, summary {
   display: block; }
 
@@ -159,6 +162,10 @@ html {
     font-variant: normal;
     text-transform: none;
     text-decoration: none; }
+  .chassis legend {
+    font-size: 1.26667em;
+    line-height: 1.29167em;
+    margin-bottom: 1.27727em; }
   .chassis section,
   .chassis nav,
   .chassis form {
@@ -199,6 +206,9 @@ html {
       .chassis h6 {
         font-size: 0.8em;
         line-height: 0.79167em; }
+      .chassis legend {
+        font-size: 1.26667em;
+        line-height: 1.29167em; }
       .chassis section,
       .chassis nav,
       .chassis form {
@@ -216,7 +226,12 @@ html {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.6em; } }
+        margin-bottom: 1.6em; }
+      .chassis input,
+      .chassis textarea {
+        font-size: 15px; }
+      .chassis textarea {
+        line-height: 24px; } }
   @media screen and (min-width: 512px) and (max-width: 768px) {
     .chassis {
       font-size: 16px;
@@ -239,6 +254,9 @@ html {
       .chassis h6 {
         font-size: 0.8125em;
         line-height: 0.80769em; }
+      .chassis legend {
+        font-size: 1.25em;
+        line-height: 1.23077em; }
       .chassis section,
       .chassis nav,
       .chassis form {
@@ -256,7 +274,12 @@ html {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.625em; } }
+        margin-bottom: 1.625em; }
+      .chassis input,
+      .chassis textarea {
+        font-size: 16px; }
+      .chassis textarea {
+        line-height: 26px; } }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     .chassis {
       font-size: 17px;
@@ -279,6 +302,9 @@ html {
       .chassis h6 {
         font-size: 0.76471em;
         line-height: 0.75em; }
+      .chassis legend {
+        font-size: 1.29412em;
+        line-height: 1.28571em; }
       .chassis section,
       .chassis nav,
       .chassis form {
@@ -296,7 +322,12 @@ html {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.64706em; } }
+        margin-bottom: 1.64706em; }
+      .chassis input,
+      .chassis textarea {
+        font-size: 17px; }
+      .chassis textarea {
+        line-height: 28px; } }
   @media screen and (min-width: 1024px) and (max-width: 1200px) {
     .chassis {
       font-size: 18px;
@@ -319,6 +350,9 @@ html {
       .chassis h6 {
         font-size: 0.77778em;
         line-height: 0.7931em; }
+      .chassis legend {
+        font-size: 1.27778em;
+        line-height: 1.27586em; }
       .chassis section,
       .chassis nav,
       .chassis form {
@@ -336,7 +370,12 @@ html {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.61111em; } }
+        margin-bottom: 1.61111em; }
+      .chassis input,
+      .chassis textarea {
+        font-size: 18px; }
+      .chassis textarea {
+        line-height: 29px; } }
   @media screen and (min-width: 1200px) {
     .chassis {
       font-size: 19px;
@@ -359,6 +398,9 @@ html {
       .chassis h6 {
         font-size: 0.78947em;
         line-height: 0.77419em; }
+      .chassis legend {
+        font-size: 1.26316em;
+        line-height: 1.25806em; }
       .chassis section,
       .chassis nav,
       .chassis form {
@@ -376,9 +418,17 @@ html {
       .chassis table,
       .chassis canvas,
       .chassis embed {
-        margin-bottom: 1.63158em; } }
+        margin-bottom: 1.63158em; }
+      .chassis input,
+      .chassis textarea {
+        font-size: 19px; }
+      .chassis textarea {
+        line-height: 31px; } }
 
-.chassis .button, .showroom main .content > section.buttons .custom-button {
+.chassis .button, .chassis button,
+.chassis input[type="reset"],
+.chassis input[type="button"],
+.chassis input[type="submit"], .showroom main .content > section.buttons .custom-button {
   display: inline-block;
   margin: 0 0.80902em 1.61803em 0;
   padding: 0 0.80902em;
@@ -389,24 +439,96 @@ html {
   outline: none;
   box-shadow: none;
   vertical-align: middle;
+  text-align: center;
   text-decoration: none;
   text-transform: none;
   color: white;
   cursor: pointer; }
-  .chassis .button:link, .showroom main .content > section.buttons .custom-button:link {
+  .chassis .button:link, .chassis button:link,
+  .chassis input[type="reset"]:link,
+  .chassis input[type="button"]:link,
+  .chassis input[type="submit"]:link, .showroom main .content > section.buttons .custom-button:link {
     color: white; }
-  .chassis .button:hover, .showroom main .content > section.buttons .custom-button:hover {
+  .chassis .button:hover, .chassis button:hover,
+  .chassis input[type="reset"]:hover,
+  .chassis input[type="button"]:hover,
+  .chassis input[type="submit"]:hover, .showroom main .content > section.buttons .custom-button:hover {
     background: #00a2f5; }
-  .chassis .button:active, .showroom main .content > section.buttons .custom-button:active {
+  .chassis .button:active, .chassis button:active,
+  .chassis input[type="reset"]:active,
+  .chassis input[type="button"]:active,
+  .chassis input[type="submit"]:active, .showroom main .content > section.buttons .custom-button:active {
     background: #0091dc; }
-  .chassis .disabled.button, .showroom main .content > section.buttons .disabled.custom-button {
+  .chassis .disabled.button, .chassis button.disabled,
+  .chassis input.disabled[type="reset"],
+  .chassis input.disabled[type="button"],
+  .chassis input.disabled[type="submit"], .showroom main .content > section.buttons .disabled.custom-button {
     background: rgba(0, 152, 230, 0.382);
     color: white; }
-  .chassis .button:focus, .showroom main .content > section.buttons .custom-button:focus {
+  .chassis .button:focus, .chassis button:focus,
+  .chassis input[type="reset"]:focus,
+  .chassis input[type="button"]:focus,
+  .chassis input[type="submit"]:focus, .showroom main .content > section.buttons .custom-button:focus {
     outline: none; }
 
+.chassis {
+  /* This rule must be independent of other selectors */
+  /* Selects
+    -----------------------------------------------*/ }
+  .chassis legend {
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none; }
+  .chassis label {
+    display: block; }
+  .chassis input,
+  .chassis textarea {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    border: 0;
+    outline: 0;
+    box-shadow: inset 0 0 0 1px #bcbdc1; }
+    .chassis input:focus,
+    .chassis textarea:focus {
+      outline: 0;
+      box-shadow: inset 0 0 0 1px #0098e6; }
+  .chassis input {
+    margin: 0 0.80902em 1.61803em 0;
+    padding: 0 0.80902em;
+    line-height: 2.61803em; }
+  .chassis textarea {
+    margin: 0 0.80902em 1.61803em 0;
+    padding: 0.5em 0.80902em;
+    line-height: 1.61803em;
+    line-height: 1.61803em;
+    line-height: 1.61803em;
+    line-height: 1.61803em;
+    line-height: 1.61803em;
+    resize: none;
+    /* Turn off scroll bars in IE unless needed */
+    overflow: auto;
+    vertical-align: top; }
+  @media screen and (max-width: 512px) {
+    .chassis input,
+    .chassis textarea,
+    .chassis button,
+    .chassis input[type="reset"],
+    .chassis input[type="button"],
+    .chassis input[type="submit"] {
+      display: block;
+      width: 100%; } }
+  .chassis ::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none; }
+  .chassis select[multiple] {
+    /* Move the label to the top */
+    vertical-align: top; }
+
 .chassis .modal {
-  align-self: flex-start;
+  align-self: center;
   min-width: 320px;
   max-width: calc(1440px - 6.18vw);
   min-height: 38.2vh;
@@ -415,7 +537,7 @@ html {
   z-index: 999;
   background: white; }
 
-.chassis .overlay {
+.chassis chassis-overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -429,16 +551,19 @@ html {
   padding: 6.18vh 19.1vw;
   background-color: rgba(0, 0, 0, 0.8);
   background-image: none;
-  background-blend-mode: multiply;
+  background-blend-mode: normal;
   z-index: 997; }
 
-.showroom .overlay .modal {
+.showroom .modal {
+  align-self: flex-start;
   padding: 1.618em;
   border-radius: 0.24063em; }
-  .showroom .overlay .modal footer {
+  .showroom .modal footer {
     text-align: right; }
-    .showroom .overlay .modal footer .button {
+    .showroom .modal footer .button {
       margin-bottom: 0; }
+      .showroom .modal footer .button:last-child {
+        margin-right: 0; }
 
 .showroom > header {
   padding: 1.46em 0 .90169942em;
@@ -491,22 +616,21 @@ html {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
     margin: 0; }
     @media screen and (min-width: 768px) {
       .showroom main .sidebar {
+        display: block;
+        visibility: visible;
+        opacity: 1;
         flex: 1 0 25%;
         margin: 0 0 1.61803em 0; } }
     .showroom main .sidebar nav a {
-      display: none;
-      visibility: hidden;
-      opacity: 0;
+      display: block;
       padding: 0 0.80902em;
       line-height: 2.61803em; }
-      @media screen and (min-width: 768px) {
-        .showroom main .sidebar nav a {
-          display: block;
-          visibility: visible;
-          opacity: 1; } }
       .showroom main .sidebar nav a:not(:first-child) {
         box-shadow: 0 -1px 0 0 #dadbdd; }
       .showroom main .sidebar nav a:hover {
@@ -645,6 +769,12 @@ html {
       .showroom main .content > section.flex-tiles .tiles .tile:before {
         content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
         display: block; }
+  .showroom main .content > section.modals .open.button {
+    margin-bottom: 0; }
+    @media screen and (max-width: 512px) {
+      .showroom main .content > section.modals .open.button {
+        display: block;
+        margin-right: 0; } }
   .showroom main .content pre.code {
     margin: 0 0 1.61803em 0;
     padding: 0.5em 1em;
