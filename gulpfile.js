@@ -28,7 +28,7 @@ gulp.task('sasscompile', function () {
   return gulp.src([SHOWROOM.SASS])
     .pipe(
       sass({
-        includePaths: SHOWROOM.INCLUDE
+        includePaths: require('./index').includePaths.concat(SHOWROOM.INCLUDE)
       })
     ).on('error', sass.logError)
     .pipe(gulp.dest(DEST + '/stylesheets'))
