@@ -4,6 +4,7 @@
 @import 'config/breakpoints';
 @import 'config/typography';
 @import 'config/layout';
+@import 'config/z-index';
 
 @import 'functions/math';
 @import 'functions/unit-conversion';
@@ -11,7 +12,6 @@
 @import 'mixins/media-queries';
 @import 'mixins/misc';
 @import 'mixins/flex-layout';
-@import 'mixins/flex-tiles';
 
 @import 'typography/definitions';
 @import 'typography/functions';
@@ -28,28 +28,45 @@ html {
   }
 }
 
-.ngn-chassis {
+.chassis {
+  // Used to set default font-size, line-height, and margin values for
+  // mobile-first media-queries
+  $first-screen-size-range: nth(map-keys($screen-size-ranges), 1);
+  $first-screen-size-range-upper-bound: map-get(nth(map-values($screen-size-ranges), 1), upper-bound);
+
   min-width: $ui-min-width;
 
   margin: 0;
   padding: 0;
 
   font: {
+    size: get-font-size(root, $first-screen-size-range-upper-bound);
+
     @if variable-exists(font-family) {
       family: $font-family;
     }
     @if variable-exists(font-weight-defs) {
       weight: $regular;
     }
-    style: normal;
-    variant: normal;
+    @if variable-exists(font-style) {
+      style: $font-style;
+    } @else {
+      style: normal;
+    }
+    @if variable-exists(font-variant) {
+      variant: $font-variant;
+    } @else {
+      variant: normal;
+    }
   }
+
+  line-height: get-line-height(root, $first-screen-size-range-upper-bound);
 
   @if variable-exists(text-color) {
     color: $text-color;
   }
 
-  @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+  @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
     a:not(.button) {
       @if $link-fonts != $font-family {
         font-family: $link-fonts;
@@ -59,9 +76,15 @@ html {
         @if $link-fonts != $font-family {
           family: $link-fonts;
         }
-        weight: $link-weight;
-        style: $link-style;
-        variant: $link-variant;
+        @if $link-weight != $font-weight {
+          weight: $link-weight;
+        }
+        @if $link-style != $font-style {
+          style: $link-style;
+        }
+        @if $link-variant != $font-variant {
+          variant: $link-variant;
+        }
       }
 
       text: {
@@ -69,10 +92,12 @@ html {
         transform: $link-transform;
       }
 
-      color: $link-color;
-
-      &:link {
+      @if $link-color != $text-color {
         color: $link-color;
+
+        &:link {
+          color: $link-color;
+        }
       }
 
       &:visited {
@@ -169,9 +194,12 @@ html {
     }
   }
 
-  @if variable-exists(CHASSIS_DETAILER_INCLUDED) {
+  h1 {
+    font-size: ( ( get-font-size($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
 
-    h1 {
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h1-fonts != $font-family {
         font-family: $h1-fonts;
       }
@@ -188,8 +216,14 @@ html {
       text-transform: $h1-transform;
       text-decoration: $h1-decoration;
     }
+  }
 
-    h2 {
+  h2 {
+    font-size: ( ( get-font-size($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h2-fonts != $font-family {
         font-family: $h2-fonts;
       }
@@ -206,8 +240,14 @@ html {
       text-transform: $h2-transform;
       text-decoration: $h2-decoration;
     }
+  }
 
-    h3 {
+  h3 {
+    font-size: ( ( get-font-size($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h3-fonts != $font-family {
         font-family: $h3-fonts;
       }
@@ -224,8 +264,14 @@ html {
       text-transform: $h3-transform;
       text-decoration: $h3-decoration;
     }
+  }
 
-    h4 {
+  h4 {
+    font-size: ( ( get-font-size($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h4-fonts != $font-family {
         font-family: $h4-fonts;
       }
@@ -242,8 +288,14 @@ html {
       text-transform: $h4-transform;
       text-decoration: $h4-decoration;
     }
+  }
 
-    h5 {
+  h5 {
+    font-size: ( ( get-font-size($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h5-fonts != $font-family {
         font-family: $h5-fonts;
       }
@@ -260,8 +312,14 @@ html {
       text-transform: $h5-transform;
       text-decoration: $h5-decoration;
     }
+  }
 
-    h6 {
+  h6 {
+    font-size: ( ( get-font-size($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h6-fonts != $font-family {
         font-family: $h6-fonts;
       }
@@ -278,7 +336,36 @@ html {
       text-transform: $h6-transform;
       text-decoration: $h6-decoration;
     }
+  }
 
+  legend {
+    font-size: ( ( get-font-size($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
+    line-height: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
+    margin-bottom: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+  }
+
+  // Container Elements
+  section,
+  nav,
+  form {
+    margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
+  }
+
+  // Inner Elements
+  section section,
+  nav section,
+  section nav,
+  nav nav,
+  article,
+  p,
+  fieldset,
+  figure,
+  pre,
+  blockquote,
+  table,
+  canvas,
+  embed {
+    margin-bottom: ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em;
   }
 
   // Auto Typography -----------------------------------------------------------
@@ -297,11 +384,7 @@ html {
     $index: index(map-keys($screen-size-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    @if $index == 1 {
-      @include max-screen-size($range-semantic-name) {
-        @include global-typography-rules($upper-bound);
-      }
-    } @elseif $index == length($screen-size-ranges) {
+    @if $index == length($screen-size-ranges) {
       @include min-screen-size($range-semantic-name) {
         @include global-typography-rules($upper-bound);
       }

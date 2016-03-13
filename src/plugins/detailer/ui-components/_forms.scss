@@ -1,0 +1,101 @@
+// NGN Chassis
+// UI Components
+
+// :: Forms
+
+@if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+
+  .chassis {
+
+    legend {
+      font: {
+        weight: $form-legend-font-weight;
+        style: $form-legend-font-style;
+        variant: $form-legend-font-variant;
+      }
+
+      text: {
+        decoration: $form-legend-text-decoration;
+        transform: $form-legend-text-transform;
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    input,
+    textarea {
+      font: {
+        family: $textfield-fonts;
+        weight: $textfield-font-weight;
+      }
+
+      border: 0;
+      outline: 0;
+
+      box-shadow: inset 0 0 0 1px $textfield-border-color;
+
+      &:focus {
+        outline: 0;
+        box-shadow: inset 0 0 0 1px $textfield-focus-ring-color;
+      }
+    }
+
+    input {
+      @include inline-layout-rules;
+    }
+
+    textarea {
+      @include inline-layout-rules($multi-line: true);
+
+      resize: none;
+
+    	/* Turn off scroll bars in IE unless needed */
+    	overflow: auto;
+
+      vertical-align: top;
+    }
+
+    button,
+    input[type="reset"],
+    input[type="button"],
+    input[type="submit"] {
+    	@extend %button;
+    }
+
+    @if map-has-key($screen-size-ranges, tiny) {
+      @include max-screen-size(tiny) {
+        input,
+        textarea,
+        button,
+        input[type="reset"],
+        input[type="button"],
+        input[type="submit"] {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    /* This rule must be independent of other selectors */
+    ::-webkit-file-upload-button {
+    	padding: 0;
+    	border: 0;
+    	background: none;
+    }
+
+    /* Selects
+    -----------------------------------------------*/
+
+    select {
+
+      &[multiple] {
+        /* Move the label to the top */
+      	vertical-align: top;
+      }
+    }
+
+  }
+
+}

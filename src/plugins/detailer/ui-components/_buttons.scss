@@ -65,7 +65,7 @@
     )
   );
 
-  @mixin button-pseudo-class($type, $settings: $default-button-defs) {
+  @mixin button-pseudo-class($type, $settings) {
     $default: map-get($settings, default);
     $defs: map-get($settings, $type);
 
@@ -113,7 +113,7 @@
   }
 
 
-  @mixin button-styles($settings: $default-button-defs) {
+  @mixin button-styles($settings) {
     $default: map-get($settings, default);
     $disabled: map-get($settings, disabled);
 
@@ -127,7 +127,6 @@
 
     border: none;
     outline: none;
-    box-shadow: none;
 
     @if map-get($default, has-border) {
       box-shadow: inset 0 0 0 map-get($default, border-thickness) map-get($default, border-color);
@@ -138,13 +137,22 @@
     vertical-align: middle;
 
     font: {
-      family: map-get($default, font-family);
-      weight: map-get($default, font-weight);
-      style: map-get($default, font-style);
-      variant: map-get($default, font-variant);
+      @if map-get($default, font-family) != $font-family {
+        family: map-get($default, font-family);
+      }
+      @if map-get($default, font-weight) != $font-weight {
+        weight: map-get($default, font-weight);
+      }
+      @if map-get($default, font-style) != $font-style {
+        style: map-get($default, font-style);
+      }
+      @if map-get($default, font-variant) != $font-variant {
+        variant: map-get($default, font-variant);
+      }
     }
 
     text: {
+      align: center;
       decoration: map-get($default, text-decoration);
       transform: map-get($default, text-transform);
     }
@@ -190,15 +198,11 @@
   }
 
   %button {
-    @include button-styles;
+    @include button-styles($default-button-defs);
   }
 
-  .ngn-chassis {
-
-    .button {
-      @extend %button;
-    }
-
+  .chassis .button {
+    @extend %button;
   }
 
 }
