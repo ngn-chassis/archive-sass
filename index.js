@@ -2,6 +2,6 @@ var path = require("path");
 
 module.exports = {
   includePaths: [
-    path.join(__dirname, "src")
+    path.join(__dirname)
   ]
 };
