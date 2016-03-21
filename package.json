@@ -1,15 +1,12 @@
 {
   "name": "chassis-sass",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Sass-based layout engine for NGN Chassis framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test, deployment only.\" && exit 0"
   },
   "author": "Graham Butler",
-  "files": [
-    "src"
-  ],
   "license": "ISC",
   "devDependencies": {
     "del": "^2.1.0",
