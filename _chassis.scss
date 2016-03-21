@@ -1,24 +1,24 @@
-@import 'constants/colors';
-@import 'constants/typography';
+@import 'chassis/constants/colors';
+@import 'chassis/constants/typography';
 
-@import 'config/breakpoints';
-@import 'config/typography';
-@import 'config/layout';
-@import 'config/z-index';
+@import 'chassis/config/breakpoints';
+@import 'chassis/config/typography';
+@import 'chassis/config/layout';
+@import 'chassis/config/z-index';
 
-@import 'functions/math';
-@import 'functions/unit-conversion';
+@import 'chassis/functions/math';
+@import 'chassis/functions/unit-conversion';
 
-@import 'mixins/media-queries';
-@import 'mixins/misc';
-@import 'mixins/flex-layout';
+@import 'chassis/mixins/media-queries';
+@import 'chassis/mixins/misc';
+@import 'chassis/mixins/flex-layout';
 
-@import 'typography/definitions';
-@import 'typography/functions';
+@import 'chassis/typography/definitions';
+@import 'chassis/typography/functions';
 @import 'typography/mixins';
 
-@import 'reset';
-@import 'helpers';
+@import 'chassis/reset';
+@import 'chassis/helpers';
 
 // Chassis Core ----------------------------------------------------------------
 
