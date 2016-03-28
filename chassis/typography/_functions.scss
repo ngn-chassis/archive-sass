@@ -42,16 +42,15 @@
 }
 
 // The mixins below are used to set initial typography values for headings
-// as well as default margins for container and inner elements
 
-@function get-initial-font-size($alias, $first-upper-bound) {
+@function get-initial-heading-font-size($alias, $first-upper-bound) {
   @return ( ( get-font-size($alias, $first-upper-bound) / get-font-size(root, $first-upper-bound) ) * 1em );
 }
 
-@function get-initial-line-height($alias, $first-upper-bound) {
+@function get-initial-heading-line-height($alias, $first-upper-bound) {
   @return ( ( get-line-height($alias, $first-upper-bound) / get-line-height(root, $first-upper-bound) ) * 1em );
 }
 
-@function get-initial-margin-bottom($alias, $first-upper-bound) {
+@function get-initial-heading-margin-bottom($alias, $first-upper-bound) {
   @return ( ( get-line-height($alias, $first-upper-bound) / get-font-size($alias, $first-upper-bound) ) / $type-scale-ratio ) * 1em;
 }

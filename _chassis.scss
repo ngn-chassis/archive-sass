@@ -195,9 +195,9 @@ html {
   }
 
   h1 {
-    font-size: get-initial-font-size($h1-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h1-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h1-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h1-fonts != $font-family {
@@ -219,9 +219,9 @@ html {
   }
 
   h2 {
-    font-size: get-initial-font-size($h2-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h2-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h2-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h2-fonts != $font-family {
@@ -243,9 +243,9 @@ html {
   }
 
   h3 {
-    font-size: get-initial-font-size($h3-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h3-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h3-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h3-fonts != $font-family {
@@ -267,9 +267,9 @@ html {
   }
 
   h4 {
-    font-size: get-initial-font-size($h4-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h4-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h4-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h4-fonts != $font-family {
@@ -291,9 +291,9 @@ html {
   }
 
   h5 {
-    font-size: get-initial-font-size($h5-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h5-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h5-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h5-fonts != $font-family {
@@ -315,9 +315,9 @@ html {
   }
 
   h6 {
-    font-size: get-initial-font-size($h6-font-size-alias, $first-viewport-width-range-upper-bound);
-    line-height: get-initial-line-height($h6-font-size-alias, $first-viewport-width-range-upper-bound);
-    margin-bottom: get-initial-margin-bottom($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    font-size: get-initial-heading-font-size($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h6-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h6-fonts != $font-family {
@@ -339,9 +339,9 @@ html {
   }
 
   legend {
-    font-size: ( ( get-font-size($form-legend-font-size-alias, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($form-legend-font-size-alias, $first-viewport-width-range-upper-bound) / get-line-height(root, $first-viewport-width-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($form-legend-font-size-alias, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
   }
 
   // Container Elements
