@@ -20,6 +20,11 @@
 @import 'chassis/reset';
 @import 'chassis/helpers';
 
+// Used to set default font-size, line-height, and margin values for
+// mobile-first media-queries
+$first-viewport-width-range: nth(map-keys($viewport-width-ranges), 1);
+$first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-ranges), 1), upper-bound);
+
 // Chassis Core ----------------------------------------------------------------
 
 html {
@@ -29,18 +34,13 @@ html {
 }
 
 .chassis {
-  // Used to set default font-size, line-height, and margin values for
-  // mobile-first media-queries
-  $first-screen-size-range: nth(map-keys($screen-size-ranges), 1);
-  $first-screen-size-range-upper-bound: map-get(nth(map-values($screen-size-ranges), 1), upper-bound);
-
   min-width: $ui-min-width;
 
   margin: 0;
   padding: 0;
 
   font: {
-    size: get-font-size(root, $first-screen-size-range-upper-bound);
+    size: get-font-size(root, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(font-family) {
       family: $font-family;
@@ -60,7 +60,7 @@ html {
     }
   }
 
-  line-height: get-line-height(root, $first-screen-size-range-upper-bound);
+  line-height: get-line-height(root, $first-viewport-width-range-upper-bound);
 
   @if variable-exists(text-color) {
     color: $text-color;
@@ -195,9 +195,9 @@ html {
   }
 
   h1 {
-    font-size: ( ( get-font-size($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h1-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(larger, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h1-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h1-fonts != $font-family {
@@ -219,9 +219,9 @@ html {
   }
 
   h2 {
-    font-size: ( ( get-font-size($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h2-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(large, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h2-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h2-fonts != $font-family {
@@ -243,9 +243,9 @@ html {
   }
 
   h3 {
-    font-size: ( ( get-font-size($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h3-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h3-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h3-fonts != $font-family {
@@ -267,9 +267,9 @@ html {
   }
 
   h4 {
-    font-size: ( ( get-font-size($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h4-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h4-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h4-fonts != $font-family {
@@ -291,9 +291,9 @@ html {
   }
 
   h5 {
-    font-size: ( ( get-font-size($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h5-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h5-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h5-fonts != $font-family {
@@ -315,9 +315,9 @@ html {
   }
 
   h6 {
-    font-size: ( ( get-font-size($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($h6-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h6-font-size-alias, $first-viewport-width-range-upper-bound);
 
     @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
       @if $h6-fonts != $font-family {
@@ -339,16 +339,16 @@ html {
   }
 
   legend {
-    font-size: ( ( get-font-size($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em );
-    line-height: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-line-height(root, $first-screen-size-range-upper-bound) ) * 1em );
-    margin-bottom: ( ( get-line-height($form-legend-font-size-alias, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) / $type-scale-ratio ) * 1em;
+    font-size: get-initial-heading-font-size($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
   }
 
   // Container Elements
   section,
   nav,
   form {
-    margin-bottom: ( ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * $type-scale-ratio ) * 1em;
+    margin-bottom: ( ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * $type-scale-ratio ) * 1em;
   }
 
   // Inner Elements
@@ -365,31 +365,31 @@ html {
   table,
   canvas,
   embed {
-    margin-bottom: ( get-line-height(root, $first-screen-size-range-upper-bound) / get-font-size(root, $first-screen-size-range-upper-bound) ) * 1em;
+    margin-bottom: ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * 1em;
   }
 
   // Auto Typography -----------------------------------------------------------
 
-  // Loops through each screen-size range, as specified in `config/breakpoints`.
+  // Loops through each viewport-width range, as specified in `config/breakpoints`.
   // Uses global-typography-rules mixin to set appropriate typography rules at
-  // each screen-size range.
-  // This is determined by checking the upper-bound of the current screen-size
+  // each viewport-width range.
+  // This is determined by checking the upper-bound of the current viewport-width
   // range against preset golden-ratio typography rules and selecting the
   // corresponding rules.
 
   // Typography Rule definitions can be found in `typography/definitions`.
 
-  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
-    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
-    @if $index == length($screen-size-ranges) {
-      @include min-screen-size($range-semantic-name) {
+    @if $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
         @include global-typography-rules($upper-bound);
       }
-    } @else {
-      @include screen-size($range-semantic-name) {
+    } @elseif $index != 1 {
+      @include at-viewport-width($range-semantic-name) {
         @include global-typography-rules($upper-bound);
       }
     }

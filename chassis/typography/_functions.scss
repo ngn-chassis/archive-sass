@@ -1,11 +1,11 @@
 // NGN Chassis
 // Golden Ratio typography-base
 
-// Select appropriate font-size for screen-size-range.
-// Compares current screen-size upper-bound to Chassis typography defaults and
+// Select appropriate font-size for viewport-width-range.
+// Compares current viewport-width upper-bound to Chassis typography defaults and
 // returns the appropriate font-size
 
-@function get-font-size($type, $upper-bound) {
+@function get-font-size($type, $upper-bound, $multiplier: $global-typography-multiplier) {
   $range-upper-bound: null;
 
   @if unit($upper-bound) == 'px' {
@@ -34,9 +34,23 @@
     }
   }
 
-  @return $font-size;
+  @return ( $font-size * $multiplier );
 }
 
-@function get-line-height($type, $upper-bound) {
-  @return round(get-font-size($type, $upper-bound) * $type-scale-ratio);
+@function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
+  @return ( round(get-font-size($type, $upper-bound) * $type-scale-ratio) * $multiplier );
+}
+
+// The mixins below are used to set initial typography values for headings
+
+@function get-initial-heading-font-size($alias, $first-upper-bound) {
+  @return ( ( get-font-size($alias, $first-upper-bound) / get-font-size(root, $first-upper-bound) ) * 1em );
+}
+
+@function get-initial-heading-line-height($alias, $first-upper-bound) {
+  @return ( ( get-line-height($alias, $first-upper-bound) / get-line-height(root, $first-upper-bound) ) * 1em );
+}
+
+@function get-initial-heading-margin-bottom($alias, $first-upper-bound) {
+  @return ( ( get-line-height($alias, $first-upper-bound) / get-font-size($alias, $first-upper-bound) ) / $type-scale-ratio ) * 1em;
 }

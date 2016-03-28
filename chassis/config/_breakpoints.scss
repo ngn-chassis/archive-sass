@@ -3,7 +3,7 @@
 $ui-min-width : 320px  !default;
 $ui-max-width : 1440px !default;
 
-$screen-size-ranges : (
+$viewport-width-ranges : (
 	tiny: (
 		lower-bound: $ui-min-width,
 		upper-bound: 512px
