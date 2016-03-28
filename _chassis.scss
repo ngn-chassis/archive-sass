@@ -389,7 +389,7 @@ html {
         @include global-typography-rules($upper-bound);
       }
     } @else {
-      @include screen-size($range-semantic-name) {
+      @include at-screen-size($range-semantic-name) {
         @include global-typography-rules($upper-bound);
       }
     }

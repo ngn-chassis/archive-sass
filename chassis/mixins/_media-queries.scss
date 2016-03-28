@@ -1,13 +1,94 @@
 // NGN Chassis
-// Media Query Mixins ----------------------------------------------------------
+// Media Query Mixins --------------------------------------------------------
+/*
 
-@mixin screen-size($specified-range) {
+Viewport size-specific styles can be applied in 5 different ways:
 
+  1. Targeting all Screen Size Ranges below the specified range:
+
+    ```SASS
+    @include below-screen-size(medium) {
+      -- your styles --
+    }
+    ```
+    ( default 0px - 767px )
+
+    This will target screen sizes below, but not including, the lower bound of
+    the "medium" Screen Size Range
+
+ 2. Targeting all Screen Size Ranges up to, and including, the specified range:
+
+    ```SASS
+    @include max-screen-size(medium) {
+      -- your styles --
+    }
+    ```
+    ( default 0px - 1023px )
+
+    This will target screen sizes below, but not including, the upper bound of
+    the "medium" Screen Size Range
+
+ 3. Targeting a screen-size range directly:
+
+    ```SASS
+    @include at-screen-size(medium) {
+      -- your styles --
+    }
+    ```
+    ( default 768px - 1023px )
+
+    This will target screen sizes at or above the lower bound, and below (but
+    not including) the upper bound of the "medium" Screen Size Range
+
+ 4. Targeting all Screen Size Ranges starting with the specified range and up:
+
+    ```SASS
+    @include min-screen-size(medium) {
+      -- your styles --
+    }
+    ```
+    ( default 768px - infinite )
+
+    This will target screen sizes at or above the lower bound of the
+    "medium" Screen Size Range
+
+ 4. Targeting all Screen Size Ranges above, but not including, the specified
+    range:
+
+    ```SASS
+    @include above-screen-size(medium) {
+      -- your styles --
+    }
+    ```
+    ( default 1025px - infinite )
+
+    This will target screen sizes above the upper bound of the "medium" screen
+    size range
+
+*/
+// Mixins
+// -----------------------------------------------------------------------------
+
+/**
+ * @mixin below-screen-size()
+ * Apply styling only at screen sizes below, but not including, the lower
+ * bound of the specified range
+ * @param {map-key} $sprecified-range
+ * from ./config/breakpoints or custom theme file
+ *
+ *    By default, this media query affects:
+ *    ✓ below minimum UI
+ *    ✓ tiny
+ *    ✓ small
+ *    ✘ medium
+ *    ✘ large
+ *    ✘ huge
+ *    ✘ above maximum UI width
+ */
+@mixin below-screen-size($specified-range) {
   @if map-has-key($screen-size-ranges, $specified-range) {
     $screen-size-range: map-get($screen-size-ranges, $specified-range);
-
     $lower-bound: map-get($screen-size-range, lower-bound);
-    $upper-bound: map-get($screen-size-range, upper-bound);
 
     @if unit($lower-bound) != 'px' {
       @if unit($lower-bound) == 'rem' {
@@ -17,38 +98,9 @@
       }
     }
 
-    @if unit($upper-bound) != 'px' {
-      @if unit($upper-bound) == 'rem' {
-        $upper-bound: rem-to-px($upper-bound);
-      } @else {
-        @warn '#{unit($upper-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
-      }
-    }
+    $max-width: ( $lower-bound - 1px );
 
-    @media screen and (min-width: $lower-bound) and (max-width: $upper-bound) {
-      @content;
-    }
-
-  } @else {
-    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
-  }
-
-}
-
-@mixin min-screen-size($specified-range) {
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
-    $lower-bound: map-get($screen-size-range, lower-bound);
-
-    @if unit($lower-bound) != 'px' {
-      @if unit($lower-bound) == 'rem' {
-        $lower-bound: rem-to-px($lower-bound);
-      } @else {
-        @warn '#{unit($lower-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
-      }
-    }
-
-    @media screen and (min-width: $lower-bound) {
+    @media screen and (max-width: $max-width) {
       @content;
     }
 
@@ -57,6 +109,22 @@
   }
 }
 
+/**
+ * @mixin max-screen-size()
+ * Apply styling only at screen sizes below, but not including, the upper
+ * bound of the specified range
+ * @param {map-key} $sprecified-range
+ * from ./config/breakpoints or custom theme file
+ *
+ *    By default, this media query affects:
+ *    ✓ below minimum UI width
+ *    ✓ tiny
+ *    ✓ small
+ *    ✓ medium
+ *    ✘ large
+ *    ✘ huge
+ *    ✘ above maximum UI width
+ */
 @mixin max-screen-size($specified-range) {
   @if map-has-key($screen-size-ranges, $specified-range) {
     $screen-size-range: map-get($screen-size-ranges, $specified-range);
@@ -70,7 +138,146 @@
       }
     }
 
-    @media screen and (max-width: $upper-bound) {
+    $max-width: ( $upper-bound - 1px );
+
+    @media screen and (max-width: $max-width) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+}
+
+/**
+ * @mixin at-screen-size()
+ * Apply styling only at screen sizes at or above the lower bound
+ * and below, but not including, the upper bound of the specified range
+ * @param {map-key} $sprecified-range
+ * from ./config/breakpoints or custom theme file
+ *
+ *    By default, this media query affects:
+ *    ✘ below minimum UI
+ *    ✘ tiny
+ *    ✘ small
+ *    ✓ medium
+ *    ✘ large
+ *    ✘ huge
+ *    ✘ above maximum UI width
+ */
+@mixin at-screen-size($specified-range) {
+
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+
+    $lower-bound: map-get($screen-size-range, lower-bound);
+
+    @if unit($lower-bound) != 'px' {
+      @if unit($lower-bound) == 'rem' {
+        $lower-bound: rem-to-px($lower-bound);
+      } @else {
+        @warn '#{unit($lower-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    $upper-bound: map-get($screen-size-range, upper-bound);
+
+    @if unit($upper-bound) != 'px' {
+      @if unit($upper-bound) == 'rem' {
+        $upper-bound: rem-to-px($upper-bound);
+      } @else {
+        @warn '#{unit($upper-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    $min-width: $lower-bound;
+    $max-width: ( $upper-bound - 1px );
+
+    @if index(map-keys($screen-size-ranges), $specified-range) == length($screen-size-ranges) {
+      $max-width: $upper-bound;
+    }
+
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+
+}
+
+/** @mixin min-screen-size()
+ * Apply styling only at screen sizes at or above the lower bound of the
+ * specified range
+ * @param {map-key} $sprecified-range
+ * from ./config/breakpoints or custom theme file
+ *
+ *    By default, this media query affects:
+ *    ✘ below minimum UI
+ *    ✘ tiny
+ *    ✘ small
+ *    ✓ medium
+ *    ✓ large
+ *    ✓ huge
+ *    ✓ above maximum UI width
+ */
+@mixin min-screen-size($specified-range) {
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+    $lower-bound: map-get($screen-size-range, lower-bound);
+
+    @if unit($lower-bound) != 'px' {
+      @if unit($lower-bound) == 'rem' {
+        $lower-bound: rem-to-px($lower-bound);
+      } @else {
+        @warn '#{unit($lower-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    $min-width: $lower-bound;
+
+    @media screen and (min-width: $min-width) {
+      @content;
+    }
+
+  } @else {
+    @warn 'Screen size range "#{$specified-range}" is not defined. Please add it to your configuration file.';
+  }
+}
+
+/**
+ * @mixin above-screen-size()
+ * Apply styling only at screen sizes above the upper bound of the
+ * specified range
+ * @param {map-key} $sprecified-range
+ * from ./config/breakpoints or custom theme file
+ *
+ *    By default, this media query affects:
+ *    ✘ below minimum UI
+ *    ✘ tiny
+ *    ✘ small
+ *    ✘ medium
+ *    ✓ large
+ *    ✓ huge
+ *    ✓ above maximum UI width
+ */
+@mixin above-screen-size($specified-range) {
+  @if map-has-key($screen-size-ranges, $specified-range) {
+    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+    $upper-bound: map-get($screen-size-range, upper-bound);
+
+    @if unit($upper-bound) != 'px' {
+      @if unit($upper-bound) == 'rem' {
+        $upper-bound: rem-to-px($upper-bound);
+      } @else {
+        @warn '#{unit($upper-bound)} cannot be used as a unit for breakpoint values. Please use `rem` or `px` instead.';
+      }
+    }
+
+    $min-width: ( $upper-bound + 1px );
+
+    @media screen and (min-width: $min-width) {
       @content;
     }
 

@@ -1,14 +1,14 @@
-@import 'detailer-config';
-@import 'plugins/detailer/plugin';
+// @import 'detailer-config';
+// @import 'plugins/detailer/plugin';
 
 @import 'chassis';
 
 // Import Detailer UI Components
-@import 'plugins/detailer/ui-components/buttons';
-@import 'plugins/detailer/ui-components/forms';
-@import 'plugins/detailer/ui-components/modal';
-@import 'plugins/detailer/ui-components/overlay';
-@import 'plugins/detailer/ui-components/tiles';
+// @import 'plugins/detailer/ui-components/buttons';
+// @import 'plugins/detailer/ui-components/forms';
+// @import 'plugins/detailer/ui-components/modal';
+// @import 'plugins/detailer/ui-components/overlay';
+// @import 'plugins/detailer/ui-components/tiles';
 
 .showroom {
 
@@ -161,23 +161,23 @@
 
         &.flex-tiles {
           .tiles {
-            @include tiles(1);
+            // @include tiles(1);
 
             padding: 1em 1em 0;
 
             border: 1px solid $grey-n03;
 
-            @include min-screen-size(small) {
-              @include tiles(2);
-            }
-
-            @include min-screen-size(medium) {
-              @include tiles(3);
-            }
-
-            @include min-screen-size(huge) {
-              @include tiles(4);
-            }
+            // @include min-screen-size(small) {
+            //   @include tiles(2);
+            // }
+            //
+            // @include min-screen-size(medium) {
+            //   @include tiles(3);
+            // }
+            //
+            // @include min-screen-size(huge) {
+            //   @include tiles(4);
+            // }
 
             .tile {
               display: flex;
@@ -251,7 +251,68 @@
   }
 
   > footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
+    padding: 1em 0;
+
+    background: $white;
+    box-shadow: inset 0 1px 0 0 $grey-n05;
+
+    text-align: center;
+
+    .label {
+      font-weight: bold;
+    }
+
+    .range {
+      @include hide;
+
+      @include below-screen-size(tiny) {
+        &.below-min {
+          @include show(inline);
+        }
+      }
+
+      @include at-screen-size(tiny) {
+        &.tiny {
+          @include show(inline);
+        }
+      }
+
+      @include at-screen-size(small) {
+        &.small {
+          @include show(inline);
+        }
+      }
+
+      @include at-screen-size(medium) {
+        &.medium {
+          @include show(inline);
+        }
+      }
+
+      @include at-screen-size(large) {
+        &.large {
+          @include show(inline);
+        }
+      }
+
+      @include at-screen-size(huge) {
+        &.huge {
+          @include show(inline);
+        }
+      }
+
+      @include above-screen-size(huge) {
+        &.above-max {
+          @include show(inline);
+        }
+      }
+    }
   }
 
 }

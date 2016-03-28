@@ -113,7 +113,7 @@
         }
       }
     } @else {
-      @include screen-size($range-semantic-name) {
+      @include at-screen-size($range-semantic-name) {
         font-size: $font-size;
         line-height: $line-height;
 
