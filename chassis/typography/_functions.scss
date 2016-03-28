@@ -5,7 +5,7 @@
 // Compares current viewport-width upper-bound to Chassis typography defaults and
 // returns the appropriate font-size
 
-@function get-font-size($type, $upper-bound) {
+@function get-font-size($type, $upper-bound, $multiplier: $global-typography-multiplier) {
   $range-upper-bound: null;
 
   @if unit($upper-bound) == 'px' {
@@ -34,11 +34,11 @@
     }
   }
 
-  @return $font-size;
+  @return ( $font-size * $multiplier );
 }
 
-@function get-line-height($type, $upper-bound) {
-  @return round(get-font-size($type, $upper-bound) * $type-scale-ratio);
+@function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
+  @return ( round(get-font-size($type, $upper-bound) * $type-scale-ratio) * $multiplier );
 }
 
 // The mixins below are used to set initial typography values for headings
