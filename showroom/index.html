@@ -75,6 +75,18 @@
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
+          <h4>Heading (h4)</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h5>Heading (h5)</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <h6>Heading (h6)</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
         </section>
 
         <section id="buttons" class="buttons">
@@ -139,7 +151,7 @@
   @include tiles(NUMBER_OF_COLUMNS);
   // additional styles
 
-  @include min-screen-size(medium) {
+  @include min-viewport-width(medium) {
     @include tiles(DIFFERENT_NUMBER_OF_COLUMNS);
   }
 }</pre>
@@ -171,7 +183,7 @@
     </main>
     <footer>
       <div class="width-constraint">
-        <span class="label">Screen Size Range:</span>
+        <span class="label">Viewport Width Range:</span>
 
         <span class="below-min range">
           Below min: <= 319px

@@ -2,93 +2,124 @@
 // Media Query Mixins --------------------------------------------------------
 /*
 
-Viewport size-specific styles can be applied in 5 different ways:
+Viewport Width-specific styles can be applied in 5 different ways:
 
-  1. Targeting all Screen Size Ranges below the specified range:
+  1. Targeting all Viewport Width Ranges below the specified range:
 
     ```SASS
-    @include below-screen-size(medium) {
+    @include below-viewport-width(medium) {
       -- your styles --
     }
     ```
-    ( default 0px - 767px )
 
-    This will target screen sizes below, but not including, the lower bound of
-    the "medium" Screen Size Range
+    This will target viewport widths below, but not including, the lower bound
+    of the "medium" Viewport Width Range
 
- 2. Targeting all Screen Size Ranges up to, and including, the specified range:
+    By default, the above code would affect viewports 0px - 767px wide:
+    ✓ below minimum UI
+    ✓ tiny
+    ✓ small
+    ✘ medium
+    ✘ large
+    ✘ huge
+    ✘ above maximum UI width
+
+ 2. Targeting all Viewport Width Ranges up to, and including, the specified range:
 
     ```SASS
-    @include max-screen-size(medium) {
+    @include max-viewport-width(medium) {
       -- your styles --
     }
     ```
-    ( default 0px - 1023px )
 
-    This will target screen sizes below, but not including, the upper bound of
-    the "medium" Screen Size Range
+    This will target viewport widths below, but not including, the upper bound
+    of the "medium" Viewport Width Range
 
- 3. Targeting a screen-size range directly:
+    By default, the above code would affect viewports 0px - 1023px wide:
+    ✓ below minimum UI width
+    ✓ tiny
+    ✓ small
+    ✓ medium
+    ✘ large
+    ✘ huge
+    ✘ above maximum UI width
+
+ 3. Targeting a viewport-width range directly:
 
     ```SASS
-    @include at-screen-size(medium) {
+    @include at-viewport-width(medium) {
       -- your styles --
     }
     ```
-    ( default 768px - 1023px )
 
-    This will target screen sizes at or above the lower bound, and below (but
-    not including) the upper bound of the "medium" Screen Size Range
+    This will target viewport widths at or above the lower bound, and below (but
+    not including) the upper bound of the "medium" Viewport Width Range
 
- 4. Targeting all Screen Size Ranges starting with the specified range and up:
+    By default, the above code would affect viewports 768px - 1023px wide:
+    ✘ below minimum UI
+    ✘ tiny
+    ✘ small
+    ✓ medium
+    ✘ large
+    ✘ huge
+    ✘ above maximum UI width
+
+ 4. Targeting all Viewport Width Ranges starting with the specified range and up:
 
     ```SASS
-    @include min-screen-size(medium) {
+    @include min-viewport-width(medium) {
       -- your styles --
     }
     ```
-    ( default 768px - infinite )
 
-    This will target screen sizes at or above the lower bound of the
-    "medium" Screen Size Range
+    This will target viewport widths at or above the lower bound of the
+    "medium" Viewport Width Range
 
- 4. Targeting all Screen Size Ranges above, but not including, the specified
+    By default, the above code would affect viewports 768px - infinite wide:
+    ✘ below minimum UI
+    ✘ tiny
+    ✘ small
+    ✓ medium
+    ✓ large
+    ✓ huge
+    ✓ above maximum UI width
+
+ 5. Targeting all Viewport Width Ranges above, but not including, the specified
     range:
 
     ```SASS
-    @include above-screen-size(medium) {
+    @include above-viewport-width(medium) {
       -- your styles --
     }
     ```
-    ( default 1025px - infinite )
 
-    This will target screen sizes above the upper bound of the "medium" screen
-    size range
+    This will target viewport widths above the upper bound of the "medium"
+    Viewport Width Range
+
+    By default, the above code would affect viewports 1025px - infinite wide:
+    ✘ below minimum UI
+    ✘ tiny
+    ✘ small
+    ✘ medium
+    ✓ large
+    ✓ huge
+    ✓ above maximum UI width
 
 */
 // Mixins
 // -----------------------------------------------------------------------------
 
 /**
- * @mixin below-screen-size()
- * Apply styling only at screen sizes below, but not including, the lower
+ * @mixin below-viewport-width()
+ * Apply styling only at viewport widths below, but not including, the lower
  * bound of the specified range
- * @param {map-key} $sprecified-range
+ * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
- *
- *    By default, this media query affects:
- *    ✓ below minimum UI
- *    ✓ tiny
- *    ✓ small
- *    ✘ medium
- *    ✘ large
- *    ✘ huge
- *    ✘ above maximum UI width
  */
-@mixin below-screen-size($specified-range) {
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
-    $lower-bound: map-get($screen-size-range, lower-bound);
+@mixin below-viewport-width($specified-range) {
+  @if map-has-key($viewport-width-ranges, $specified-range) {
+    $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
+    $lower-bound: map-get($viewport-width-range, lower-bound);
 
     @if unit($lower-bound) != 'px' {
       @if unit($lower-bound) == 'rem' {
@@ -110,25 +141,16 @@ Viewport size-specific styles can be applied in 5 different ways:
 }
 
 /**
- * @mixin max-screen-size()
- * Apply styling only at screen sizes below, but not including, the upper
+ * @mixin max-viewport-width()
+ * Apply styling only at viewport widths below, but not including, the upper
  * bound of the specified range
- * @param {map-key} $sprecified-range
+ * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
- *
- *    By default, this media query affects:
- *    ✓ below minimum UI width
- *    ✓ tiny
- *    ✓ small
- *    ✓ medium
- *    ✘ large
- *    ✘ huge
- *    ✘ above maximum UI width
  */
-@mixin max-screen-size($specified-range) {
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
-    $upper-bound: map-get($screen-size-range, upper-bound);
+@mixin max-viewport-width($specified-range) {
+  @if map-has-key($viewport-width-ranges, $specified-range) {
+    $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
+    $upper-bound: map-get($viewport-width-range, upper-bound);
 
     @if unit($upper-bound) != 'px' {
       @if unit($upper-bound) == 'rem' {
@@ -150,27 +172,18 @@ Viewport size-specific styles can be applied in 5 different ways:
 }
 
 /**
- * @mixin at-screen-size()
- * Apply styling only at screen sizes at or above the lower bound
+ * @mixin at-viewport-width()
+ * Apply styling only at viewport widths at or above the lower bound
  * and below, but not including, the upper bound of the specified range
- * @param {map-key} $sprecified-range
+ * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
- *
- *    By default, this media query affects:
- *    ✘ below minimum UI
- *    ✘ tiny
- *    ✘ small
- *    ✓ medium
- *    ✘ large
- *    ✘ huge
- *    ✘ above maximum UI width
  */
-@mixin at-screen-size($specified-range) {
+@mixin at-viewport-width($specified-range) {
 
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
+  @if map-has-key($viewport-width-ranges, $specified-range) {
+    $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
 
-    $lower-bound: map-get($screen-size-range, lower-bound);
+    $lower-bound: map-get($viewport-width-range, lower-bound);
 
     @if unit($lower-bound) != 'px' {
       @if unit($lower-bound) == 'rem' {
@@ -180,7 +193,7 @@ Viewport size-specific styles can be applied in 5 different ways:
       }
     }
 
-    $upper-bound: map-get($screen-size-range, upper-bound);
+    $upper-bound: map-get($viewport-width-range, upper-bound);
 
     @if unit($upper-bound) != 'px' {
       @if unit($upper-bound) == 'rem' {
@@ -190,10 +203,12 @@ Viewport size-specific styles can be applied in 5 different ways:
       }
     }
 
+    // If $specified-range is the largest range available (the last key in
+    // $viewport-width-ranges), subtract 1px
     $min-width: $lower-bound;
     $max-width: ( $upper-bound - 1px );
 
-    @if index(map-keys($screen-size-ranges), $specified-range) == length($screen-size-ranges) {
+    @if index(map-keys($viewport-width-ranges), $specified-range) == length($viewport-width-ranges) {
       $max-width: $upper-bound;
     }
 
@@ -207,25 +222,16 @@ Viewport size-specific styles can be applied in 5 different ways:
 
 }
 
-/** @mixin min-screen-size()
- * Apply styling only at screen sizes at or above the lower bound of the
+/** @mixin min-viewport-width()
+ * Apply styling only at viewport widths at or above the lower bound of the
  * specified range
- * @param {map-key} $sprecified-range
+ * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
- *
- *    By default, this media query affects:
- *    ✘ below minimum UI
- *    ✘ tiny
- *    ✘ small
- *    ✓ medium
- *    ✓ large
- *    ✓ huge
- *    ✓ above maximum UI width
  */
-@mixin min-screen-size($specified-range) {
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
-    $lower-bound: map-get($screen-size-range, lower-bound);
+@mixin min-viewport-width($specified-range) {
+  @if map-has-key($viewport-width-ranges, $specified-range) {
+    $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
+    $lower-bound: map-get($viewport-width-range, lower-bound);
 
     @if unit($lower-bound) != 'px' {
       @if unit($lower-bound) == 'rem' {
@@ -247,25 +253,16 @@ Viewport size-specific styles can be applied in 5 different ways:
 }
 
 /**
- * @mixin above-screen-size()
- * Apply styling only at screen sizes above the upper bound of the
+ * @mixin above-viewport-width()
+ * Apply styling only at viewport widths above the upper bound of the
  * specified range
- * @param {map-key} $sprecified-range
+ * @param {map-key} $specified-range
  * from ./config/breakpoints or custom theme file
- *
- *    By default, this media query affects:
- *    ✘ below minimum UI
- *    ✘ tiny
- *    ✘ small
- *    ✘ medium
- *    ✓ large
- *    ✓ huge
- *    ✓ above maximum UI width
  */
-@mixin above-screen-size($specified-range) {
-  @if map-has-key($screen-size-ranges, $specified-range) {
-    $screen-size-range: map-get($screen-size-ranges, $specified-range);
-    $upper-bound: map-get($screen-size-range, upper-bound);
+@mixin above-viewport-width($specified-range) {
+  @if map-has-key($viewport-width-ranges, $specified-range) {
+    $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
+    $upper-bound: map-get($viewport-width-range, upper-bound);
 
     @if unit($upper-bound) != 'px' {
       @if unit($upper-bound) == 'rem' {

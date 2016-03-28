@@ -27,7 +27,7 @@
     right: $ui-gutter;
   }
 
-	// Prevent vw padding from shrinking at screen sizes below minimum ui width
+	// Prevent vw padding from shrinking at viewport widths below minimum ui width
 	@media screen and (max-width: $ui-min-width) {
 		@if unit($ui-min-width) != 'rem' {
       @if unit($ui-min-width) == 'px' {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	// Prevent vw padding from enlarging at screen sizes above maximum ui width
+	// Prevent vw padding from enlarging at viewport widths above maximum ui width
 	@media screen and (min-width: $ui-max-width) {
 		@if unit($ui-max-width) != 'rem' {
       @if unit($ui-max-width) == 'px' {

@@ -36,7 +36,7 @@
 
     border-bottom: 4px solid $grey-n00;
 
-    @include min-screen-size(medium) {
+    @include min-viewport-width(medium) {
       padding-top: 2.36em;
 
       .width-constraint {
@@ -71,7 +71,7 @@
 
     padding-top: 2em;
 
-    @include min-screen-size(medium) {
+    @include min-viewport-width(medium) {
       display: flex;
       align-items: flex-start;
 
@@ -85,7 +85,7 @@
 
       @include hide;
 
-      @include min-screen-size(medium) {
+      @include min-viewport-width(medium) {
         @include show;
 
         flex: 1 0 25%;
@@ -126,7 +126,7 @@
     }
 
     .content {
-      @include min-screen-size(medium) {
+      @include min-viewport-width(medium) {
         padding: 0 0 0 3.82vw;
       }
 
@@ -167,15 +167,15 @@
 
             border: 1px solid $grey-n03;
 
-            // @include min-screen-size(small) {
+            // @include min-viewport-width(small) {
             //   @include tiles(2);
             // }
             //
-            // @include min-screen-size(medium) {
+            // @include min-viewport-width(medium) {
             //   @include tiles(3);
             // }
             //
-            // @include min-screen-size(huge) {
+            // @include min-viewport-width(huge) {
             //   @include tiles(4);
             // }
 
@@ -187,7 +187,7 @@
               height: 3.82em;
               margin-bottom: 1em;
 
-              @include min-screen-size(small) {
+              @include min-viewport-width(small) {
                 height: 6.18em;
                 margin-bottom: 0;
               }
@@ -206,7 +206,7 @@
           .open.button {
             margin-bottom: 0;
 
-            @include max-screen-size(tiny) {
+            @include max-viewport-width(tiny) {
               display: block;
               margin-right: 0;
             }
@@ -271,43 +271,43 @@
     .range {
       @include hide;
 
-      @include below-screen-size(tiny) {
+      @include below-viewport-width(tiny) {
         &.below-min {
           @include show(inline);
         }
       }
 
-      @include at-screen-size(tiny) {
+      @include at-viewport-width(tiny) {
         &.tiny {
           @include show(inline);
         }
       }
 
-      @include at-screen-size(small) {
+      @include at-viewport-width(small) {
         &.small {
           @include show(inline);
         }
       }
 
-      @include at-screen-size(medium) {
+      @include at-viewport-width(medium) {
         &.medium {
           @include show(inline);
         }
       }
 
-      @include at-screen-size(large) {
+      @include at-viewport-width(large) {
         &.large {
           @include show(inline);
         }
       }
 
-      @include at-screen-size(huge) {
+      @include at-viewport-width(huge) {
         &.huge {
           @include show(inline);
         }
       }
 
-      @include above-screen-size(huge) {
+      @include above-viewport-width(huge) {
         &.above-max {
           @include show(inline);
         }

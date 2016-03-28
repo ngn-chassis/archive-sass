@@ -1,4 +1,4 @@
-@mixin global-typography-rules($upper-bound, $include-bottom-margin: false) {
+@mixin global-typography-rules($upper-bound) {
   $root-font-size: get-font-size(root, $upper-bound);
   $root-line-height: get-line-height(root, $upper-bound);
 
@@ -86,16 +86,16 @@
 // If true, calculated margin rule will be added
 @mixin font-size($alias, $multiplier: 1, $has-margin: false) {
 
-  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
-    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ( get-font-size($alias, $upper-bound) * $multiplier );
     $line-height: ( get-line-height($alias, $upper-bound) * $multiplier );
 
     @if $index == 1 {
-      @include max-screen-size($range-semantic-name) {
+      @include max-viewport-width($range-semantic-name) {
         font-size: $font-size;
         line-height: $line-height;
 
@@ -103,8 +103,8 @@
           margin-bottom: ( $line-height / get-font-size(root, $upper-bound) ) * 1em;
         }
       }
-    } @elseif $index == length($screen-size-ranges) {
-      @include min-screen-size($range-semantic-name) {
+    } @elseif $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
         font-size: $font-size;
         line-height: $line-height;
 
@@ -113,7 +113,7 @@
         }
       }
     } @else {
-      @include at-screen-size($range-semantic-name) {
+      @include at-viewport-width($range-semantic-name) {
         font-size: $font-size;
         line-height: $line-height;
 
@@ -139,9 +139,9 @@
 @mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false) {
 
   // TODO: Figure out whether this loop is actually necessary
-  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
-    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
@@ -184,9 +184,9 @@
 @mixin block-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
 
   // TODO: Figure out whether this loop is actually necessary
-  @each $range-semantic-name, $range-bounds in $screen-size-ranges {
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
-    $index: index(map-keys($screen-size-ranges), $range-semantic-name);
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
