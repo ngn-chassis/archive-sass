@@ -20,6 +20,11 @@
 @import 'chassis/reset';
 @import 'chassis/helpers';
 
+// Used to set default font-size, line-height, and margin values for
+// mobile-first media-queries
+$first-viewport-width-range: nth(map-keys($viewport-width-ranges), 1);
+$first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-ranges), 1), upper-bound);
+
 // Chassis Core ----------------------------------------------------------------
 
 html {
@@ -29,11 +34,6 @@ html {
 }
 
 .chassis {
-  // Used to set default font-size, line-height, and margin values for
-  // mobile-first media-queries
-  $first-viewport-width-range: nth(map-keys($viewport-width-ranges), 1);
-  $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-ranges), 1), upper-bound);
-
   min-width: $ui-min-width;
 
   margin: 0;

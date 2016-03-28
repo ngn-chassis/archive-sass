@@ -449,194 +449,193 @@ section, summary {
       .chassis textarea {
         line-height: 31px; } }
 
-.showroom .modal {
-  align-self: flex-start;
-  padding: 1.618em;
-  border-radius: 0.24063em; }
-  .showroom .modal footer {
-    text-align: right; }
-    .showroom .modal footer .button {
-      margin-bottom: 0; }
-      .showroom .modal footer .button:last-child {
-        margin-right: 0; }
-
-.showroom > header {
-  padding: 1.46em 0 .90169942em;
-  border-bottom: 4px solid #ededed; }
-  @media screen and (min-width: 768px) {
-    .showroom > header {
-      padding-top: 2.36em; }
-      .showroom > header .width-constraint, .showroom > header main {
-        display: flex; } }
-  .showroom > header h1 {
-    flex: 1;
-    margin: 0;
-    color: #a9aaae; }
-    @media screen and (max-width: 511px) {
-      .showroom > header h1 {
-        font-size: 19px;
-        line-height: 31px; } }
-    @media screen and (min-width: 512px) and (max-width: 767px) {
-      .showroom > header h1 {
-        font-size: 20px;
-        line-height: 32px; } }
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-      .showroom > header h1 {
-        font-size: 22px;
-        line-height: 36px; } }
-    @media screen and (min-width: 1024px) and (max-width: 1199px) {
-      .showroom > header h1 {
-        font-size: 23px;
-        line-height: 37px; } }
-    @media screen and (min-width: 1200px) {
-      .showroom > header h1 {
-        font-size: 24px;
-        line-height: 39px; } }
-  .showroom > header .links {
-    display: flex;
-    align-items: center; }
-    .showroom > header .links a {
-      margin-left: 1em; }
-      .showroom > header .links a:first-child {
-        margin-left: 0; }
-
-.showroom main {
-  padding-top: 2em; }
-  @media screen and (min-width: 768px) {
-    .showroom main {
-      display: flex;
-      align-items: flex-start;
-      padding-top: 3.82em; } }
-  .showroom main .sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    margin: 0; }
+.showroom {
+  padding-bottom: 3em; }
+  .showroom .modal {
+    align-self: flex-start;
+    padding: 1.618em;
+    border-radius: 0.24063em; }
+    .showroom .modal footer {
+      text-align: right; }
+      .showroom .modal footer .button {
+        margin-bottom: 0; }
+        .showroom .modal footer .button:last-child {
+          margin-right: 0; }
+  .showroom > header {
+    padding: 1.46em 0 .90169942em;
+    border-bottom: 4px solid #ededed; }
     @media screen and (min-width: 768px) {
-      .showroom main .sidebar {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        flex: 1 0 25%;
-        margin: 0 0 1.61803em 0; } }
-    .showroom main .sidebar nav a {
-      display: block;
-      padding: 0 0.80902em;
-      line-height: 2.61803em; }
-      .showroom main .sidebar nav a:not(:first-child) {
-        box-shadow: 0 -1px 0 0 #dadbdd; }
-      .showroom main .sidebar nav a:hover {
-        box-shadow: none;
-        color: white;
-        text-decoration: none; }
-        .showroom main .sidebar nav a:hover + a {
-          box-shadow: none; }
-  @media screen and (min-width: 768px) {
-    .showroom main .content {
-      padding: 0 0 0 3.82vw; } }
-  .showroom main .content > section h1 {
-    box-shadow: inset 0 -1px 0 0 #d1d2d4; }
-  .showroom main .content > section.buttons .button.green {
-    background: lime; }
-    .showroom main .content > section.buttons .button.green:hover {
-      background: #0aff0a; }
-    .showroom main .content > section.buttons .button.green:active {
-      background: #00f500; }
-    .showroom main .content > section.buttons .button.green.disabled {
-      background: #a8faa8; }
-  .showroom main .content > section.flex-tiles .tiles {
-    padding: 1em 1em 0;
-    border: 1px solid #d1d2d4; }
-    .showroom main .content > section.flex-tiles .tiles .tile {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 3.82em;
-      margin-bottom: 1em;
-      background: #ededed; }
-      @media screen and (min-width: 512px) {
-        .showroom main .content > section.flex-tiles .tiles .tile {
-          height: 6.18em;
-          margin-bottom: 0; } }
-      .showroom main .content > section.flex-tiles .tiles .tile:before {
-        content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
-        display: block; }
-  .showroom main .content > section.modals .open.button {
-    margin-bottom: 0; }
-    @media screen and (max-width: 511px) {
-      .showroom main .content > section.modals .open.button {
-        display: block;
-        margin-right: 0; } }
-  .showroom main .content pre.code {
-    margin: 0 0 1.61803em 0;
-    padding: 0.5em 1em;
-    background: #fafafa;
-    box-shadow: 0 0 0 1px #d1d2d4;
-    border-radius: 0 0.24063em 0.24063em 0;
-    font-family: Consolas, Courier New, monospace;
-    white-space: pre-wrap;
-    word-wrap: break-word; }
-    .showroom main .content pre.code:before {
-      display: block;
+      .showroom > header {
+        padding-top: 2.36em; }
+        .showroom > header .width-constraint, .showroom > header main {
+          display: flex; } }
+    .showroom > header h1 {
+      flex: 1;
+      margin: 0;
       color: #a9aaae; }
-    .showroom main .content pre.code.html:before {
-      content: 'HTML:'; }
-    .showroom main .content pre.code.sass:before {
-      content: 'SASS:'; }
-    .showroom main .content pre.code.javascript:before {
-      content: 'JavaScript:'; }
-
-.showroom > footer {
-  display: block;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1em 0;
-  background: white;
-  box-shadow: inset 0 1px 0 0 #a9aaae;
-  text-align: center; }
-  .showroom > footer .label {
-    font-weight: bold; }
-  .showroom > footer .range {
-    display: none;
-    visibility: hidden;
-    opacity: 0; }
-    @media screen and (max-width: 319px) {
-      .showroom > footer .range.below-min {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 320px) and (max-width: 511px) {
-      .showroom > footer .range.tiny {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 512px) and (max-width: 767px) {
-      .showroom > footer .range.small {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-      .showroom > footer .range.medium {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 1024px) and (max-width: 1199px) {
-      .showroom > footer .range.large {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 1200px) and (max-width: 1440px) {
-      .showroom > footer .range.huge {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
-    @media screen and (min-width: 1441px) {
-      .showroom > footer .range.above-max {
-        display: inline;
-        visibility: visible;
-        opacity: 1; } }
+      @media screen and (max-width: 511px) {
+        .showroom > header h1 {
+          font-size: 19px;
+          line-height: 31px; } }
+      @media screen and (min-width: 512px) and (max-width: 767px) {
+        .showroom > header h1 {
+          font-size: 20px;
+          line-height: 32px; } }
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .showroom > header h1 {
+          font-size: 22px;
+          line-height: 36px; } }
+      @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        .showroom > header h1 {
+          font-size: 23px;
+          line-height: 37px; } }
+      @media screen and (min-width: 1200px) {
+        .showroom > header h1 {
+          font-size: 24px;
+          line-height: 39px; } }
+    .showroom > header .links {
+      display: flex;
+      align-items: center; }
+      .showroom > header .links a {
+        margin-left: 1em; }
+        .showroom > header .links a:first-child {
+          margin-left: 0; }
+  .showroom main {
+    padding-top: 2em; }
+    @media screen and (min-width: 768px) {
+      .showroom main {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 3.82em; } }
+    .showroom main .sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+      margin: 0; }
+      @media screen and (min-width: 768px) {
+        .showroom main .sidebar {
+          display: block;
+          visibility: visible;
+          opacity: 1;
+          flex: 1 0 25%;
+          margin: 0 0 1.61803em 0; } }
+      .showroom main .sidebar nav a {
+        display: block;
+        padding: 0 0.80902em;
+        line-height: 2.61803em; }
+        .showroom main .sidebar nav a:not(:first-child) {
+          box-shadow: 0 -1px 0 0 #dadbdd; }
+        .showroom main .sidebar nav a:hover {
+          box-shadow: none;
+          color: white;
+          text-decoration: none; }
+          .showroom main .sidebar nav a:hover + a {
+            box-shadow: none; }
+    @media screen and (min-width: 768px) {
+      .showroom main .content {
+        padding: 0 0 0 3.82vw; } }
+    .showroom main .content > section h1 {
+      box-shadow: inset 0 -1px 0 0 #d1d2d4; }
+    .showroom main .content > section.buttons .button.green {
+      background: lime; }
+      .showroom main .content > section.buttons .button.green:hover {
+        background: #0aff0a; }
+      .showroom main .content > section.buttons .button.green:active {
+        background: #00f500; }
+      .showroom main .content > section.buttons .button.green.disabled {
+        background: #a8faa8; }
+    .showroom main .content > section.flex-tiles .tiles {
+      padding: 1em 1em 0;
+      border: 1px solid #d1d2d4; }
+      .showroom main .content > section.flex-tiles .tiles .tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.82em;
+        margin-bottom: 1em;
+        background: #ededed; }
+        @media screen and (min-width: 512px) {
+          .showroom main .content > section.flex-tiles .tiles .tile {
+            height: 6.18em;
+            margin-bottom: 0; } }
+        .showroom main .content > section.flex-tiles .tiles .tile:before {
+          content: "Tile " counter(CHASSIS_FLEX_TILE_COUNTER);
+          display: block; }
+    .showroom main .content > section.modals .open.button {
+      margin-bottom: 0; }
+      @media screen and (max-width: 511px) {
+        .showroom main .content > section.modals .open.button {
+          display: block;
+          margin-right: 0; } }
+    .showroom main .content pre.code {
+      margin: 0 0 1.61803em 0;
+      padding: 0.5em 1em;
+      background: #fafafa;
+      box-shadow: 0 0 0 1px #d1d2d4;
+      border-radius: 0 0.24063em 0.24063em 0;
+      font-family: Consolas, Courier New, monospace;
+      white-space: pre-wrap;
+      word-wrap: break-word; }
+      .showroom main .content pre.code:before {
+        display: block;
+        color: #a9aaae; }
+      .showroom main .content pre.code.html:before {
+        content: 'HTML:'; }
+      .showroom main .content pre.code.sass:before {
+        content: 'SASS:'; }
+      .showroom main .content pre.code.javascript:before {
+        content: 'JavaScript:'; }
+  .showroom > footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0;
+    background: white;
+    box-shadow: inset 0 1px 0 0 #a9aaae;
+    text-align: center; }
+    .showroom > footer .label {
+      font-weight: bold; }
+    .showroom > footer .range {
+      display: none;
+      visibility: hidden;
+      opacity: 0; }
+      @media screen and (max-width: 319px) {
+        .showroom > footer .range.below-min {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 320px) and (max-width: 511px) {
+        .showroom > footer .range.tiny {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 512px) and (max-width: 767px) {
+        .showroom > footer .range.small {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .showroom > footer .range.medium {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        .showroom > footer .range.large {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        .showroom > footer .range.huge {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }
+      @media screen and (min-width: 1441px) {
+        .showroom > footer .range.above-max {
+          display: inline;
+          visibility: visible;
+          opacity: 1; } }

@@ -11,6 +11,8 @@
 // @import 'plugins/detailer/ui-components/tiles';
 
 .showroom {
+  // Account for sticky footer
+  padding-bottom: 3em;
 
   .modal {
     align-self: flex-start;
