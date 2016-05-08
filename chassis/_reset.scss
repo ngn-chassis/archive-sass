@@ -66,3 +66,9 @@ section, summary {
 //
 //   white-space: nowrap;
 // }
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
