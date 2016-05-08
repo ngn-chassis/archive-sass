@@ -1,0 +1,399 @@
+@import 'chassis/constants/colors';
+@import 'chassis/constants/typography';
+
+@import 'chassis/config/breakpoints';
+@import 'chassis/config/typography';
+@import 'chassis/config/layout';
+@import 'chassis/config/z-index';
+
+@import 'chassis/functions/math';
+@import 'chassis/functions/unit-conversion';
+
+@import 'chassis/mixins/media-queries';
+@import 'chassis/mixins/misc';
+@import 'chassis/mixins/flex-layout';
+
+@import 'chassis/typography/definitions';
+@import 'chassis/typography/functions';
+@import 'chassis/typography/mixins';
+
+@import 'chassis/reset';
+@import 'chassis/helpers';
+
+// Used to set default font-size, line-height, and margin values for
+// mobile-first media-queries
+$first-viewport-width-range: nth(map-keys($viewport-width-ranges), 1);
+$first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-ranges), 1), upper-bound);
+
+// Chassis Core ----------------------------------------------------------------
+
+html {
+  @if variable-exists(root-bg-color) {
+    background: $root-bg-color;
+  }
+}
+
+.chassis {
+  min-width: $ui-min-width;
+
+  margin: 0;
+  padding: 0;
+
+  font: {
+    size: get-font-size(root, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(font-family) {
+      family: $font-family;
+    }
+    @if variable-exists(font-weight-defs) {
+      weight: $regular;
+    }
+    @if variable-exists(font-style) {
+      style: $font-style;
+    } @else {
+      style: normal;
+    }
+    @if variable-exists(font-variant) {
+      variant: $font-variant;
+    } @else {
+      variant: normal;
+    }
+  }
+
+  line-height: get-line-height(root, $first-viewport-width-range-upper-bound);
+
+  @if variable-exists(text-color) {
+    color: $text-color;
+  }
+
+  @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+    a:not(.button) {
+      @if $link-fonts != $font-family {
+        font-family: $link-fonts;
+      }
+
+      font: {
+        @if $link-fonts != $font-family {
+          family: $link-fonts;
+        }
+        @if $link-weight != $font-weight {
+          weight: $link-weight;
+        }
+        @if $link-style != $font-style {
+          style: $link-style;
+        }
+        @if $link-variant != $font-variant {
+          variant: $link-variant;
+        }
+      }
+
+      text: {
+        decoration: $link-decoration;
+        transform: $link-transform;
+      }
+
+      @if $link-color != $text-color {
+        color: $link-color;
+
+        &:link {
+          color: $link-color;
+        }
+      }
+
+      &:visited {
+        @if $visited-link-weight != $link-weight {
+          font-weight: $visited-link-weight;
+        }
+        @if $visited-link-style != $link-style {
+          font-style: $visited-link-style;
+        }
+        @if $visited-link-variant != $link-variant {
+          font-variant: $visited-link-variant;
+        }
+        @if $visited-link-decoration != $link-decoration {
+          text-decoration: $visited-link-decoration;
+        }
+        @if $visited-link-transform != $link-transform {
+          text-transform: $visited-link-transform;
+        }
+        @if $visited-link-color != $link-color {
+          color: $visited-link-color;
+        }
+      }
+
+      &:hover {
+        @if $hover-link-fonts != $link-fonts {
+          font-family: $hover-link-fonts;
+        }
+        @if $hover-link-weight != $link-weight {
+          font-weight: $hover-link-weight;
+        }
+        @if $hover-link-style != $link-style {
+          font-style: $hover-link-style;
+        }
+        @if $hover-link-variant != $link-variant {
+          font-variant: $hover-link-variant;
+        }
+        @if $hover-link-decoration != $link-decoration {
+          text-decoration: $hover-link-decoration;
+        }
+        @if $hover-link-transform != $link-transform {
+          text-transform: $hover-link-transform;
+        }
+        @if $hover-link-color != $link-color {
+          color: $hover-link-color;
+        }
+      }
+
+      &:active {
+        @if $active-link-fonts != $link-fonts {
+          font-family: $active-link-fonts;
+        }
+        @if $active-link-weight != $link-weight {
+          font-weight: $active-link-weight;
+        }
+        @if $active-link-style != $link-style {
+          font-style: $active-link-style;
+        }
+        @if $active-link-variant != $link-variant {
+          font-variant: $active-link-variant;
+        }
+        @if $active-link-decoration != $link-decoration {
+          text-decoration: $active-link-decoration;
+        }
+        @if $active-link-transform != $link-transform {
+          text-transform: $active-link-transform;
+        }
+        @if $active-link-color != $link-color {
+          color: $active-link-color;
+        }
+      }
+
+      &.disabled {
+        @if $disabled-link-weight != $link-weight {
+          font-weight: $disabled-link-weight;
+        }
+        @if $disabled-link-style != $link-style {
+          font-style: $disabled-link-style;
+        }
+        @if $disabled-link-variant != $link-variant {
+          font-variant: $disabled-link-variant;
+        }
+        @if $disabled-link-decoration != $link-decoration {
+          text-decoration: $disabled-link-decoration;
+        }
+        @if $disabled-link-transform != $link-transform {
+          text-transform: $disabled-link-transform;
+        }
+        @if $disabled-link-color != $link-color {
+          color: $disabled-link-color;
+        }
+
+        @extend %disable-pointer-events;
+      }
+    }
+  }
+
+  h1 {
+    font-size: get-initial-heading-font-size($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h1-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h1-fonts != $font-family {
+        font-family: $h1-fonts;
+      }
+      font: {
+        weight: $h1-weight;
+        style: $h1-style;
+        variant: $h1-variant;
+      }
+
+      @if $h1-color != $text-color {
+        color: $h1-color;
+      }
+
+      text-transform: $h1-transform;
+      text-decoration: $h1-decoration;
+    }
+  }
+
+  h2 {
+    font-size: get-initial-heading-font-size($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h2-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h2-fonts != $font-family {
+        font-family: $h2-fonts;
+      }
+      font: {
+        weight: $h2-weight;
+        style: $h2-style;
+        variant: $h2-variant;
+      }
+
+      @if $h2-color != $text-color {
+        color: $h2-color;
+      }
+
+      text-transform: $h2-transform;
+      text-decoration: $h2-decoration;
+    }
+  }
+
+  h3 {
+    font-size: get-initial-heading-font-size($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h3-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h3-fonts != $font-family {
+        font-family: $h3-fonts;
+      }
+      font: {
+        weight: $h3-weight;
+        style: $h3-style;
+        variant: $h3-variant;
+      }
+
+      @if $h3-color != $text-color {
+        color: $h3-color;
+      }
+
+      text-transform: $h3-transform;
+      text-decoration: $h3-decoration;
+    }
+  }
+
+  h4 {
+    font-size: get-initial-heading-font-size($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h4-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h4-fonts != $font-family {
+        font-family: $h4-fonts;
+      }
+      font: {
+        weight: $h4-weight;
+        style: $h4-style;
+        variant: $h4-variant;
+      }
+
+      @if $h4-color != $text-color {
+        color: $h4-color;
+      }
+
+      text-transform: $h4-transform;
+      text-decoration: $h4-decoration;
+    }
+  }
+
+  h5 {
+    font-size: get-initial-heading-font-size($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h5-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h5-fonts != $font-family {
+        font-family: $h5-fonts;
+      }
+      font: {
+        weight: $h5-weight;
+        style: $h5-style;
+        variant: $h5-variant;
+      }
+
+      @if $h5-color != $text-color {
+        color: $h5-color;
+      }
+
+      text-transform: $h5-transform;
+      text-decoration: $h5-decoration;
+    }
+  }
+
+  h6 {
+    font-size: get-initial-heading-font-size($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($h6-font-size-alias, $first-viewport-width-range-upper-bound);
+
+    @if variable-exists(CHASSIS_DETAILER_INCLUDED) and $CHASSIS_DETAILER_INCLUDED {
+      @if $h6-fonts != $font-family {
+        font-family: $h6-fonts;
+      }
+      font: {
+        weight: $h6-weight;
+        style: $h6-style;
+        variant: $h6-variant;
+      }
+
+      @if $h6-color != $text-color {
+        color: $h6-color;
+      }
+
+      text-transform: $h6-transform;
+      text-decoration: $h6-decoration;
+    }
+  }
+
+  legend {
+    font-size: get-initial-heading-font-size($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    line-height: get-initial-heading-line-height($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+    margin-bottom: get-initial-heading-margin-bottom($form-legend-font-size-alias, $first-viewport-width-range-upper-bound);
+  }
+
+  // Container Elements
+  section,
+  nav,
+  form {
+    margin-bottom: ( ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * $type-scale-ratio ) * 1em;
+  }
+
+  // Inner Elements
+  section section,
+  nav section,
+  section nav,
+  nav nav,
+  article,
+  p,
+  fieldset,
+  figure,
+  pre,
+  blockquote,
+  table,
+  canvas,
+  embed {
+    margin-bottom: ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * 1em;
+  }
+
+  // Auto Typography -----------------------------------------------------------
+
+  // Loops through each viewport-width range, as specified in `config/breakpoints`.
+  // Uses global-typography-rules mixin to set appropriate typography rules at
+  // each viewport-width range.
+  // This is determined by checking the upper-bound of the current viewport-width
+  // range against preset golden-ratio typography rules and selecting the
+  // corresponding rules.
+
+  // Typography Rule definitions can be found in `typography/definitions`.
+
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
+
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    @if $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
+        @include global-typography-rules($upper-bound);
+      }
+    } @elseif $index != 1 {
+      @include at-viewport-width($range-semantic-name) {
+        @include global-typography-rules($upper-bound);
+      }
+    }
+
+  }
+
+}
