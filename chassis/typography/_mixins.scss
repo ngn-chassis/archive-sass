@@ -137,41 +137,67 @@
 // of text content, such as a textarea or a contentEditable container
 
 @mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false) {
+  $old-font-size: null;
 
-  // TODO: Figure out whether this loop is actually necessary
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
-
     $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
     $base-line-height: ($font-size * $type-scale-ratio);
 
-    @if not ( variable-exists(margin) ) and $has-margin {
-      $margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
-      margin: $margin;
-    }
+    @if $font-size != $old-font-size {
+      @if $index == 1 {
 
-    @if not ( variable-exists(padding) ) and $has-padding {
+        @if $has-margin {
+          margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
+        }
 
-      @if $multi-line {
-        $padding: ( ( ( $base-line-height * $type-scale-ratio ) - $base-line-height ) / 2 ) ( $base-line-height / 2 );
-        padding: $padding;
+        @if $has-padding {
+
+          @if $multi-line {
+            padding: ( ( ( $base-line-height * $type-scale-ratio ) - $base-line-height ) / 2 ) ( $base-line-height / 2 );
+          } @else {
+            padding: 0 ( $base-line-height / 2 );
+          }
+        }
+
+        @if $multi-line {
+          line-height: $base-line-height;
+        } @else {
+          line-height: ( $base-line-height * $type-scale-ratio );
+        }
+
       } @else {
-        $padding: 0 ( $base-line-height / 2 );
-        padding: $padding;
+
+        @include min-viewport-width($range-semantic-name) {
+          @if $has-margin {
+            margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
+          }
+
+          @if $has-padding {
+
+            @if $multi-line {
+              padding: ( ( ( $base-line-height * $type-scale-ratio ) - $base-line-height ) / 2 ) ( $base-line-height / 2 );
+            } @else {
+              padding: 0 ( $base-line-height / 2 );
+            }
+          }
+
+          @if $multi-line {
+            line-height: $base-line-height;
+          } @else {
+            @if not variable-exists(adjusted-line-height) {
+              $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
+              line-height: $adjusted-line-height;
+            }
+          }
+        }
+
       }
     }
 
-    @if $multi-line {
-      line-height: $base-line-height;
-    } @else {
-      @if not variable-exists(adjusted-line-height) {
-        $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
-        line-height: $adjusted-line-height;
-      }
-    }
-
+    $old-font-size: $font-size;
   }
 
 }
@@ -182,8 +208,8 @@
 // Margin and padding are calculated using GR Typography rules
 
 @mixin block-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
-
-  // TODO: Figure out whether this loop is actually necessary
+  $old-font-size: null;
+  
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
     $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
@@ -192,16 +218,35 @@
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
     $line-height: ($font-size * $type-scale-ratio);
 
-    @if not ( variable-exists(margin) ) and $has-margin {
-      $margin: 0 0 $line-height 0;
-      margin: $margin;
+    @if $font-size != $old-font-size {
+      @if $index == 1 {
+
+        @if $has-margin {
+          margin: 0 0 $line-height 0;
+        }
+
+        @if $has-padding {
+          padding: ( ( $line-height / $type-scale-ratio ) / 2 ) 1em;
+        }
+
+      } @else {
+
+        @include min-viewport-width($range-semantic-name) {
+          @if not ( variable-exists(margin) ) and $has-margin {
+            $margin: 0 0 $line-height 0;
+            margin: $margin;
+          }
+
+          @if not ( variable-exists(padding) ) and $has-padding {
+            $padding: ( ( $line-height / $type-scale-ratio ) / 2 ) 1em;
+            padding: $padding;
+          }
+        }
+
+      }
     }
 
-    @if not ( variable-exists(padding) ) and $has-padding {
-      $padding: ( ( $line-height / $type-scale-ratio ) / 2 ) 1em;
-      padding: $padding;
-    }
-
+    $old-font-size: $font-size;
   }
 
 }
