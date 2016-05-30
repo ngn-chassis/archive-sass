@@ -36,3 +36,14 @@
 %disable-pointer-events {
 	@include disable-pointer-events;
 }
+
+// Ellipsis
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+%ellipsis {
+  @include ellipsis;
+}
