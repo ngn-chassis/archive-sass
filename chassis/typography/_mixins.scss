@@ -48,12 +48,11 @@
   }
 
   // Inner Elements
-  section section,
+  // section section,
   nav section,
   section nav,
   nav nav,
   article,
-  p,
   fieldset,
   figure,
   pre,
@@ -62,6 +61,10 @@
   canvas,
   embed {
     margin-bottom: ( get-line-height(root, $upper-bound) / get-font-size(root, $upper-bound) ) * 1em;
+  }
+  
+  p {
+    margin-bottom: 1em;
   }
 
   input,

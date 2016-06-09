@@ -85,12 +85,11 @@ $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-
   }
 
   // Inner Elements
-  section section,
+  // section section,
   nav section,
   section nav,
   nav nav,
   article,
-  p,
   fieldset,
   figure,
   pre,
@@ -99,6 +98,10 @@ $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-
   canvas,
   embed {
     margin-bottom: ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * 1em;
+  }
+  
+  p {
+    margin-bottom: 1em;
   }
 
   // Auto Typography -----------------------------------------------------------
