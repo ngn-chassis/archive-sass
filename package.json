@@ -1,6 +1,6 @@
 {
   "name": "chassis-sass",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Sass-based layout engine for NGN Chassis framework",
   "main": "index.js",
   "scripts": {
