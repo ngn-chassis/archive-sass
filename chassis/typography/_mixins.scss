@@ -1,3 +1,14 @@
+// NGN Chassis 
+// :: Typography Mixins
+
+/**
+ * @mixin global-typography-rules
+ * Generate default typography rules for standard elements
+ * This mixin is used in the chassis-sass core package to establish typography
+ * rules at each breakpoint
+ * @param {var} $upper-bound
+ * Upper Bound of the current viewport-width-range
+ */
 @mixin global-typography-rules($upper-bound) {
   $root-font-size: get-font-size(root, $upper-bound);
   $root-line-height: get-line-height(root, $upper-bound);
@@ -78,15 +89,18 @@
 
 }
 
-// Used to set an element to a calculated golden-ratio font-size and line-height;
-// Includes the ability to add a GR calculated margin as well
-// params:
-// { alias } string
-// Possible values (from ./definitions):
-// small, root, large, larger, largest
-// { multiplier } int
-// { has-margin }
-// If true, calculated margin rule will be added
+
+/**
+ * @mixin font-size
+ * Sets font-size and line-height, and optionally margin-bottom, on an element
+ * based on Golden Ratio Typography rules, in ems
+ * @param {string} $alias
+ * Name of font-size alias (as defined in ./definitions)
+ * @param {int} $multiplier
+ * Integer to multiply calculated property values by
+ * @param {bool} $has-margin
+ * Determines whether or not to add a calculated bottom-margin property
+ */
 @mixin font-size($alias, $multiplier: 1, $has-margin: false) {
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
@@ -131,14 +145,22 @@
 
 // Typography-based Layout Mixins ----------------------------------------------
 
-// :: Inline Layout Rules
-// Used to set margin, padding, and line-height on inline elements that are not
-// just plain text. ie: buttons, form fields, tags, etc.
-// Margin, padding and line-height are calculated using GR Typography rules
-
-// $multi-line bool is for elements that are inline but contain multiple lines
-// of text content, such as a textarea or a contentEditable container
-
+/**
+ * @mixin inline-layout-rules
+ * Sets margin, padding, and line-height on inline elements that are not just
+ * plain text, ie buttons, form fields, tags, etc.
+ * Values are calculated in ems using Golden Ratio Typography rules
+ * @param {string} $alias
+ * Default font-size category for this element
+ * @param {bool} $has-padding
+ * Determines whether or not to output padding rules
+ * @param {bool} $has-margin
+ * Determines whether or not to output margin rules
+ * @param {bool} $multi-line
+ * If element displays inline but can contain multiple lines of text within 
+ * itself, like a textarea or contenteditable, set this to true. This will 
+ * ensure correct line-height.
+ */
 @mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false) {
   $old-font-size: null;
 
@@ -206,10 +228,15 @@
 }
 
 
-// :: Block Layout Rules
-// Used to set margin, padding, and line-height on block elements
-// Margin and padding are calculated using GR Typography rules
-
+/**
+ * @mixin block-layout-rules
+ * Sets margin, padding, and line-height on block elements
+ * Values are calculated in ems using Golden Ratio Typography rules
+ * @param {bool} $has-padding
+ * Determines whether or not to output padding rules
+ * @param {bool} $has-margin
+ * Determines whether or not to output margin rules
+ */
 @mixin block-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
   $old-font-size: null;
   
