@@ -169,7 +169,7 @@
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
-    $base-line-height: ($font-size * $type-scale-ratio);
+    $base-line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
 
     @if $font-size != $old-font-size {
       @if $index == 1 {
@@ -246,7 +246,7 @@
     $upper-bound: map-get($range-bounds, upper-bound);
 
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
-    $line-height: ($font-size * $type-scale-ratio);
+    $line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
 
     @if $font-size != $old-font-size {
       @if $index == 1 {

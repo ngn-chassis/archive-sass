@@ -38,8 +38,14 @@
 }
 
 @function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
-  @return ( round(get-font-size($type, $upper-bound) * $type-scale-ratio) * $multiplier );
+  $font-size: get-font-size($type, $upper-bound);
+  
+  @return ( round($font-size * calculate-line-height($font-size, $upper-bound)) * $multiplier );
 }
+
+// @function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
+//   @return ( round(get-font-size($type, $upper-bound) * $type-scale-ratio) * $multiplier );
+// }
 
 // The mixins below are used to set initial typography values for headings
 
@@ -54,3 +60,38 @@
 @function get-initial-heading-margin-bottom($alias, $first-upper-bound) {
   @return ( ( get-line-height($alias, $first-upper-bound) / get-font-size($alias, $first-upper-bound) ) / $type-scale-ratio ) * 1em;
 }
+
+// NOTE: The following functions are experimental. They will form the basis of
+// the upcoming auto-line-height features.
+
+/**
+ * @function get-optimal-line-dimensions
+ * Return optimized line-height and width based on font-size and type-scale-ratio
+ * @param {px} $font-size
+ * @param {int} $ratio
+ * Type scale ratio
+ */
+@function get-optimal-line-dimensions($font-size, $ratio) {
+	$line-height-px: $font-size * $ratio;
+	$line-height-ems: (((strip-units($font-size) * $ratio) / strip-units($font-size)) * 1em);
+	
+	@return (
+		height: $line-height-ems,
+		width: (strip-units($line-height-px) * strip-units($line-height-px) * 1px)
+	);
+}
+
+/**
+ * @function calculate-line-height
+ * Returns adjusted line-height for a particular font-size and viewport-width-range
+ * @param {px} $font-size
+ * @param {px} $upper-bound
+ * viewport-width-range upper bound
+ */
+@function calculate-line-height($font-size, $upper-bound) {
+	$optimal-line: get-optimal-line-dimensions($font-size, $type-scale-ratio);
+	
+	@return ( $type-scale-ratio - ( ( 1 / ( 2 * $type-scale-ratio ) ) * ( 1 - ( $upper-bound / map-get($optimal-line, width) ) ) ) );
+}
+
+// @warn calculate-line-height(16px, 512px);
