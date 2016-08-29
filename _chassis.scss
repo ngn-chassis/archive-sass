@@ -9,6 +9,7 @@
 
 @import 'chassis/functions/math';
 @import 'chassis/functions/unit-conversion';
+@import 'chassis/functions/z-index';
 
 @import 'chassis/mixins/media-queries';
 @import 'chassis/mixins/misc';
@@ -101,7 +102,7 @@ $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-
   embed {
     margin-bottom: ( get-line-height(root, $first-viewport-width-range-upper-bound) / get-font-size(root, $first-viewport-width-range-upper-bound) ) * 1em;
   }
-  
+
   p {
     margin-bottom: 1em;
   }
