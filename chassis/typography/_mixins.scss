@@ -161,7 +161,7 @@
  * itself, like a textarea or contenteditable, set this to true. This will 
  * ensure correct line-height.
  */
-@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false) {
+@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false, $add-height-rule: false) {
   $old-font-size: null;
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
@@ -189,8 +189,14 @@
 
         @if $multi-line {
           line-height: $base-line-height;
+          @if $add-height-rule {
+            height: $base-line-height;
+          }
         } @else {
           line-height: ( $base-line-height * $type-scale-ratio );
+          @if $add-height-rule {
+            height: ( $base-line-height * $type-scale-ratio );
+          }
         }
 
       } @else {
@@ -211,10 +217,16 @@
 
           @if $multi-line {
             line-height: $base-line-height;
+            @if $add-height-rule {
+              height: $base-line-height;
+            }
           } @else {
             @if not variable-exists(adjusted-line-height) {
               $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
               line-height: $adjusted-line-height;
+              @if $add-height-rule {
+                height: $adjusted-line-height;
+              }
             }
           }
         }

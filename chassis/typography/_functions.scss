@@ -91,6 +91,8 @@
 @function calculate-line-height($font-size, $upper-bound) {
 	$optimal-line: get-optimal-line-dimensions($font-size, $type-scale-ratio);
 	
+  // Pearsonified Golden Ratio Typography line height equation
+  // www.pearsonified.com
 	@return ( $type-scale-ratio - ( ( 1 / ( 2 * $type-scale-ratio ) ) * ( 1 - ( $upper-bound / map-get($optimal-line, width) ) ) ) );
 }
 
