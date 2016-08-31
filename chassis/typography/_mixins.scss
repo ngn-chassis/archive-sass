@@ -160,6 +160,9 @@
  * If element displays inline but can contain multiple lines of text within 
  * itself, like a textarea or contenteditable, set this to true. This will 
  * ensure correct line-height.
+ * @param {bool} $add-height-rule
+ * Add height rule that matches line-height. Useful in browsers which do not
+ * resize containers in respect to line-height
  */
 @mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false, $add-height-rule: false) {
   $old-font-size: null;
