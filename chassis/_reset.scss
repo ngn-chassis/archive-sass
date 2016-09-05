@@ -3,7 +3,6 @@
 
 *, *:before, *:after { box-sizing: border-box; }
 
-// TODO: Find out if this block is still necessary
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
@@ -19,28 +18,20 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+q,
+blockquote {
+  quotes: none;
 
-caption, th, td {
-	text-align: left;
-	font-weight: normal;
-	vertical-align: middle;
-}
-
-q, blockquote {
-	quotes: none;
-}
-
-q:before, q:after, blockquote:before, blockquote:after {
-	content: "";
-	content: none;
+  &:before,
+  &:after {
+    content: "";
+  	content: none;
+  }
 }
 
 a img {
@@ -49,8 +40,19 @@ a img {
 
 // For IE and Opera Mini
 // Set default box model on HTML5 semantic elements
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav,
-section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
 	display: block;
 }
 
