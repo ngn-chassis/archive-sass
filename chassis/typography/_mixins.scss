@@ -87,7 +87,7 @@
 
 }
 
-// @mixin font-size
+// @mixin set-typography
 // Sets font-size and line-height, and optionally margin-bottom, on an element
 // based on Golden Ratio Typography rules, in ems
 // @param {string} $alias
@@ -96,7 +96,7 @@
 // Integer to multiply calculated property values by
 // @param {bool} $has-margin
 // Determines whether or not to add a calculated bottom-margin property
-@mixin font-size($alias, $multiplier: 1, $has-margin: false) {
+@mixin set-typography($alias: root, $multiplier: 1, $has-margin: false) {
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
@@ -132,6 +132,82 @@
         @if $has-margin {
           margin-bottom: ( $line-height / get-font-size(root, $upper-bound) ) * 1em;
         }
+      }
+    }
+
+  }
+}
+
+@mixin font-size($alias: root, $multiplier: 1) {
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
+
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $font-size: ( get-font-size($alias, $upper-bound) * $multiplier );
+
+    @if $index == 1 {
+      @include max-viewport-width($range-semantic-name) {
+        font-size: $font-size;
+      }
+    } @elseif $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
+        font-size: $font-size;
+      }
+    } @else {
+      @include at-viewport-width($range-semantic-name) {
+        font-size: $font-size;
+      }
+    }
+  }
+}
+
+@mixin line-height($alias: root, $multiplier: 1) {
+
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
+
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $line-height: ( get-line-height($alias, $upper-bound) * $multiplier );
+
+    @if $index == 1 {
+      @include max-viewport-width($range-semantic-name) {
+        line-height: $line-height;
+      }
+    } @elseif $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
+        line-height: $line-height;
+      }
+    } @else {
+      @include at-viewport-width($range-semantic-name) {
+        line-height: $line-height;
+      }
+    }
+
+  }
+}
+
+@mixin margin-bottom($alias: root, $multiplier: 1) {
+
+  @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
+
+    $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
+    $upper-bound: map-get($range-bounds, upper-bound);
+
+    $line-height: ( get-line-height($alias, $upper-bound) * $multiplier );
+
+    @if $index == 1 {
+      @include max-viewport-width($range-semantic-name) {
+        margin-bottom: ( $line-height / get-font-size(root, $upper-bound) ) * 1em;
+      }
+    } @elseif $index == length($viewport-width-ranges) {
+      @include min-viewport-width($range-semantic-name) {
+        margin-bottom: ( $line-height / get-font-size(root, $upper-bound) ) * 1em;
+      }
+    } @else {
+      @include at-viewport-width($range-semantic-name) {
+        margin-bottom: ( $line-height / get-font-size(root, $upper-bound) ) * 1em;
       }
     }
 
