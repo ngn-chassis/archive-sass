@@ -1,8 +1,10 @@
-// Ideal font-sizes for screen-width
-// Used to calculate line-height and width
+// NGN chassis
+// Default Typography Definitions ----------------------------------------------
 
-// Ideal font-sizes at different viewport width ranges
-// Ex. (lower bound, upper bound, font-size)
+// Default font-size values for different viewport widths
+// Each viewport width has 5 default font-sizes:
+// small, root, large, larger, largest
+
 $font-size-defs : (
   (
     lower-bound: 0px,

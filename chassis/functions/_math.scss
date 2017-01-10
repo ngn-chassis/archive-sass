@@ -1,7 +1,10 @@
 // NGN Chassis
-// Math Functions
+// Math Functions --------------------------------------------------------------
 
-// :: Exponents
+// @function exponent
+// returns passed number multiplied exponentially
+// @param {int} $base
+// @param {int} $exponent
 @function exponent($base, $exponent) {
   $value: $base;
 
@@ -20,7 +23,9 @@
   @return $value;
 }
 
-// Square Root
+// @function square-root
+// returns square-root of passed number
+// @param {int} $number
 @function square-root($number) {
   @if $number < 0 {
     @warn "Argument for `square-root()` must be a positive number!";

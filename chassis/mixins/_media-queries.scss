@@ -1,121 +1,117 @@
 // NGN Chassis
 // Media Query Mixins --------------------------------------------------------
-/*
 
-Viewport Width-specific styles can be applied in 5 different ways:
+// Viewport Width-specific styles can be applied in 5 different ways:
+//
+//   1. Targeting all Viewport Width Ranges below the specified range:
+//
+//     ```SASS
+//     @include below-viewport-width(medium) {
+//       -- your styles --
+//     }
+//     ```
+//
+//     This will target viewport widths below, but not including, the lower bound
+//     of the "medium" Viewport Width Range
+//
+//     By default, the above code would affect viewports 0px - 767px wide:
+//     ✓ below minimum UI
+//     ✓ tiny
+//     ✓ small
+//     ✘ medium
+//     ✘ large
+//     ✘ huge
+//     ✘ above maximum UI width
+//
+//  2. Targeting all Viewport Width Ranges up to, and including, the specified range:
+//
+//     ```SASS
+//     @include max-viewport-width(medium) {
+//       -- your styles --
+//     }
+//     ```
+//
+//     This will target viewport widths below, but not including, the upper bound
+//     of the "medium" Viewport Width Range
+//
+//     By default, the above code would affect viewports 0px - 1023px wide:
+//     ✓ below minimum UI width
+//     ✓ tiny
+//     ✓ small
+//     ✓ medium
+//     ✘ large
+//     ✘ huge
+//     ✘ above maximum UI width
+//
+//  3. Targeting a viewport-width range directly:
+//
+//     ```SASS
+//     @include at-viewport-width(medium) {
+//       -- your styles --
+//     }
+//     ```
+//
+//     This will target viewport widths at or above the lower bound, and below (but
+//     not including) the upper bound of the "medium" Viewport Width Range
+//
+//     By default, the above code would affect viewports 768px - 1023px wide:
+//     ✘ below minimum UI
+//     ✘ tiny
+//     ✘ small
+//     ✓ medium
+//     ✘ large
+//     ✘ huge
+//     ✘ above maximum UI width
+//
+//  4. Targeting all Viewport Width Ranges starting with the specified range and up:
+//
+//     ```SASS
+//     @include min-viewport-width(medium) {
+//       -- your styles --
+//     }
+//     ```
+//
+//     This will target viewport widths at or above the lower bound of the
+//     "medium" Viewport Width Range
+//
+//     By default, the above code would affect viewports 768px - infinite wide:
+//     ✘ below minimum UI
+//     ✘ tiny
+//     ✘ small
+//     ✓ medium
+//     ✓ large
+//     ✓ huge
+//     ✓ above maximum UI width
+//
+//  5. Targeting all Viewport Width Ranges above, but not including, the specified
+//     range:
+//
+//     ```SASS
+//     @include above-viewport-width(medium) {
+//       -- your styles --
+//     }
+//     ```
+//
+//     This will target viewport widths above the upper bound of the "medium"
+//     Viewport Width Range
+//
+//     By default, the above code would affect viewports 1025px - infinite wide:
+//     ✘ below minimum UI
+//     ✘ tiny
+//     ✘ small
+//     ✘ medium
+//     ✓ large
+//     ✓ huge
+//     ✓ above maximum UI width
 
-  1. Targeting all Viewport Width Ranges below the specified range:
-
-    ```SASS
-    @include below-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths below, but not including, the lower bound
-    of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 0px - 767px wide:
-    ✓ below minimum UI
-    ✓ tiny
-    ✓ small
-    ✘ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 2. Targeting all Viewport Width Ranges up to, and including, the specified range:
-
-    ```SASS
-    @include max-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths below, but not including, the upper bound
-    of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 0px - 1023px wide:
-    ✓ below minimum UI width
-    ✓ tiny
-    ✓ small
-    ✓ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 3. Targeting a viewport-width range directly:
-
-    ```SASS
-    @include at-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths at or above the lower bound, and below (but
-    not including) the upper bound of the "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 768px - 1023px wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✓ medium
-    ✘ large
-    ✘ huge
-    ✘ above maximum UI width
-
- 4. Targeting all Viewport Width Ranges starting with the specified range and up:
-
-    ```SASS
-    @include min-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths at or above the lower bound of the
-    "medium" Viewport Width Range
-
-    By default, the above code would affect viewports 768px - infinite wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✓ medium
-    ✓ large
-    ✓ huge
-    ✓ above maximum UI width
-
- 5. Targeting all Viewport Width Ranges above, but not including, the specified
-    range:
-
-    ```SASS
-    @include above-viewport-width(medium) {
-      -- your styles --
-    }
-    ```
-
-    This will target viewport widths above the upper bound of the "medium"
-    Viewport Width Range
-
-    By default, the above code would affect viewports 1025px - infinite wide:
-    ✘ below minimum UI
-    ✘ tiny
-    ✘ small
-    ✘ medium
-    ✓ large
-    ✓ huge
-    ✓ above maximum UI width
-
-*/
 // Mixins
 // -----------------------------------------------------------------------------
 
-/**
- * @mixin below-viewport-width()
- * Apply styling only at viewport widths below, but not including, the lower
- * bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
+// @mixin below-viewport-width
+// Apply styling only at viewport widths below, but not including, the lower
+// bound of the specified range
+// @param {map-key} $specified-range
+// from ./config/breakpoints or custom theme file
 @mixin below-viewport-width($specified-range) {
   @if map-has-key($viewport-width-ranges, $specified-range) {
     $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
@@ -140,13 +136,11 @@ Viewport Width-specific styles can be applied in 5 different ways:
   }
 }
 
-/**
- * @mixin max-viewport-width()
- * Apply styling only at viewport widths below, but not including, the upper
- * bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
+// @mixin max-viewport-width
+// Apply styling only at viewport widths below, but not including, the upper
+// bound of the specified range
+// @param {map-key} $specified-range
+// from ./config/breakpoints or custom theme file
 @mixin max-viewport-width($specified-range) {
   @if map-has-key($viewport-width-ranges, $specified-range) {
     $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
@@ -171,13 +165,11 @@ Viewport Width-specific styles can be applied in 5 different ways:
   }
 }
 
-/**
- * @mixin at-viewport-width()
- * Apply styling only at viewport widths at or above the lower bound
- * and below, but not including, the upper bound of the specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
+// @mixin at-viewport-width
+// Apply styling only at viewport widths at or above the lower bound
+// and below, but not including, the upper bound of the specified range
+// @param {map-key} $specified-range
+// from ./config/breakpoints or custom theme file
 @mixin at-viewport-width($specified-range) {
 
   @if map-has-key($viewport-width-ranges, $specified-range) {
@@ -222,12 +214,11 @@ Viewport Width-specific styles can be applied in 5 different ways:
 
 }
 
-/** @mixin min-viewport-width()
- * Apply styling only at viewport widths at or above the lower bound of the
- * specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
+// @mixin min-viewport-width
+// Apply styling only at viewport widths at or above the lower bound of the
+// specified range
+// @param {map-key} $specified-range
+// from ./config/breakpoints or custom theme file
 @mixin min-viewport-width($specified-range) {
   @if map-has-key($viewport-width-ranges, $specified-range) {
     $viewport-width-range: map-get($viewport-width-ranges, $specified-range);
@@ -252,13 +243,11 @@ Viewport Width-specific styles can be applied in 5 different ways:
   }
 }
 
-/**
- * @mixin above-viewport-width()
- * Apply styling only at viewport widths above the upper bound of the
- * specified range
- * @param {map-key} $specified-range
- * from ./config/breakpoints or custom theme file
- */
+// @mixin above-viewport-width
+// Apply styling only at viewport widths above the upper bound of the
+// specified range
+// @param {map-key} $specified-range
+// from ./config/breakpoints or custom theme file
 @mixin above-viewport-width($specified-range) {
   @if map-has-key($viewport-width-ranges, $specified-range) {
     $viewport-width-range: map-get($viewport-width-ranges, $specified-range);

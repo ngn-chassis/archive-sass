@@ -1,21 +1,39 @@
-// Chassis Unit Conversion Functions
+// NGN Chassis
+// Unit Conversion Functions ---------------------------------------------------
 
-// Strip Units
+// @function strip-units
+// Strip units from passed value and return integer
+// @param $value
 @function strip-units($value) {
   @return $value / ($value * 0 + 1);
 }
 
-@function px-to-em($new-value, $base: $typography-base) {
+// @function px-to-em
+// Convert pixels to ems
+// @param $value
+// @param $base
+// reference for em value
+@function px-to-em($value, $base: $typography-base) {
 	@if $base == 0 { @return 0 }
-	@return $new-value / $base * 1em;
+	@return $value / $base * 1em;
 }
 
-@function px-to-rem($new-value, $base: $typography-base) {
+// @function px-to-rem
+// Convert pixels to rems
+// @param $value
+// @param $base
+// reference for rem value
+@function px-to-rem($value, $base: $typography-base) {
 	@if $base == 0 { @return 0 }
-	@return $new-value / $base * 1rem;
+	@return $value / $base * 1rem;
 }
 
-@function rem-to-px($new-value, $base: $typography-base) {
+// @function rem-to-px
+// Convert rems to pixels
+// @param $value
+// @param $base
+// reference for pixel value
+@function rem-to-px($value, $base: $typography-base) {
   @if $base == 0 { @return 0 }
-  @return ( strip-units($new-value) * $base );
+  @return (( strip-units($value) * $base ) * 1px);
 }

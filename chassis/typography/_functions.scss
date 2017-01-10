@@ -1,10 +1,10 @@
 // NGN Chassis
-// Golden Ratio typography-base
+// Golden Ratio Typography Functions -------------------------------------------
 
+// @function get-font-size
 // Select appropriate font-size for viewport-width-range.
-// Compares current viewport-width upper-bound to Chassis typography defaults and
-// returns the appropriate font-size
-
+// Compares passed viewport upper bound to Chassis typography defaults and
+// returns the matching font-size
 @function get-font-size($type, $upper-bound, $multiplier: $global-typography-multiplier) {
   $range-upper-bound: null;
 
@@ -37,63 +37,59 @@
   @return ( $font-size * $multiplier );
 }
 
+// @function get-line-height
+// Select appropriate line-height for viewport-width-range.
+// Compares passed viewport upper bound to Chassis typography defaults and
+// calculates the appropriate line-height from the returned font-size
 @function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
   $font-size: get-font-size($type, $upper-bound);
-  
   @return ( round($font-size * calculate-line-height($font-size, $upper-bound)) * $multiplier );
 }
 
-// @function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
-//   @return ( round(get-font-size($type, $upper-bound) * $type-scale-ratio) * $multiplier );
-// }
+// Heading Initialization ------------------------------------------------------
+// The following functions are used to establish default vertical rhythm for
+// headings (h1, h2, h3, etc)
 
-// The mixins below are used to set initial typography values for headings
-
+// @function get-initial-heading-font-size
+// calculate initial font-size value
 @function get-initial-heading-font-size($alias, $first-upper-bound) {
   @return ( ( get-font-size($alias, $first-upper-bound) / get-font-size(root, $first-upper-bound) ) * 1em );
 }
 
+// @function get-initial-heading-line-height
+// calculate initial line-height value
 @function get-initial-heading-line-height($alias, $first-upper-bound) {
   @return ( ( get-line-height($alias, $first-upper-bound) / get-line-height(root, $first-upper-bound) ) * 1em );
 }
 
+// @function get-initial-heading-margin-bottom
+// calculate initial margin-bottom value
 @function get-initial-heading-margin-bottom($alias, $first-upper-bound) {
   @return ( ( get-line-height($alias, $first-upper-bound) / get-font-size($alias, $first-upper-bound) ) / $type-scale-ratio ) * 1em;
 }
 
-// NOTE: The following functions are experimental. They will form the basis of
-// the upcoming auto-line-height features.
+// Auto line-height ------------------------------------------------------------
+// Use Golden Ratio math to find ideal line-heights for different viewport widths
 
-/**
- * @function get-optimal-line-dimensions
- * Return optimized line-height and width based on font-size and type-scale-ratio
- * @param {px} $font-size
- * @param {int} $ratio
- * Type scale ratio
- */
-@function get-optimal-line-dimensions($font-size, $ratio) {
-	$line-height-px: $font-size * $ratio;
-	$line-height-ems: (((strip-units($font-size) * $ratio) / strip-units($font-size)) * 1em);
-	
-	@return (
-		height: $line-height-ems,
-		width: (strip-units($line-height-px) * strip-units($line-height-px) * 1px)
-	);
+// @function get-optimal-line-dimensions
+// Return optimized line-height and width based on font-size and type-scale-ratio
+// @param {px} $font-size
+// @param {int} $ratio
+// Type scale ratio
+@function get-optimal-line-width($font-size, $ratio) {
+	$line-height: strip-units($font-size * $ratio);
+  @return (exponent($line-height, 2) * 1px);
 }
 
-/**
- * @function calculate-line-height
- * Returns adjusted line-height for a particular font-size and viewport-width-range
- * @param {px} $font-size
- * @param {px} $upper-bound
- * viewport-width-range upper bound
- */
+// @function calculate-line-height
+// Returns adjusted line-height for a particular font-size and viewport-width-range
+// @param {px} $font-size
+// @param {px} $upper-bound
+// viewport-width-range upper bound
 @function calculate-line-height($font-size, $upper-bound) {
-	$optimal-line: get-optimal-line-dimensions($font-size, $type-scale-ratio);
-	
-  // Pearsonified Golden Ratio Typography line height equation
-  // www.pearsonified.com
-	@return ( $type-scale-ratio - ( ( 1 / ( 2 * $type-scale-ratio ) ) * ( 1 - ( $upper-bound / map-get($optimal-line, width) ) ) ) );
-}
+	$optimal-line-width: get-optimal-line-width($font-size, $type-scale-ratio);
 
-// @warn calculate-line-height(16px, 512px);
+  // Pearsonified Golden Ratio Typography line height equation
+  // http://www.pearsonified.com
+	@return ( $type-scale-ratio - ( ( 1 / ( 2 * $type-scale-ratio ) ) * ( 1 - ( $upper-bound / $optimal-line-width ) ) ) );
+}

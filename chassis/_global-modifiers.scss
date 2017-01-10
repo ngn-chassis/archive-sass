@@ -1,23 +1,52 @@
 // NGN Chassis
-// Helper Classes
+// Helper Classes --------------------------------------------------------------
 
-// These classes can be injected with javascript
-
-// Add !important to rules that absolutely must overwrite any other styles.
-//------------------------------------------------------------------------------
-
+// Hide element
 .hidden {
 	display: none !important;
 	visibility: hidden !important;
 	opacity: 0 !important;
 }
 
-// Limit width of a container to the min and max UI widths
-// <div class="width-constraint"> should be placed inside elements that span the
-// full width of the viewport to maintain proper UI dimensions
+// Font weights
+.thin-weight {
+	font-weight: $thin !important;
+}
 
-// For  elements that need to be constrained to the max UI width
-// (e.g. inner containers on top-level elements, etc.)
+.light-weight {
+	font-weight: $light !important;
+}
+
+.regular-weight {
+	font-weight: $regular !important;
+}
+
+.semibold-weight {
+	font-weight: $semibold !important;
+}
+
+.bold-weight {
+	font-weight: $bold !important;
+}
+
+.ultra-weight {
+	font-weight: $ultra !important;
+}
+
+// Font Styles
+.normal-style {
+	font-style: normal !important;
+}
+
+.italic-style {
+	font-style: italic !important;
+}
+
+// @mixin width-constraint
+// Limit width of a container to the min and max UI widths
+// <div class="width-constraint"> can be placed as the first child element of any
+// full-width container to constrain the width of the contents to the min/max UI
+// width. Horizontal padding is added via $ui-gutter
 @mixin width-constraint($min-width: $ui-min-width, $max-width: $ui-max-width, $has-padding: true) {
 	width: 100%;
 	min-width: $min-width !important;

@@ -20,9 +20,9 @@
 @import 'chassis/typography/mixins';
 
 @import 'chassis/reset';
-@import 'chassis/helpers';
+@import 'chassis/global-modifiers';
 
-// Used to set default font-size, line-height, and margin values for
+// Used to set initial font-size, line-height, and margin values for
 // mobile-first media-queries
 $first-viewport-width-range: nth(map-keys($viewport-width-ranges), 1);
 $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-ranges), 1), upper-bound);
@@ -108,15 +108,6 @@ $first-viewport-width-range-upper-bound: map-get(nth(map-values($viewport-width-
   }
 
   // Auto Typography -----------------------------------------------------------
-
-  // Loops through each viewport-width range, as specified in `config/breakpoints`.
-  // Uses global-typography-rules mixin to set appropriate typography rules at
-  // each viewport-width range.
-  // This is determined by checking the upper-bound of the current viewport-width
-  // range against preset golden-ratio typography rules and selecting the
-  // corresponding rules.
-
-  // Typography Rule definitions can be found in `typography/definitions`.
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 

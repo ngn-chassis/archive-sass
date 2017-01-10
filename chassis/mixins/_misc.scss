@@ -1,18 +1,26 @@
 // NGN Chassis
 // Miscellaneous Mixins
 
+// @mixin hide
+// Hide Element
 @mixin hide {
   display: none;
 	visibility: hidden;
 	opacity: 0;
 }
 
+// @mixin show
+// unset hide mixin.
+// @param $box-model
+// set box model to display
+// defaults to block
 @mixin show($box-model: block) {
 	display: $box-model;
 	visibility: visible;
 	opacity: 1;
 }
 
+// @mixin disable-text-selection
 // Disable text selection on element
 @mixin disable-text-selection {
 	-webkit-touch-callout: none;
@@ -28,6 +36,7 @@
 	@include disable-text-selection;
 }
 
+// @mixin disable-pointer-events
 // Disable Pointer Events
 @mixin disable-pointer-events {
 	pointer-events: none;
@@ -37,6 +46,7 @@
 	@include disable-pointer-events;
 }
 
+// @mixin ellipsis
 // Ellipsis
 @mixin ellipsis {
   white-space: nowrap;
