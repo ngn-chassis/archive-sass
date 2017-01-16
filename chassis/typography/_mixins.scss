@@ -75,16 +75,6 @@
   p {
     margin-bottom: 1em;
   }
-
-  input,
-  textarea {
-    font-size: get-font-size(root, $upper-bound);
-  }
-
-  textarea {
-    line-height: get-line-height(root, $upper-bound);
-  }
-
 }
 
 // @mixin set-typography
@@ -234,24 +224,33 @@
 // Add height rule that matches line-height. Useful in browsers which do not
 // resize containers in respect to line-height
 @mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false, $add-height-rule: false) {
-  $old-font-size: null;
+  $font-size-on-previous-iteration: null;
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
+    // Loop Index
     $index: index(map-keys($viewport-width-ranges), $range-semantic-name);
+
+    // Upper Bound of current Viewport Width Range
     $upper-bound: map-get($range-bounds, upper-bound);
 
+    // Font Size in ems
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    // Default Line Height in ems
     $base-line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
 
-    @if $font-size != $old-font-size {
+    // Write rules if returned font-size is different than on previous iteration
+    @if $font-size != $font-size-on-previous-iteration {
+
+      // First iteration
       @if $index == 1 {
 
+        // Add calculated margin
         @if $has-margin {
           margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
         }
 
+        // Add calculated padding
         @if $has-padding {
-
           @if $multi-line {
             padding: ( ( ( $base-line-height * $type-scale-ratio ) - $base-line-height ) / 2 ) ( $base-line-height / 2 );
           } @else {
@@ -259,18 +258,24 @@
           }
         }
 
+        // For elements that display multiple lines of text
         @if $multi-line {
           line-height: $base-line-height;
+
           @if $add-height-rule {
             height: $base-line-height;
           }
+
+        // For single-line elements
         } @else {
           line-height: ( $base-line-height * $type-scale-ratio );
+
           @if $add-height-rule {
             height: ( $base-line-height * $type-scale-ratio );
           }
         }
 
+      // All iterations after the first
       } @else {
 
         @include min-viewport-width($range-semantic-name) {
@@ -289,6 +294,7 @@
 
           @if $multi-line {
             line-height: $base-line-height;
+
             @if $add-height-rule {
               height: $base-line-height;
             }
@@ -296,6 +302,7 @@
             @if not variable-exists(adjusted-line-height) {
               $adjusted-line-height: ( $base-line-height * $type-scale-ratio );
               line-height: $adjusted-line-height;
+
               @if $add-height-rule {
                 height: $adjusted-line-height;
               }
@@ -306,7 +313,7 @@
       }
     }
 
-    $old-font-size: $font-size;
+    $font-size-on-previous-iteration: $font-size;
   }
 
 }
@@ -319,7 +326,7 @@
 // @param {bool} $has-margin
 // Determines whether or not to output margin rules
 @mixin block-layout-rules($alias: root, $has-padding: true, $has-margin: true) {
-  $old-font-size: null;
+  $font-size-on-previous-iteration: null;
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
 
@@ -329,7 +336,7 @@
     $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
     $line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
 
-    @if $font-size != $old-font-size {
+    @if $font-size != $font-size-on-previous-iteration {
       @if $index == 1 {
 
         @if $has-margin {
@@ -357,7 +364,7 @@
       }
     }
 
-    $old-font-size: $font-size;
+    $font-size-on-previous-iteration: $font-size;
   }
 
 }
