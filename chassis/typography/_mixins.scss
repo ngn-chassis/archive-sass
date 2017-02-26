@@ -223,7 +223,7 @@
 // @param {bool} $add-height-rule
 // Add height rule that matches line-height. Useful in browsers which do not
 // resize containers in respect to line-height
-@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $multi-line: false, $add-height-rule: false) {
+@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $has-margin-bottom: true, $multi-line: false, $add-height-rule: false) {
   $font-size-on-previous-iteration: null;
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
@@ -246,7 +246,11 @@
 
         // Add calculated margin
         @if $has-margin {
-          margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
+          @if $has-margin-bottom {
+            margin: 0 ( $base-line-height / 2 ) $base-line-height 0;
+          } @else {
+            margin: 0 ( $base-line-height / 2 ) 0 0;
+          }
         }
 
         // Add calculated padding
