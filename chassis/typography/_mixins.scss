@@ -223,7 +223,7 @@
 // @param {bool} $add-height-rule
 // Add height rule that matches line-height. Useful in browsers which do not
 // resize containers in respect to line-height
-@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $has-margin-bottom: true, $multi-line: false, $add-height-rule: false) {
+@mixin inline-layout-rules($alias: root, $has-padding: true, $has-margin: true, $has-margin-bottom: true, $multi-line: false, $add-height-rule: false, $use-base-line-height: false) {
   $font-size-on-previous-iteration: null;
 
   @each $range-semantic-name, $range-bounds in $viewport-width-ranges {
@@ -234,9 +234,10 @@
     $upper-bound: map-get($range-bounds, upper-bound);
 
     // Font Size in ems
-    $font-size: ((get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em );
+    $font-size: (get-font-size($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em;
     // Default Line Height in ems
-    $base-line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
+    $base-line-height: (get-line-height($alias, $upper-bound) / get-font-size(root, $upper-bound)) * 1em;
+    // $base-line-height: (calculate-line-height(get-font-size($alias, $upper-bound), $upper-bound) * 1em );
 
     // Write rules if returned font-size is different than on previous iteration
     @if $font-size != $font-size-on-previous-iteration {
@@ -272,10 +273,19 @@
 
         // For single-line elements
         } @else {
-          line-height: ( $base-line-height * $type-scale-ratio );
+
+          @if $use-base-line-height {
+            line-height: $base-line-height;
+          } @else {
+            line-height: ( $base-line-height * $type-scale-ratio );
+          }
 
           @if $add-height-rule {
-            height: ( $base-line-height * $type-scale-ratio );
+            @if $use-base-line-height {
+              height: $base-line-height;
+            } @else {
+              height: ( $base-line-height * $type-scale-ratio );
+            }
           }
         }
 

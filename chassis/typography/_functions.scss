@@ -34,7 +34,7 @@
     }
   }
 
-  @return ( $font-size * $multiplier );
+  @return $font-size * $multiplier;
 }
 
 // @function get-line-height
@@ -43,7 +43,7 @@
 // calculates the appropriate line-height from the returned font-size
 @function get-line-height($type, $upper-bound, $multiplier: $global-typography-multiplier) {
   $font-size: get-font-size($type, $upper-bound);
-  @return ( round($font-size * calculate-line-height($font-size, $upper-bound)) * $multiplier );
+  @return $font-size * calculate-line-height($font-size, $upper-bound) * $multiplier;
 }
 
 // Heading Initialization ------------------------------------------------------
